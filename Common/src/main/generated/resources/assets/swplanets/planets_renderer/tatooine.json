@@ -30,18 +30,18 @@
       "back_light_scale": 27.0,
       "blend": false,
       "global_rotation": [
-        -40.0,
         0.0,
-        160.0
+        90.0,
+        0.0
       ],
       "local_rotation": [
         0.0,
-        100.0,
+        0.0,
         0.0
       ],
       "movement_type": "TIME_OF_DAY",
       "scale": 9.0,
-      "texture": "ad_astra:textures/environment/sun.png"
+      "texture": "swplanets:textures/sky/mustafar.png"
     }
   ],
   "star_brightness": 0.6,

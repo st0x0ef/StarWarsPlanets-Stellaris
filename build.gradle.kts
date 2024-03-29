@@ -7,7 +7,7 @@ import net.fabricmc.loom.task.RemapJarTask
 plugins {
     java
     id("maven-publish")
-    id("dev.architectury.loom") version "1.4-SNAPSHOT" apply false
+    id("dev.architectury.loom") version "1.5-SNAPSHOT" apply false
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("com.github.johnrengelman.shadow") version "7.1.2" apply false
     id("com.modrinth.minotaur") version "2.+"
@@ -198,7 +198,7 @@ subprojects {
         projectId = "star-wars-planets-ad-astra" // This can be the project ID or the slug. Either will work!
         versionNumber.set("$version") // You don't need to set this manually. Will fail if Modrinth has this version already
         versionType.set("release") // This is the default -- can also be `beta` or `alpha`
-        versionName = "[${modLoader.uppercase()}] SWPlanets ${version}"// This can be the project ID or the slug. Either will work!
+        versionName = "[${modLoader.lowercase()}] SWPlanets ${version}"// This can be the project ID or the slug. Either will work!
         changelog = file("../changelog.md").readText(Charsets.UTF_8) // This is the changelog for the version
         uploadFile.set(tasks.findByPath("remapJar")) // With Loom, this MUST be set to `remapJar` instead of `jar`!
         gameVersions.addAll("1.20.4") // Must be an array, even with only one version

@@ -2,14 +2,14 @@
   "custom_clouds": true,
   "custom_sky": true,
   "custom_weather": false,
-  "dimension": "swplanets:tatooine",
-  "has_fog": true,
+  "dimension": "swplanets:mandalore_orbit",
+  "has_fog": false,
   "has_thick_fog": false,
   "render_in_rain": true,
   "sky_renderables": [
     {
       "back_light_color": -39,
-      "back_light_scale": 27.0,
+      "back_light_scale": 21.0,
       "blend": false,
       "global_rotation": [
         0.0,
@@ -22,26 +22,26 @@
         0.0
       ],
       "movement_type": "TIME_OF_DAY",
-      "scale": 9.0,
+      "scale": 7.0,
       "texture": "ad_astra:textures/environment/sun.png"
     },
     {
-      "back_light_color": -39,
-      "back_light_scale": 27.0,
+      "back_light_color": -4827861,
+      "back_light_scale": 240.0,
       "blend": false,
       "global_rotation": [
-        -40.0,
+        180.0,
         0.0,
-        160.0
+        0.0
       ],
       "local_rotation": [
         0.0,
-        100.0,
+        0.0,
         0.0
       ],
-      "movement_type": "TIME_OF_DAY",
-      "scale": 9.0,
-      "texture": "ad_astra:textures/environment/sun.png"
+      "movement_type": "STATIC",
+      "scale": 80.0,
+      "texture": "ad_astra:textures/environment/mars.png"
     }
   ],
   "star_brightness": 0.6,
@@ -87,7 +87,7 @@
       "weight": 1
     }
   ],
-  "stars": 0,
+  "stars": 13000,
   "sunrise_angle": 0,
   "sunrise_color": 14180147
 }

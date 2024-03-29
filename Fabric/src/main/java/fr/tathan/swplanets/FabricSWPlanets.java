@@ -1,9 +1,11 @@
 package fr.tathan.swplanets;
 
+import fr.tathan.swplanets.common.registry.EntityRegistry;
 import fr.tathan.swplanets.common.registry.TagsRegistry;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -17,6 +19,8 @@ public class FabricSWPlanets implements ModInitializer {
 
 		Constants.LOG.info("Star Wars Planets 🚀!");
 		CommonClass.init();
+		EntityRegistry.registerAttributes((type, builder) -> FabricDefaultAttributeRegistry.register(type.get(), builder.get()));
+
 
 		BiomeModifications.addFeature(
 				BiomeSelectors.tag(TagsRegistry.STARWARS_PLANETS),

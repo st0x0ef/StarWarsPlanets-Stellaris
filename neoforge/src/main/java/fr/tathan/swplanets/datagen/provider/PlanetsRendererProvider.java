@@ -80,7 +80,7 @@ public class PlanetsRendererProvider extends ModCodecProvider<PlanetRenderer> {
             COLORED_STARS,
             List.of(
                 new SkyRenderable(DimensionRenderingUtils.SUN, 9, Vec3.ZERO, Vec3.ZERO, MovementType.TIME_OF_DAY, 0xffffffd9),
-                new SkyRenderable(DimensionRenderingUtils.SUN, 9, new Vec3(-40, 0, 160), new Vec3(0, 100, 0), MovementType.TIME_OF_DAY, 0xffffffd9)
+                new SkyRenderable(DimensionRenderingUtils.RED_SUN, 9, new Vec3(0, 0, 0), new Vec3(0, 0, 0), MovementType.TIME_OF_DAY, 0xffffffd9)
             )));
 
         consumer.accept(LevelRegistry.ENDOR.location(), new PlanetRenderer(
