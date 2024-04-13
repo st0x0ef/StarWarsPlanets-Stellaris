@@ -1,0 +1,128 @@
+{
+  "gui.swplanets.planet_selection.solar_system_button": "银河系",
+  "planet.swplanets.tatooine": "塔图因",
+  "planet.swplanets.kamino": "卡米诺",
+  "planet.swplanets.endor": "恩多尔",
+  "planet.swplanets.hot": "霍斯",
+  "planet.swplanets.mustafar": "穆斯塔法",
+  "planet.swplanets.mandalore": "曼达洛",
+
+  "planet.swplanets.tatooine_orbit": "塔图因轨道",
+  "planet.swplanets.kamino_orbit": "卡米诺轨道",
+  "planet.swplanets.endor_orbit": "恩多尔轨道",
+  "planet.swplanets.hot_orbit": "霍斯轨道",
+  "planet.swplanets.mustafar_orbit": "穆斯塔法轨道",
+  "planet.swplanets.mandalore_orbit": "曼达洛轨道",
+
+  "gui.swplanets.text.galaxy_far_away": "银河系",
+  "solar_system.swplanets.outer_rims": "外圈",
+
+  "advancements.pro_hyperspace.title": "超空间专家！",
+  "advancements.pro_hyperspace.descr": "拜访银河系中的所有行星",
+
+  "advancements.swplanets.title": "新的银河系",
+  "advancements.swplanets.descr": "欢迎来到银河系！",
+
+  "advancements.find_kyber.title": "哈！闪亮极了！",
+  "advancements.find_kyber.descr": "你刚刚找到了凯伯水晶！",
+
+  "advancements.craft_saber.title": "愿原力与你同在！",
+  "advancements.craft_saber.descr": "你现在是绝地武士了！ 也有可能还不是...",
+
+  "advancements.beskar.title": "另一条路！",
+  "advancements.beskar.descr": "你找到了贝斯卡金属！",
+
+  "advancements.mandalorian.title": "就是这样！",
+  "advancements.mandalorian.descr": "你成为曼达洛人",
+
+  "item.swplanets.star_wars_opening_music_disc": "音乐唱片",
+  "item.swplanets.star_wars_opening_music_disc.desc": "John Williams - Star Wars Opening",
+  "item.swplanets.kyber_crystal": "凯伯水晶",
+  "item.swplanets.kyber_crystal_ore": "凯伯水晶矿石",
+  "item.swplanets.kyber_crystal_ore_sandstone": "砂岩凯伯水晶矿石 ",
+  "item.swplanets.mustafar_stone": "穆斯塔法石",
+  "item.swplanets.mustafar_sand": "穆斯塔法沙",
+
+  "item.swplanets.beskar": "Beskar",
+  "item.swplanets.darksaber": "Dark Saber",
+
+  "item.swplanets.beskar_ore_sandstone": "Beskar Ore",
+
+  "item.swplanets.light_saber_base": "Light Saber Base",
+  "item.swplanets.light_saber_red": "Red Light Saber",
+  "item.swplanets.light_saber_blue": "Blue Light Saber ",
+  "item.swplanets.light_saber_green": "Green Light Saber ",
+  "item.swplanets.light_saber_violet": "Violet Light Saber ",
+  "item.swplanets.light_saber_dark_maul": "Darth Maul's lightsaber ",
+  "item.swplanets.light_saber_kylo_ren": "Kylo Ren's lightsaber ",
+
+  "item.swplanets.star_manual": "Star Manual ",
+
+  "item.swplanets.blaster": "Blaster",
+  "item.swplanets.blaster_zoom": "Blaster",
+
+  "item.swplanets.stormtrooper_mask": "Stormtrooper Helmet",
+  "item.swplanets.stormtrooper_chestplate": "Stormtrooper ChestPlate",
+  "item.swplanets.stormtrooper_leggings": "Stormtrooper Legging",
+  "item.swplanets.stormtrooper_boots": "Stormtrooper Boots",
+  "item.swplanets.plastic_plate": "Plastic Plate ",
+  "item.swplanets.speeder": "Speeder",
+  "item.swplanets.blaster_zoom_upgrade": "Blaster Zoom Upgrade",
+  "item.swplanets.blaster_distance_upgrade": "Blaster Distance Upgrade",
+  "item.swplanets.blaster_upgrader": "Blaster Upgrader",
+
+  "item.swplanets.beskar_armor_helmet": "Beskar Helmet",
+  "item.swplanets.beskar_armor_chestplate": "Beskar ChestPlate",
+  "item.swplanets.beskar_armor_leggings": "Beskar Legging",
+  "item.swplanets.beskar_armor_boots": "Beskar Boots",
+
+  "entity.swplanets.speeder": "Speeder",
+
+  "tooltip.swplanets.jedilightsaber.tooltip.shift": "A weapon used by the greatest §1Jedi",
+  "tooltip.swplanets.jedilightsaber.tooltip.shift.two": "May the force be with you !",
+
+  "tooltip.swplanets.sithlightsaber.tooltip.shift": "A weapon used by the darkest §4Sith",
+  "tooltip.swplanets.sithlightsaber.tooltip.shift.two": "Join the dark side of the force !",
+
+
+
+  "block.swplanets.kyber_crystal_ore": "Kyber Crystal Ore",
+  "block.swplanets.kyber_crystal_cluster": "Kyber Crystal Cluster",
+  "block.swplanets.kyber_crystal_ore_sandstone": "Sandstone Kyber Crystal Ore ",
+  "block.swplanets.mustafar_stone": "Mustafar Stone",
+  "block.swplanets.mustafar_sand": "Mustafar Sand",
+  "block.swplanets.beskar_ore_sandstone": "Beskar Ore",
+
+
+
+  "message.swplanets.error.patchouli": "I think &4patchouli&r is not installed. You need this mod to use this item",
+
+  "itemGroup.swplanets.main": "Star Wars Planets",
+
+  "swplanets.tip.kyber_crystal.title": "Kyber Crystals",
+  "swplanets.tip.kyber_crystal": "Kyber Crystals are an inexhaustible source of energy",
+
+  "swplanets.tip.sith_saber": "The most dangerous weapon in the galaxy used by the most dangerous people in the galaxy",
+  "swplanets.tip.sith_saber.title": "Sith Light Saber",
+
+  "swplanets.tip.jedi_saber": "The most dangerous weapon in the galaxy used to keep the peace in the galaxy",
+  "swplanets.tip.jedi_saber.title": "Jedi Light Saber",
+
+  "swplanets.tip.tatooine_houses": "You can find communities of tatooine inhabitants in the desert",
+  "swplanets.tip.tatooine_houses.title": "Tatooine Houses",
+
+  "biome.swplanets.endor_taiga": "Taiga of Endor",
+  "biome.swplanets.hot_desert": "Desert of Hot",
+  "biome.swplanets.kamino_ocean": "Ocean of Kamino",
+  "biome.swplanets.mustafar_hill": "Mustafar Hills",
+  "biome.swplanets.tatooine_desert": "Tatooine Desert",
+
+
+  "tooltip.swplanets.shift": "§7Hold §6§oShift §7for more informations",
+  "tooltip.swplanets.blaster.lifetime.shift": "§7Laser lifetime : §6§o%s",
+  "tooltip.swplanets.blaster.zoom.shift": "§7Zoom : §6§o%s",
+
+
+  "sounds.swplanets.blaster_sound": "Blaster Sound",
+  "sounds.swplanets.saber_attack_sound": "Saber Attack Sound"
+}
