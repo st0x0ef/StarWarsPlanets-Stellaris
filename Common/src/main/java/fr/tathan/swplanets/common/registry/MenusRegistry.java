@@ -17,7 +17,7 @@ public class MenusRegistry {
 
     public static final ResourcefulRegistry<MenuType<?>> MENUS = ResourcefulRegistries.create(BuiltInRegistries.MENU, Constants.MODID);
     public static final RegistryEntry<MenuType<BlasterUpgraderMenu>> BLASTER_UPGRADER = MENUS.register("blaster_upgrader_menu",
-        () -> createMenuType(BlasterUpgraderMenu::new, BlasterUpgraderEntity.class));
+        () -> RegistryHelpers.createMenuType(BlasterUpgraderMenu::new));
 
     private static <T extends BaseContainerMenu<E>, E extends BlockEntity> MenuType<T> createMenuType(ModMenus.Factory<T, E> factory, Class<E> clazz) {
         return RegistryHelpers.createMenuType((id, inventory, buf) -> factory.create(

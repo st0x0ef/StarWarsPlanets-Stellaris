@@ -81,6 +81,7 @@ public class ItemsRegistry {
 
     // Blaster Upgrade
     public static final RegistryEntry<Item> BLASTER_ZOOM_UPGRADE = TAB_ITEMS.register("blaster_zoom_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16), true, 0));
+    public static final RegistryEntry<BlockItem> BLASTER_UPGRADE = TAB_ITEMS.register("blaster_upgrader", () -> new BlockItem(BlocksRegistry.BLASTER_UPGRADER.get(), new Item.Properties()));
 
 
 }

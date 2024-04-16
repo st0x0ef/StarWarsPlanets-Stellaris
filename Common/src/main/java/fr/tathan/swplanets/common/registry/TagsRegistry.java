@@ -13,7 +13,7 @@ public class TagsRegistry {
     public static final TagKey<Biome> MANDALORE_BIOME;
 
     public static final TagKey<Item> BLASTERS;
-    public static final TagKey<Item> BLASTER_UPGRADE;
+    public static final TagKey<Item> BLASTER_UPGRADES;
     public static final TagKey<Item> LIGHT_SABERS;
 
     public static void init() {
@@ -25,7 +25,7 @@ public class TagsRegistry {
         MANDALORE_BIOME = TagKey.create(Registries.BIOME, new ResourceLocation(Constants.MODID, "mandalore_biomes"));
 
         BLASTERS = TagKey.create(Registries.ITEM, new ResourceLocation(Constants.MODID, "blasters"));
-        BLASTER_UPGRADE = TagKey.create(Registries.ITEM, new ResourceLocation(Constants.MODID, "blaster_upgrade"));
+        BLASTER_UPGRADES = TagKey.create(Registries.ITEM, new ResourceLocation(Constants.MODID, "blaster_upgrades"));
         LIGHT_SABERS = TagKey.create(Registries.ITEM, new ResourceLocation(Constants.MODID, "light_sabers"));
     }
 
