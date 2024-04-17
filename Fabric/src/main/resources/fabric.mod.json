@@ -13,7 +13,10 @@
         "sources": "https://github.com/TathanDev/StarWarsPlanets",
         "issues": "https://github.com/TathanDev/StarWarsPlanets-AdAstra/issues"
     },
-
+    "contributors": [
+        "Lost Tapes",
+        "Duchy"
+    ],
     "license": "CC0-1.0",
     "icon": "swplanets.png",
 
