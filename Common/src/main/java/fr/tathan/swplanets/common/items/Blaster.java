@@ -14,6 +14,7 @@ import earth.terrarium.botarium.common.item.ItemStackHolder;
 import fr.tathan.swplanets.common.entities.LaserEntity;
 import fr.tathan.swplanets.common.registry.ItemsRegistry;
 import fr.tathan.swplanets.common.registry.SoundsRegistry;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
@@ -30,17 +31,14 @@ import java.util.List;
 public class Blaster extends TieredItem implements BotariumEnergyItem<WrappedItemEnergyContainer> {
 
     public static final String ZOOM_UPGRADE = "Mode";
+    public static final String EXPLOSION_UPGRADE = "Explosion";
 
-    public boolean zoom = false;
 
     public Blaster(Properties properties) {
         super(StarWarsTiers.PLASTIC, properties);
     }
 
-    public Blaster(Properties properties, boolean zoom) {
-        super(StarWarsTiers.PLASTIC, properties);
-        this.zoom = zoom;
-    }
+
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand handIn) {
@@ -68,7 +66,7 @@ public class Blaster extends TieredItem implements BotariumEnergyItem<WrappedIte
 
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
-        if (this.zoom) {
+        if (getZoomUpgrade(stack)) {
             return UseAnim.SPYGLASS;
         } else {
             return UseAnim.BOW;
@@ -85,7 +83,7 @@ public class Blaster extends TieredItem implements BotariumEnergyItem<WrappedIte
         var energy = getEnergyStorage(stack);
 
         if(Screen.hasShiftDown()) {
-            components.add(Component.translatable("tooltip.swplanets.blaster.zoom.shift", getZoomUpgrade(stack)));
+            addUpgradesComponents(stack, components);
             components.add(TooltipUtils.getEnergyComponent(energy.getStoredEnergy(), energy.getMaxCapacity()));
 
         } else {
@@ -95,11 +93,30 @@ public class Blaster extends TieredItem implements BotariumEnergyItem<WrappedIte
         super.appendHoverText(stack, $$1, components, $$3);
     }
 
+    public void addUpgradesComponents(ItemStack stack, List<Component> components) {
+        Component zoom;
+        Component explosion;
+
+        if (getZoomUpgrade(stack)) {
+            zoom = Component.literal("✔").withStyle(ChatFormatting.GREEN);
+        } else {
+            zoom = Component.literal("✘").withStyle(ChatFormatting.RED);
+        }
+        if (getExplosionUpgrade(stack)) {
+            explosion = Component.literal("✔").withStyle(ChatFormatting.GREEN);
+        } else {
+            explosion = Component.literal("✘").withStyle(ChatFormatting.RED);
+        }
+
+        components.add(Component.literal("Zoom: ").append(zoom));
+        components.add(Component.literal("Explosion: ").append(explosion));
+    }
 
     public void setUpgrade(BlasterUpgrade upgradeItem, ItemStack stack) {
 
         var tag = stack.getOrCreateTag();
         tag.putBoolean(ZOOM_UPGRADE, upgradeItem.getZoom());
+        tag.putBoolean(EXPLOSION_UPGRADE, upgradeItem.getExplosion());
 
     }
 
@@ -155,6 +172,9 @@ public class Blaster extends TieredItem implements BotariumEnergyItem<WrappedIte
 
     public boolean getZoomUpgrade(ItemStack stack) {
         return stack.getOrCreateTag().getBoolean(ZOOM_UPGRADE);
+    }
+    public boolean getExplosionUpgrade(ItemStack stack) {
+        return stack.getOrCreateTag().getBoolean(EXPLOSION_UPGRADE);
     }
 
 }

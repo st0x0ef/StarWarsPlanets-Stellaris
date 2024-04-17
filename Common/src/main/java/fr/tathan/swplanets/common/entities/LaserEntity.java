@@ -1,5 +1,6 @@
 package fr.tathan.swplanets.common.entities;
 
+import fr.tathan.swplanets.common.registry.DamageSourceRegistry;
 import fr.tathan.swplanets.common.registry.EntityRegistry;
 import fr.tathan.swplanets.common.registry.ItemsRegistry;
 import net.minecraft.nbt.CompoundTag;
@@ -10,6 +11,7 @@ import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.EntityHitResult;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -74,7 +76,7 @@ public class LaserEntity extends Fireball {
 
     @Override
     protected boolean shouldBurn() {
-        return false;
+        return true;
     }
 
 
@@ -86,6 +88,12 @@ public class LaserEntity extends Fireball {
     @Override
     public boolean isPickable() {
         return false;
+    }
+
+    @Override
+    protected void onHitEntity(EntityHitResult result) {
+        super.onHitEntity(result);
+        result.getEntity().hurt(DamageSourceRegistry.create(result.getEntity().level(), DamageSourceRegistry.BLASTER), 6.0F);
     }
 
     @Override
