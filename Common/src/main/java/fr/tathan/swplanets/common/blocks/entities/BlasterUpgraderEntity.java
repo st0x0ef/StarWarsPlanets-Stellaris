@@ -67,25 +67,17 @@ public class BlasterUpgraderEntity extends ContainerMachineBlockEntity {
         }
 
         if(hasRecipe()) {
-            Constants.LOG.error("Recipe !!");
-            setChanged(level, pos, state);
             craft();
-
         } else {
             setChanged(level, pos, state);
         }
-
     }
 
     private boolean hasRecipe() {
-
         boolean hasBlasterInFirstSlot = getItem(0).is(TagsRegistry.BLASTERS);
-
         boolean hasUpgradeInSecondSlot = getItem(1).is(TagsRegistry.BLASTER_UPGRADES);
-
         return hasBlasterInFirstSlot && hasUpgradeInSecondSlot;
     }
-
 
     private void craft(){
         ItemStack upgrade_input = getItem(1);

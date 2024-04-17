@@ -30,7 +30,6 @@ public class CommonClass {
     }
 
     public static void postInit() {
-        Constants.LOG.error("TEST");
         Map<Item, CauldronInteraction> map = CauldronInteraction.WATER.map();
         map.put(ItemsRegistry.STORMTROOPER_BOOTS.get(), CauldronInteraction.DYED_ITEM);
         map.put(ItemsRegistry.STORMTROOPER_CHESTPLATE.get(), CauldronInteraction.DYED_ITEM);
