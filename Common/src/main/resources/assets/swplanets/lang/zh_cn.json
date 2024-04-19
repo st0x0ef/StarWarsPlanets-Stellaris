@@ -43,86 +43,86 @@
   "item.swplanets.mustafar_stone": "穆斯塔法石",
   "item.swplanets.mustafar_sand": "穆斯塔法沙",
 
-  "item.swplanets.beskar": "Beskar",
-  "item.swplanets.darksaber": "Dark Saber",
+  "item.swplanets.beskar": "贝斯卡金属",
+  "item.swplanets.darksaber": "暗剑",
 
-  "item.swplanets.beskar_ore_sandstone": "Beskar Ore",
+  "item.swplanets.beskar_ore_sandstone": "贝斯卡矿石",
 
-  "item.swplanets.light_saber_base": "Light Saber Base",
-  "item.swplanets.light_saber_red": "Red Light Saber",
-  "item.swplanets.light_saber_blue": "Blue Light Saber ",
-  "item.swplanets.light_saber_green": "Green Light Saber ",
-  "item.swplanets.light_saber_violet": "Violet Light Saber ",
-  "item.swplanets.light_saber_dark_maul": "Darth Maul's lightsaber ",
-  "item.swplanets.light_saber_kylo_ren": "Kylo Ren's lightsaber ",
+  "item.swplanets.light_saber_base": "光剑底座",
+  "item.swplanets.light_saber_red": "红色光剑",
+  "item.swplanets.light_saber_blue": "蓝色光剑 ",
+  "item.swplanets.light_saber_green": "绿色光剑 ",
+  "item.swplanets.light_saber_violet": "紫色光剑 ",
+  "item.swplanets.light_saber_dark_maul": "达斯摩尔的光剑 ",
+  "item.swplanets.light_saber_kylo_ren": "凯洛伦的光剑 ",
 
-  "item.swplanets.star_manual": "Star Manual ",
+  "item.swplanets.star_manual": "行星手册 ",
 
-  "item.swplanets.blaster": "Blaster",
-  "item.swplanets.blaster_zoom": "Blaster",
+  "item.swplanets.blaster": "爆能枪",
+  "item.swplanets.blaster_zoom": "爆能枪",
 
-  "item.swplanets.stormtrooper_mask": "Stormtrooper Helmet",
-  "item.swplanets.stormtrooper_chestplate": "Stormtrooper ChestPlate",
-  "item.swplanets.stormtrooper_leggings": "Stormtrooper Legging",
-  "item.swplanets.stormtrooper_boots": "Stormtrooper Boots",
-  "item.swplanets.plastic_plate": "Plastic Plate ",
-  "item.swplanets.speeder": "Speeder",
-  "item.swplanets.blaster_zoom_upgrade": "Blaster Zoom Upgrade",
-  "item.swplanets.blaster_distance_upgrade": "Blaster Distance Upgrade",
-  "item.swplanets.blaster_upgrader": "Blaster Upgrader",
+  "item.swplanets.stormtrooper_mask": "冲锋队头盔",
+  "item.swplanets.stormtrooper_chestplate": "冲锋队胸甲",
+  "item.swplanets.stormtrooper_leggings": "冲锋队护腿",
+  "item.swplanets.stormtrooper_boots": "冲锋队靴子",
+  "item.swplanets.plastic_plate": "塑料板 ",
+  "item.swplanets.speeder": "飞车",
+  "item.swplanets.blaster_zoom_upgrade": "爆能枪瞄准升级",
+  "item.swplanets.blaster_distance_upgrade": "爆能枪射击距离升级",
+  "item.swplanets.blaster_upgrader": "爆能枪升级器",
 
-  "item.swplanets.beskar_armor_helmet": "Beskar Helmet",
-  "item.swplanets.beskar_armor_chestplate": "Beskar ChestPlate",
-  "item.swplanets.beskar_armor_leggings": "Beskar Legging",
-  "item.swplanets.beskar_armor_boots": "Beskar Boots",
+  "item.swplanets.beskar_armor_helmet": "贝斯卡头盔",
+  "item.swplanets.beskar_armor_chestplate": "贝斯卡胸甲",
+  "item.swplanets.beskar_armor_leggings": "贝斯卡护腿",
+  "item.swplanets.beskar_armor_boots": "贝斯卡靴子",
 
-  "entity.swplanets.speeder": "Speeder",
+  "entity.swplanets.speeder": "飞车",
 
-  "tooltip.swplanets.jedilightsaber.tooltip.shift": "A weapon used by the greatest §1Jedi",
-  "tooltip.swplanets.jedilightsaber.tooltip.shift.two": "May the force be with you !",
+  "tooltip.swplanets.jedilightsaber.tooltip.shift": "最伟大的§1绝地武士使用的武器",
+  "tooltip.swplanets.jedilightsaber.tooltip.shift.two": "愿原力与你同在 ！",
 
-  "tooltip.swplanets.sithlightsaber.tooltip.shift": "A weapon used by the darkest §4Sith",
-  "tooltip.swplanets.sithlightsaber.tooltip.shift.two": "Join the dark side of the force !",
-
-
-
-  "block.swplanets.kyber_crystal_ore": "Kyber Crystal Ore",
-  "block.swplanets.kyber_crystal_cluster": "Kyber Crystal Cluster",
-  "block.swplanets.kyber_crystal_ore_sandstone": "Sandstone Kyber Crystal Ore ",
-  "block.swplanets.mustafar_stone": "Mustafar Stone",
-  "block.swplanets.mustafar_sand": "Mustafar Sand",
-  "block.swplanets.beskar_ore_sandstone": "Beskar Ore",
+  "tooltip.swplanets.sithlightsaber.tooltip.shift": "最黑暗的§4西斯使用的武器",
+  "tooltip.swplanets.sithlightsaber.tooltip.shift.two": "加入黑暗势力！",
 
 
 
-  "message.swplanets.error.patchouli": "I think &4patchouli&r is not installed. You need this mod to use this item",
-
-  "itemGroup.swplanets.main": "Star Wars Planets",
-
-  "swplanets.tip.kyber_crystal.title": "Kyber Crystals",
-  "swplanets.tip.kyber_crystal": "Kyber Crystals are an inexhaustible source of energy",
-
-  "swplanets.tip.sith_saber": "The most dangerous weapon in the galaxy used by the most dangerous people in the galaxy",
-  "swplanets.tip.sith_saber.title": "Sith Light Saber",
-
-  "swplanets.tip.jedi_saber": "The most dangerous weapon in the galaxy used to keep the peace in the galaxy",
-  "swplanets.tip.jedi_saber.title": "Jedi Light Saber",
-
-  "swplanets.tip.tatooine_houses": "You can find communities of tatooine inhabitants in the desert",
-  "swplanets.tip.tatooine_houses.title": "Tatooine Houses",
-
-  "biome.swplanets.endor_taiga": "Taiga of Endor",
-  "biome.swplanets.hot_desert": "Desert of Hot",
-  "biome.swplanets.kamino_ocean": "Ocean of Kamino",
-  "biome.swplanets.mustafar_hill": "Mustafar Hills",
-  "biome.swplanets.tatooine_desert": "Tatooine Desert",
+  "block.swplanets.kyber_crystal_ore": "凯伯水晶矿石",
+  "block.swplanets.kyber_crystal_cluster": "凯伯水晶簇",
+  "block.swplanets.kyber_crystal_ore_sandstone": "砂岩凯伯水晶矿石 ",
+  "block.swplanets.mustafar_stone": "穆斯塔法石",
+  "block.swplanets.mustafar_sand": "穆斯塔法沙",
+  "block.swplanets.beskar_ore_sandstone": "贝斯卡矿石",
 
 
-  "tooltip.swplanets.shift": "§7Hold §6§oShift §7for more informations",
-  "tooltip.swplanets.blaster.lifetime.shift": "§7Laser lifetime : §6§o%s",
-  "tooltip.swplanets.blaster.zoom.shift": "§7Zoom : §6§o%s",
+
+  "message.swplanets.error.patchouli": "未检测到 &4patchouli&r 模组。 您需要安装 patchouli 模组才能使用此物品",
+
+  "itemGroup.swplanets.main": "星球大战 行星",
+
+  "swplanets.tip.kyber_crystal.title": "凯伯水晶",
+  "swplanets.tip.kyber_crystal": "凯伯水晶是取之不尽、用之不竭的能源",
+
+  "swplanets.tip.sith_saber": "银河系中最危险的人使用的武器",
+  "swplanets.tip.sith_saber.title": "西斯光剑",
+
+  "swplanets.tip.jedi_saber": "银河系中最危险的武器，用来维护银河系的和平",
+  "swplanets.tip.jedi_saber.title": "绝地武士光剑",
+
+  "swplanets.tip.tatooine_houses": "您可以在沙漠中找到塔图因居民的社区",
+  "swplanets.tip.tatooine_houses.title": "塔图因房屋",
+
+  "biome.swplanets.endor_taiga": "恩多的针叶林",
+  "biome.swplanets.hot_desert": "炎热的沙漠",
+  "biome.swplanets.kamino_ocean": "卡米诺的海",
+  "biome.swplanets.mustafar_hill": "穆斯塔法的山",
+  "biome.swplanets.tatooine_desert": "塔图因的沙漠",
 
 
-  "sounds.swplanets.blaster_sound": "Blaster Sound",
-  "sounds.swplanets.saber_attack_sound": "Saber Attack Sound"
+  "tooltip.swplanets.shift": "§7按住 §6§oShift §7以了解更多信息",
+  "tooltip.swplanets.blaster.lifetime.shift": "§7激光寿命： §6§o%s",
+  "tooltip.swplanets.blaster.zoom.shift": "§7缩放： §6§o%s",
+
+
+  "sounds.swplanets.blaster_sound": "爆能枪：发射",
+  "sounds.swplanets.saber_attack_sound": "军刀：挥舞"
 }
