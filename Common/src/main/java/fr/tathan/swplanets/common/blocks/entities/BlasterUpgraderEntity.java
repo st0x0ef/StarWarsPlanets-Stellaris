@@ -14,11 +14,11 @@ import fr.tathan.swplanets.common.menu.BlasterUpgraderMenu;
 import fr.tathan.swplanets.common.registry.TagsRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
@@ -59,29 +59,25 @@ public class BlasterUpgraderEntity extends ContainerMachineBlockEntity {
 
 
     @Override
-    public void serverTick(ServerLevel level, long time, BlockState state, BlockPos pos) {
+    public void tick(Level level, long time, BlockState state, BlockPos pos) {
+        super.tick(level, time, state, pos);
+
         if(level.isClientSide()) {
             return;
         }
 
         if(hasRecipe()) {
-            Constants.LOG.error("Recipe !!");
-            setChanged(level, pos, state);
             craft();
-
         } else {
             setChanged(level, pos, state);
         }
     }
 
     private boolean hasRecipe() {
-
         boolean hasBlasterInFirstSlot = getItem(0).is(TagsRegistry.BLASTERS);
-        boolean hasUpgradeInSecondSlot = getItem(1).is(TagsRegistry.BLASTER_UPGRADE);
-
+        boolean hasUpgradeInSecondSlot = getItem(1).is(TagsRegistry.BLASTER_UPGRADES);
         return hasBlasterInFirstSlot && hasUpgradeInSecondSlot;
     }
-
 
     private void craft(){
         ItemStack upgrade_input = getItem(1);
@@ -89,10 +85,11 @@ public class BlasterUpgraderEntity extends ContainerMachineBlockEntity {
 
         if (!upgrade_input.isEmpty() && !vehicle_input.isEmpty()) {
             if (upgrade_input.getItem() instanceof BlasterUpgrade upgrade) {
+                Constants.LOG.error("Upgrade " + upgrade.getZoom());
                 ItemStack output = vehicle_input.copy();
 
-                if (output.getItem() instanceof Blaster rocket) {
-                    rocket.setUpgrade(upgrade);
+                if (output.getItem() instanceof Blaster blaster) {
+                    blaster.setUpgrade(upgrade, output);
                 }
 
                 output.setCount(1);

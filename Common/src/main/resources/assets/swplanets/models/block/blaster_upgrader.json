@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "swplanets:block/blaster_upgrader"
+    "down": "ad_astra:block/steel_machine_bottom",
+    "east": "ad_astra:block/steel_machine_side",
+    "north": "swplanets:block/blaster_upgrader",
+    "particle": "swplanets:block/blaster_upgrader",
+    "south": "ad_astra:block/steel_machine_side",
+    "up": "ad_astra:block/steel_machine_top",
+    "west": "ad_astra:block/steel_machine_side"
   }
 }

@@ -1,5 +1,6 @@
 package fr.tathan.swplanets.mixin;
 
+import fr.tathan.swplanets.Constants;
 import fr.tathan.swplanets.common.items.Blaster;
 import fr.tathan.swplanets.common.registry.ItemsRegistry;
 import net.minecraft.world.InteractionHand;
@@ -18,14 +19,12 @@ public class PlayerScopeMixin {
         Player player = (Player) ((Object) this);
         boolean haveZoom = false;
 
-        if(player.getItemInHand(InteractionHand.MAIN_HAND).is(ItemsRegistry.BLASTER_ZOOM.get())) {
+        if(player.getItemInHand(InteractionHand.MAIN_HAND).is(ItemsRegistry.BLASTER.get())) {
             Blaster blaster = (Blaster) player.getItemInHand(InteractionHand.MAIN_HAND).getItem();
-            if(blaster.zoom) {
-                haveZoom = true;
-            }
+            haveZoom = blaster.getZoomUpgrade(player.getItemInHand(InteractionHand.MAIN_HAND));
         }
 
-        boolean isUsingBlaster = haveZoom && player.isCrouching() && player.getItemInHand(InteractionHand.MAIN_HAND).is(ItemsRegistry.BLASTER_ZOOM.get());
+        boolean isUsingBlaster = haveZoom && player.isCrouching() && player.getItemInHand(InteractionHand.MAIN_HAND).is(ItemsRegistry.BLASTER.get());
         boolean isUsingSpyglass = player.isUsingItem() && player.getUseItem().is(Items.SPYGLASS);
 
         boolean isScoping = isUsingBlaster || isUsingSpyglass;

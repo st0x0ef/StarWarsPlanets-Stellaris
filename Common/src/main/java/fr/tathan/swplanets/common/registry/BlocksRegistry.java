@@ -5,6 +5,7 @@ import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.adastra.common.blocks.base.MachineBlock;
 import fr.tathan.swplanets.Constants;
+import fr.tathan.swplanets.common.blocks.BlasterUpgraderBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -33,7 +34,7 @@ public class BlocksRegistry {
    //public static final RegistryObject<Block> MUSTAFAR_SAND = BLOCKS.register("mustafar_sand", () -> new FallingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SAND).sound(SoundType.SAND).strength(0.5f, 0.5f)));
     public static final RegistryEntry<Block> MUSTAFAR_STONE = BLOCKS.register("mustafar_stone", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.STONE).strength(1.5f, 1f).requiresCorrectToolForDrops()));
 
-    public static final RegistryEntry<Block> BLASTER_UPGRADER = BLOCKS.register("blaster_upgrader", () -> new MachineBlock(IRON_PROPERTIES));
+    public static final RegistryEntry<Block> BLASTER_UPGRADER = BLOCKS.register("blaster_upgrader", () -> new BlasterUpgraderBlock(IRON_PROPERTIES));
 
 
 }

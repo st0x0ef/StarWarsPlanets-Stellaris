@@ -77,10 +77,10 @@ public class ItemsRegistry {
     /** Blaster */
     //Blasters
     public static final RegistryEntry<Item> BLASTER = TAB_ITEMS.register("blaster", () -> new Blaster(new Item.Properties().durability(2000)));
-    public static final RegistryEntry<Item> BLASTER_ZOOM = ITEMS.register("blaster_zoom", () -> new Blaster(new Item.Properties().durability(2000), true));
 
     // Blaster Upgrade
-    public static final RegistryEntry<Item> BLASTER_ZOOM_UPGRADE = TAB_ITEMS.register("blaster_zoom_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16), true, 0));
+    public static final RegistryEntry<Item> BLASTER_ZOOM_UPGRADE = TAB_ITEMS.register("blaster_zoom_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16), true, 0, false));
+    public static final RegistryEntry<BlockItem> BLASTER_UPGRADE = TAB_ITEMS.register("blaster_upgrader", () -> new BlockItem(BlocksRegistry.BLASTER_UPGRADER.get(), new Item.Properties()));
 
 
 }

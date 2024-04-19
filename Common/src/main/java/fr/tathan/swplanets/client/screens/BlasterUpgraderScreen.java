@@ -1,6 +1,7 @@
 package fr.tathan.swplanets.client.screens;
 
 import earth.terrarium.adastra.client.screens.base.MachineScreen;
+import earth.terrarium.adastra.client.screens.machines.CompressorScreen;
 import fr.tathan.swplanets.Constants;
 import fr.tathan.swplanets.common.blocks.entities.BlasterUpgraderEntity;
 import fr.tathan.swplanets.common.menu.BlasterUpgraderMenu;
@@ -15,7 +16,7 @@ public class BlasterUpgraderScreen extends MachineScreen<BlasterUpgraderMenu, Bl
     public static final ResourceLocation TEXTURE = new ResourceLocation(Constants.MODID, "textures/gui/blaster_upgrader.png");
     public static final Rect2i CLICK_AREA = new Rect2i(93, 52, 26, 25);
     public BlasterUpgraderScreen(BlasterUpgraderMenu menu, Inventory inventory, Component component) {
-        super(menu, inventory, component, TEXTURE, STEEL_SLOT, 177, 224);
+        super(menu, inventory, component, TEXTURE, STEEL_SLOT, 184, 201);
     }
 
     @Override
