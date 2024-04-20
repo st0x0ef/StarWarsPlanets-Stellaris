@@ -1,0 +1,128 @@
+{
+  "gui.swplanets.planet_selection.solar_system_button": "银河系",
+  "planet.swplanets.tatooine": "塔图因",
+  "planet.swplanets.kamino": "卡米诺",
+  "planet.swplanets.endor": "恩多尔",
+  "planet.swplanets.hot": "霍斯",
+  "planet.swplanets.mustafar": "穆斯塔法",
+  "planet.swplanets.mandalore": "曼达洛",
+
+  "planet.swplanets.tatooine_orbit": "塔图因轨道",
+  "planet.swplanets.kamino_orbit": "卡米诺轨道",
+  "planet.swplanets.endor_orbit": "恩多尔轨道",
+  "planet.swplanets.hot_orbit": "霍斯轨道",
+  "planet.swplanets.mustafar_orbit": "穆斯塔法轨道",
+  "planet.swplanets.mandalore_orbit": "曼达洛轨道",
+
+  "gui.swplanets.text.galaxy_far_away": "银河系",
+  "solar_system.swplanets.outer_rims": "外圈",
+
+  "advancements.pro_hyperspace.title": "超空间专家！",
+  "advancements.pro_hyperspace.descr": "拜访银河系中的所有行星",
+
+  "advancements.swplanets.title": "新的银河系",
+  "advancements.swplanets.descr": "欢迎来到银河系！",
+
+  "advancements.find_kyber.title": "哈！闪亮极了！",
+  "advancements.find_kyber.descr": "你刚刚找到了凯伯水晶！",
+
+  "advancements.craft_saber.title": "愿原力与你同在！",
+  "advancements.craft_saber.descr": "你现在是绝地武士了！ 也有可能还不是...",
+
+  "advancements.beskar.title": "另一条路！",
+  "advancements.beskar.descr": "你找到了贝斯卡金属！",
+
+  "advancements.mandalorian.title": "就是这样！",
+  "advancements.mandalorian.descr": "你成为曼达洛人",
+
+  "item.swplanets.star_wars_opening_music_disc": "音乐唱片",
+  "item.swplanets.star_wars_opening_music_disc.desc": "John Williams - Star Wars Opening",
+  "item.swplanets.kyber_crystal": "凯伯水晶",
+  "item.swplanets.kyber_crystal_ore": "凯伯水晶矿石",
+  "item.swplanets.kyber_crystal_ore_sandstone": "砂岩凯伯水晶矿石 ",
+  "item.swplanets.mustafar_stone": "穆斯塔法石",
+  "item.swplanets.mustafar_sand": "穆斯塔法沙",
+
+  "item.swplanets.beskar": "贝斯卡金属",
+  "item.swplanets.darksaber": "暗剑",
+
+  "item.swplanets.beskar_ore_sandstone": "贝斯卡矿石",
+
+  "item.swplanets.light_saber_base": "光剑底座",
+  "item.swplanets.light_saber_red": "红色光剑",
+  "item.swplanets.light_saber_blue": "蓝色光剑 ",
+  "item.swplanets.light_saber_green": "绿色光剑 ",
+  "item.swplanets.light_saber_violet": "紫色光剑 ",
+  "item.swplanets.light_saber_dark_maul": "达斯摩尔的光剑 ",
+  "item.swplanets.light_saber_kylo_ren": "凯洛伦的光剑 ",
+
+  "item.swplanets.star_manual": "行星手册 ",
+
+  "item.swplanets.blaster": "爆能枪",
+  "item.swplanets.blaster_zoom": "爆能枪",
+
+  "item.swplanets.stormtrooper_mask": "冲锋队头盔",
+  "item.swplanets.stormtrooper_chestplate": "冲锋队胸甲",
+  "item.swplanets.stormtrooper_leggings": "冲锋队护腿",
+  "item.swplanets.stormtrooper_boots": "冲锋队靴子",
+  "item.swplanets.plastic_plate": "塑料板 ",
+  "item.swplanets.speeder": "飞车",
+  "item.swplanets.blaster_zoom_upgrade": "爆能枪瞄准升级",
+  "item.swplanets.blaster_distance_upgrade": "爆能枪射击距离升级",
+  "item.swplanets.blaster_upgrader": "爆能枪升级器",
+
+  "item.swplanets.beskar_armor_helmet": "贝斯卡头盔",
+  "item.swplanets.beskar_armor_chestplate": "贝斯卡胸甲",
+  "item.swplanets.beskar_armor_leggings": "贝斯卡护腿",
+  "item.swplanets.beskar_armor_boots": "贝斯卡靴子",
+
+  "entity.swplanets.speeder": "飞车",
+
+  "tooltip.swplanets.jedilightsaber.tooltip.shift": "最伟大的§1绝地武士使用的武器",
+  "tooltip.swplanets.jedilightsaber.tooltip.shift.two": "愿原力与你同在 ！",
+
+  "tooltip.swplanets.sithlightsaber.tooltip.shift": "最黑暗的§4西斯使用的武器",
+  "tooltip.swplanets.sithlightsaber.tooltip.shift.two": "加入黑暗势力！",
+
+
+
+  "block.swplanets.kyber_crystal_ore": "凯伯水晶矿石",
+  "block.swplanets.kyber_crystal_cluster": "凯伯水晶簇",
+  "block.swplanets.kyber_crystal_ore_sandstone": "砂岩凯伯水晶矿石 ",
+  "block.swplanets.mustafar_stone": "穆斯塔法石",
+  "block.swplanets.mustafar_sand": "穆斯塔法沙",
+  "block.swplanets.beskar_ore_sandstone": "贝斯卡矿石",
+
+
+
+  "message.swplanets.error.patchouli": "未检测到 &4patchouli&r 模组。 您需要安装 patchouli 模组才能使用此物品",
+
+  "itemGroup.swplanets.main": "星球大战 行星",
+
+  "swplanets.tip.kyber_crystal.title": "凯伯水晶",
+  "swplanets.tip.kyber_crystal": "凯伯水晶是取之不尽、用之不竭的能源",
+
+  "swplanets.tip.sith_saber": "银河系中最危险的人使用的武器",
+  "swplanets.tip.sith_saber.title": "西斯光剑",
+
+  "swplanets.tip.jedi_saber": "银河系中最危险的武器，用来维护银河系的和平",
+  "swplanets.tip.jedi_saber.title": "绝地武士光剑",
+
+  "swplanets.tip.tatooine_houses": "您可以在沙漠中找到塔图因居民的社区",
+  "swplanets.tip.tatooine_houses.title": "塔图因房屋",
+
+  "biome.swplanets.endor_taiga": "恩多的针叶林",
+  "biome.swplanets.hot_desert": "炎热的沙漠",
+  "biome.swplanets.kamino_ocean": "卡米诺的海",
+  "biome.swplanets.mustafar_hill": "穆斯塔法的山",
+  "biome.swplanets.tatooine_desert": "塔图因的沙漠",
+
+
+  "tooltip.swplanets.shift": "§7按住 §6§oShift §7以了解更多信息",
+  "tooltip.swplanets.blaster.lifetime.shift": "§7激光寿命： §6§o%s",
+  "tooltip.swplanets.blaster.zoom.shift": "§7缩放： §6§o%s",
+
+
+  "sounds.swplanets.blaster_sound": "爆能枪：发射",
+  "sounds.swplanets.saber_attack_sound": "军刀：挥舞"
+}
