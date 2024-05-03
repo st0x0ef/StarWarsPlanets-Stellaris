@@ -18,6 +18,6 @@ public class NeoForgeSWPlanetsClient {
 
     @SubscribeEvent
     public static void onRegisterLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        AdAstraClient.onRegisterEntityLayers(event::registerLayerDefinition);
+        SWPlanetsClient.onRegisterEntityLayers(event::registerLayerDefinition);
     }
 }

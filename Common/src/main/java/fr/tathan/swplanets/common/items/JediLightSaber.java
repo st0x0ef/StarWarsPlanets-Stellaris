@@ -1,6 +1,7 @@
 package fr.tathan.swplanets.common.items;
 
 
+import fr.tathan.swplanets.common.config.SWPlanetsConfig;
 import fr.tathan.swplanets.common.registry.SoundsRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
@@ -13,8 +14,8 @@ import java.util.List;
 
 public class JediLightSaber extends SwordItem  {
 
-    public JediLightSaber(Tier pTier, int pAttackDamageModifier, float pAttackSpeedModifier, Properties pProperties) {
-        super(pTier, pAttackDamageModifier, pAttackSpeedModifier, pProperties);
+    public JediLightSaber(Tier pTier, float pAttackSpeedModifier, Properties pProperties) {
+        super(pTier, SWPlanetsConfig.lightSabersAttackModifier, pAttackSpeedModifier, pProperties);
     }
 
     @Override
@@ -27,6 +28,12 @@ public class JediLightSaber extends SwordItem  {
         return super.hurtEnemy(pStack, pTarget, pAttacker);
 
     }
+
+    @Override
+    public float getDamage() {
+        return SWPlanetsConfig.lightSabersAttackModifier;
+    }
+
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("tooltip.swplanets.jedilightsaber.tooltip.shift"));

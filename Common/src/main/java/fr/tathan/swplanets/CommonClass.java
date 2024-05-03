@@ -1,9 +1,6 @@
 package fr.tathan.swplanets;
 
-import earth.terrarium.adastra.AdAstra;
-import earth.terrarium.adastra.common.registry.ModEntityTypes;
-import earth.terrarium.adastra.common.registry.ModItems;
-import fr.tathan.swplanets.common.config.CommonConfig;
+import fr.tathan.swplanets.common.config.SWPlanetsConfig;
 import fr.tathan.swplanets.common.registry.*;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.item.Item;
@@ -14,7 +11,7 @@ public class CommonClass {
 
     public static void init() {
 
-        Constants.CONFIGURATOR.register(CommonConfig.class);
+        Constants.CONFIGURATOR.register(SWPlanetsConfig.class);
 
         // TabsRegistry.init();
         BlocksRegistry.BLOCKS.init();

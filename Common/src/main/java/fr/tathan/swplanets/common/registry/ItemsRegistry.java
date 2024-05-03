@@ -21,14 +21,14 @@ public class ItemsRegistry {
 
 
     /**Jedi Light Saber*/
-    public static final RegistryEntry<Item> BLUE_LIGHT_SABER = TAB_ITEMS.register("light_saber_blue", () -> new JediLightSaber(StarWarsTiers.LIGHT_SABER,11, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
-    public static final RegistryEntry<Item> GREEN_LIGHT_SABER = TAB_ITEMS.register("light_saber_green", () -> new JediLightSaber(StarWarsTiers.LIGHT_SABER,11, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
-    public static final RegistryEntry<Item> VIOLET_LIGHT_SABER = TAB_ITEMS.register("light_saber_violet", () -> new JediLightSaber(StarWarsTiers.LIGHT_SABER,11, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
+    public static final RegistryEntry<Item> BLUE_LIGHT_SABER = TAB_ITEMS.register("light_saber_blue", () -> new JediLightSaber(StarWarsTiers.LIGHT_SABER, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
+    public static final RegistryEntry<Item> GREEN_LIGHT_SABER = TAB_ITEMS.register("light_saber_green", () -> new JediLightSaber(StarWarsTiers.LIGHT_SABER, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
+    public static final RegistryEntry<Item> VIOLET_LIGHT_SABER = TAB_ITEMS.register("light_saber_violet", () -> new JediLightSaber(StarWarsTiers.LIGHT_SABER, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
 
     /** Sith Light Sabers **/
-    public static final RegistryEntry<Item> RED_LIGHT_SABER = TAB_ITEMS.register("light_saber_red", () -> new SithLightSaber(StarWarsTiers.LIGHT_SABER,11, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
-    public static final RegistryEntry<Item> KYLO_REN_LIGHT_SABER = TAB_ITEMS.register("light_saber_kylo_ren", () -> new SithLightSaber(StarWarsTiers.LIGHT_SABER,11, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
-    public static final RegistryEntry<Item> DARK_MAUL_LIGHT_SABER = TAB_ITEMS.register("light_saber_dark_maul", () -> new SithLightSaber(StarWarsTiers.LIGHT_SABER,11, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
+    public static final RegistryEntry<Item> RED_LIGHT_SABER = TAB_ITEMS.register("light_saber_red", () -> new SithLightSaber(StarWarsTiers.LIGHT_SABER, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
+    public static final RegistryEntry<Item> KYLO_REN_LIGHT_SABER = TAB_ITEMS.register("light_saber_kylo_ren", () -> new SithLightSaber(StarWarsTiers.LIGHT_SABER, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
+    public static final RegistryEntry<Item> DARK_MAUL_LIGHT_SABER = TAB_ITEMS.register("light_saber_dark_maul", () -> new SithLightSaber(StarWarsTiers.LIGHT_SABER, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
 
     public static final RegistryEntry<Item> PLASTIC_PLATE = TAB_ITEMS.register("plastic_plate", () -> new Item(new Item.Properties().stacksTo(64)));
 

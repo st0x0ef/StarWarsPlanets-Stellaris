@@ -124,5 +124,12 @@
 
 
   "sounds.swplanets.blaster_sound": "Blaster Sound",
-  "sounds.swplanets.saber_attack_sound": "Saber Attack Sound"
+  "sounds.swplanets.saber_attack_sound": "Saber Attack Sound",
+
+  "config.swplanets.title": "Star Wars Planets",
+  "config.swplanets.description": "May the force be with you !",
+  "config.swplanets.explosionUpgradeRadius": "Explosion Upgrade Radius",
+  "config.swplanets.explosionUpgradeFire": "Explosion Upgrade Fire",
+  "config.swplanets.lightSabersAttackModifier": "Light Sabers Attack Modifier",
+  "config.swplanets.maxBlasterEnergy": "Max Blaster Energy"
 }

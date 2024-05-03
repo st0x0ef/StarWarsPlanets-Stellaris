@@ -11,6 +11,7 @@ import earth.terrarium.botarium.common.fluid.FluidConstants;
 import earth.terrarium.botarium.common.fluid.base.FluidContainer;
 import earth.terrarium.botarium.common.fluid.base.FluidHolder;
 import earth.terrarium.botarium.common.item.ItemStackHolder;
+import fr.tathan.swplanets.common.config.SWPlanetsConfig;
 import fr.tathan.swplanets.common.entities.LaserEntity;
 import fr.tathan.swplanets.common.registry.ItemsRegistry;
 import fr.tathan.swplanets.common.registry.SoundsRegistry;
@@ -138,7 +139,7 @@ public class Blaster extends TieredItem implements BotariumEnergyItem<WrappedIte
     public WrappedItemEnergyContainer getEnergyStorage(ItemStack holder) {
         return new WrappedItemEnergyContainer(
                 holder,
-                new SimpleEnergyContainer(10_000) {
+                new SimpleEnergyContainer(SWPlanetsConfig.maxBlasterEnergy) {
                     @Override
                     public long maxInsert() {
                         return 100;

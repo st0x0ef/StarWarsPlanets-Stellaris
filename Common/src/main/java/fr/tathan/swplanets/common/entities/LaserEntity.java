@@ -1,6 +1,6 @@
 package fr.tathan.swplanets.common.entities;
 
-import fr.tathan.swplanets.common.config.CommonConfig;
+import fr.tathan.swplanets.common.config.SWPlanetsConfig;
 import fr.tathan.swplanets.common.registry.DamageSourceRegistry;
 import fr.tathan.swplanets.common.registry.EntityRegistry;
 import fr.tathan.swplanets.common.registry.ItemsRegistry;
@@ -109,7 +109,7 @@ public class LaserEntity extends Fireball {
         super.onHitBlock(result);
 
         if(this.explode) {
-            this.level().explode(null, this.getX(), this.getY(), this.getZ(), CommonConfig.explosionUpgradeRadius, CommonConfig.explosionUpgradeFire, Level.ExplosionInteraction.BLOCK);
+            this.level().explode(null, this.getX(), this.getY(), this.getZ(), SWPlanetsConfig.explosionUpgradeRadius, SWPlanetsConfig.explosionUpgradeFire, Level.ExplosionInteraction.BLOCK);
         }
         this.discard();
     }
