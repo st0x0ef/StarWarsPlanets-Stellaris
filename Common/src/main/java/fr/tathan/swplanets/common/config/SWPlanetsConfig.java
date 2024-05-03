@@ -7,7 +7,6 @@ import com.teamresourceful.resourcefulconfig.api.annotations.ConfigInfo;
 import com.teamresourceful.resourcefulconfig.api.types.options.EntryType;
 import fr.tathan.swplanets.common.config.info.SWPlanetsConfigInfo;
 
-
 @ConfigInfo.Provider(SWPlanetsConfigInfo.class)
 @Config(
         value = "swplanets"
@@ -37,7 +36,6 @@ public class SWPlanetsConfig {
     )
     @Comment("What is the max energy a blaster can have ?")
     public static long maxBlasterEnergy = 10_000;
-
 
     @ConfigEntry(
             id = "lightSabersAttackModifier",

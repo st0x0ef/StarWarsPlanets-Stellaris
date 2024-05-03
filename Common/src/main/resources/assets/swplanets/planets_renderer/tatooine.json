@@ -3,7 +3,7 @@
   "custom_sky": true,
   "custom_weather": false,
   "dimension": "swplanets:tatooine",
-  "has_fog": true,
+  "has_fog": false,
   "has_thick_fog": false,
   "render_in_rain": true,
   "sky_renderables": [
