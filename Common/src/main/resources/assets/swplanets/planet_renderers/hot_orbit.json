@@ -2,7 +2,7 @@
   "custom_clouds": true,
   "custom_sky": true,
   "custom_weather": false,
-  "dimension": "swplanets:mandalore_orbit",
+  "dimension": "swplanets:hot_orbit",
   "has_fog": false,
   "has_thick_fog": false,
   "render_in_rain": true,
@@ -26,7 +26,7 @@
       "texture": "ad_astra:textures/environment/sun.png"
     },
     {
-      "back_light_color": -4827861,
+      "back_light_color": -3221524,
       "back_light_scale": 240.0,
       "blend": false,
       "global_rotation": [
@@ -41,7 +41,7 @@
       ],
       "movement_type": "STATIC",
       "scale": 80.0,
-      "texture": "ad_astra:textures/environment/mars.png"
+      "texture": "swplanets:textures/sky/hot.png"
     }
   ],
   "star_brightness": 0.6,
