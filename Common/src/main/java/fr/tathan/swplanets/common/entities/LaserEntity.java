@@ -1,5 +1,6 @@
 package fr.tathan.swplanets.common.entities;
 
+import fr.tathan.swplanets.common.config.CommonConfig;
 import fr.tathan.swplanets.common.registry.DamageSourceRegistry;
 import fr.tathan.swplanets.common.registry.EntityRegistry;
 import fr.tathan.swplanets.common.registry.ItemsRegistry;
@@ -8,17 +9,15 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Fireball;
-import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class LaserEntity extends Fireball {
     public int life;
     public int lifetime;
-    public String owner;
+    public boolean explode;
 
     public LaserEntity(EntityType<? extends Fireball> $$0, Level $$1) {
         super($$0, $$1);
@@ -26,9 +25,10 @@ public class LaserEntity extends Fireball {
 
     }
 
-    public LaserEntity( double x, double y, double z, double offsetX, double offsetY, double offsetZ, Level level) {
+    public LaserEntity( double x, double y, double z, double offsetX, double offsetY, double offsetZ, Level level, Boolean explode) {
         super(EntityRegistry.LASER.get(), x, y, z, offsetX, offsetY, offsetZ, level);
         this.lifetime = 60;
+        this.explode = explode;
     }
 
     public LaserEntity(LivingEntity shooter, double offsetX, double offsetY, double offsetZ, Level level) {
@@ -42,6 +42,8 @@ public class LaserEntity extends Fireball {
         super.addAdditionalSaveData($$0);
         $$0.putInt("Life", this.life);
         $$0.putInt("LifeTime", this.lifetime);
+        $$0.putBoolean("Explode", this.explode);
+
     }
 
     @Override
@@ -49,6 +51,7 @@ public class LaserEntity extends Fireball {
         super.readAdditionalSaveData($$0);
         this.life = $$0.getInt("Life");
         this.lifetime = $$0.getInt("LifeTime");
+        this.explode = $$0.getBoolean("Explode");
     }
 
 
@@ -99,5 +102,15 @@ public class LaserEntity extends Fireball {
     @Override
     public ItemStack getItem() {
         return ItemsRegistry.LASER_ITEM.get().getDefaultInstance();
+    }
+
+    @Override
+    protected void onHitBlock(BlockHitResult result) {
+        super.onHitBlock(result);
+
+        if(this.explode) {
+            this.level().explode(null, this.getX(), this.getY(), this.getZ(), CommonConfig.explosionUpgradeRadius, CommonConfig.explosionUpgradeFire, Level.ExplosionInteraction.BLOCK);
+        }
+        this.discard();
     }
 }

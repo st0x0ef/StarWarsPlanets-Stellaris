@@ -75,7 +75,7 @@ public class BlasterUpgraderEntity extends ContainerMachineBlockEntity {
 
     private boolean hasRecipe() {
         boolean hasBlasterInFirstSlot = getItem(0).is(TagsRegistry.BLASTERS);
-        boolean hasUpgradeInSecondSlot = getItem(1).is(TagsRegistry.BLASTER_UPGRADES);
+        boolean hasUpgradeInSecondSlot = getItem(1).getItem() instanceof BlasterUpgrade;
         return hasBlasterInFirstSlot && hasUpgradeInSecondSlot;
     }
 

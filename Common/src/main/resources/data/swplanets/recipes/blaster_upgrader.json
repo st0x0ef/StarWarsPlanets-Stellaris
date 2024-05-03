@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "ABA",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "tag": "ad_astra:steel_plates"
+    },
+    "A": {
+      "item": "minecraft:smithing_table"
+    },
+    "B": {
+      "item": "swplanets:blaster"
+    }
+  },
+  "result": {
+    "item": "swplanets:blaster_upgrader"
+  }
+}

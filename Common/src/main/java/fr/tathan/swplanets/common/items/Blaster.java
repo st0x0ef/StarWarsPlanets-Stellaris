@@ -55,7 +55,7 @@ public class Blaster extends TieredItem implements BotariumEnergyItem<WrappedIte
             if (!useEnergy) return;
 
             level.playSeededSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundsRegistry.BLASTER_SOUND.get(), SoundSource.PLAYERS, 1.0F, 1.0F, 0);
-            LaserEntity laser = new LaserEntity( entity.getX(), entity.getY(), entity.getZ(), 0, 0, 0, level);            laser.setPos(entity.getX(), entity.getY() + 1.5, entity.getZ());
+            LaserEntity laser = new LaserEntity( entity.getX(), entity.getY(), entity.getZ(), 0, 0, 0, level, getExplosionUpgrade(stack));            laser.setPos(entity.getX(), entity.getY() + 1.5, entity.getZ());
             laser.shootFromRotation(entity, entity.getXRot(), entity.getYRot(), 0.0F, 3.0F, 1.0F);
             laser.setItem(ItemsRegistry.LASER_ITEM.get().getDefaultInstance());
             level.addFreshEntity(laser);
@@ -115,8 +115,17 @@ public class Blaster extends TieredItem implements BotariumEnergyItem<WrappedIte
     public void setUpgrade(BlasterUpgrade upgradeItem, ItemStack stack) {
 
         var tag = stack.getOrCreateTag();
-        tag.putBoolean(ZOOM_UPGRADE, upgradeItem.getZoom());
-        tag.putBoolean(EXPLOSION_UPGRADE, upgradeItem.getExplosion());
+
+        if(stack.getItem() instanceof Blaster blaster) {
+
+            if(!blaster.getZoomUpgrade(stack) ) {
+                tag.putBoolean(ZOOM_UPGRADE, upgradeItem.getZoom());
+            }
+
+            if(!blaster.getZoomUpgrade(stack) ) {
+                tag.putBoolean(EXPLOSION_UPGRADE, upgradeItem.getExplosion());
+            }
+        }
 
     }
 
