@@ -103,7 +103,8 @@ public class JawaModel extends HierarchicalModel<JawaEntity> {
 
 		this.animateWalk(ModAnimations.JAWA_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
 		this.animate(((JawaEntity) entity).idleAnimationState, ModAnimations.JAWA_IDLE, ageInTicks, 1f);
-		//this.animate(((JawaEntity) entity).attackAnimationState, ModAnimations.JAWA_DEATH, ageInTicks, 1f);
+
+		this.animate(((JawaEntity) entity).dieAnimationState, ModAnimations.JAWA_DEATH, ageInTicks, 1f);
 
 	}
 

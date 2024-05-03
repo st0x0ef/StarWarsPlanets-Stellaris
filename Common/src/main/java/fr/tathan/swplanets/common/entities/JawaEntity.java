@@ -1,18 +1,21 @@
 package fr.tathan.swplanets.common.entities;
 
+import earth.terrarium.adastra.common.entities.mob.MartianRaptor;
+import earth.terrarium.adastra.common.registry.ModItems;
 import fr.tathan.swplanets.common.registry.EntityRegistry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.monster.Zombie;
-import net.minecraft.world.entity.npc.Villager;
+import net.minecraft.world.entity.animal.Sheep;
+import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -29,18 +32,25 @@ public class JawaEntity extends Animal {
 
     public final AnimationState attackAnimationState = new AnimationState();
     public int attackAnimationTimeout = 0;
+    public AnimationState dieAnimationState = new AnimationState();
+
 
     public JawaEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
     }
+
+    @Override
+    protected void tickDeath() {
+        super.tickDeath();
+    }
+
 
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1D));
-        this.goalSelector.addGoal(2, new TemptGoal(this, 1.25D, Ingredient.of(Items.BEETROOT), false));
-
+        this.goalSelector.addGoal(2, new TemptGoal(this, 1D, Ingredient.of(ModItems.WRENCH.get()), false));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 4f));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
     }
@@ -76,7 +86,7 @@ public class JawaEntity extends Animal {
         return Animal.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH, 20D)
                 .add(Attributes.FOLLOW_RANGE, 24D)
-                .add(Attributes.MOVEMENT_SPEED, 0.2);
+                .add(Attributes.MOVEMENT_SPEED, 0.3);
     }
 
 
@@ -109,6 +119,9 @@ public class JawaEntity extends Animal {
         this.walkAnimation.update(f, 0.2f);
     }
 
-
-
+    @Override
+    public void die(DamageSource damageSource) {
+        this.dieAnimationState.start(this.tickCount);
+        super.die(damageSource);
+    }
 }

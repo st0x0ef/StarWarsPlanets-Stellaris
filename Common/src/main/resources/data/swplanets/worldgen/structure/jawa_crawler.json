@@ -2,7 +2,19 @@
   "type": "minecraft:jigsaw",
   "biomes": "#swplanets:has_structure/tatooine_houses",
   "step": "surface_structures",
-  "spawn_overrides": {},
+  "spawn_overrides": {
+    "ambient": {
+      "bounding_box": "piece",
+      "spawns": [
+        {
+          "type": "swplanets:jawa",
+          "weight": 2,
+          "minCount": 3,
+          "maxCount": 10
+        }
+      ]
+    }
+  },
   "start_pool": "swplanets:jawa_crawler/jawa_crawler_1",
   "size": 3,
   "terrain_adaptation": "beard_thin",

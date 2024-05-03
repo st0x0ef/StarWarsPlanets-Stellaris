@@ -26,7 +26,7 @@ public class EntityRegistry {
     public static final RegistryEntry<EntityType<JawaEntity>> JAWA = ENTITY_TYPES.register("jawa",() ->
             EntityType.Builder.<JawaEntity>of(JawaEntity::new, MobCategory.AMBIENT)
                     .fireImmune()
-                    .sized(0.4f, 0.4f)
+                    .sized(0.4f, 1.5f)
                     .build("jawa"));
 
     public static void registerAttributes(BiConsumer<Supplier<? extends EntityType<? extends LivingEntity>>, Supplier<AttributeSupplier.Builder>> attributes) {

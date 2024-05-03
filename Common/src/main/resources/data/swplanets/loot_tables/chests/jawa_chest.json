@@ -20,8 +20,8 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 15,
-          "name": "swplanets:plastic_plate",
+          "name": "ad_astra:steel_plate",
+          "weight": 10,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -36,8 +36,8 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 15,
           "name": "swplanets:stormtrooper_mask",
+          "weight": 10,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -52,8 +52,8 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
           "name": "swplanets:stormtrooper_chestplate",
+          "weight": 10,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -68,13 +68,13 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 2,
-          "name": "swplanets:stormtrooper_leggings"
+          "name": "swplanets:stormtrooper_leggings",
+          "weight": 2
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
-          "name": "minecraft:cooked_beef"
+          "name": "minecraft:cooked_beef",
+          "weight": 10
         },
         {
           "type": "minecraft:item",
@@ -82,8 +82,8 @@
         },
         {
           "type": "minecraft:item",
+          "name": "ad_astra:steel_cable",
           "weight": 10,
-          "name": "minecraft:campfire",
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -99,12 +99,19 @@
       ]
     },
     {
-      "rolls": 0,
-      "bonus_rolls": 1,
+      "rolls": 1,
+      "bonus_rolls": 0,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "swplanets:kyber_crystal"
+          "name": "swplanets:kyber_crystal",
+          "weight": 5
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.5
         }
       ]
     }

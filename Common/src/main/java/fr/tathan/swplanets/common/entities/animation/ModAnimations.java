@@ -7,8 +7,7 @@ import net.minecraft.client.animation.KeyframeAnimations;
 
 public class ModAnimations {
 
-
-    public static final AnimationDefinition JAWA_WALK = AnimationDefinition.Builder.withLength(0.5834334f).looping()
+    public static final AnimationDefinition JAWA_WALK = AnimationDefinition.Builder.withLength(0.7083434f).looping()
             .addAnimation("Model",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
@@ -16,6 +15,8 @@ public class ModAnimations {
                             new Keyframe(0.125f, KeyframeAnimations.degreeVec(0f, 0f, 7.5f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5416766f, KeyframeAnimations.degreeVec(0f, 0f, -7.5f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.7083434f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
             .addAnimation("h_head",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
@@ -32,6 +33,8 @@ public class ModAnimations {
             .addAnimation("LeftLeg",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.7083434f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
             .addAnimation("LeftLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
@@ -40,10 +43,14 @@ public class ModAnimations {
                             new Keyframe(0.25f, KeyframeAnimations.degreeVec(-20f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5834334f, KeyframeAnimations.degreeVec(30f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.7083434f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
             .addAnimation("RightLeg",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.7083434f, KeyframeAnimations.posVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
             .addAnimation("RightLeg",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
@@ -52,10 +59,14 @@ public class ModAnimations {
                             new Keyframe(0.16766666f, KeyframeAnimations.degreeVec(15f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.4583433f, KeyframeAnimations.degreeVec(-17.5f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.7083434f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR)))
             .addAnimation("LeftArm",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, -1f, 3f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.7083434f, KeyframeAnimations.posVec(0f, -1f, 3f),
                                     AnimationChannel.Interpolations.LINEAR)))
             .addAnimation("LeftArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
@@ -64,18 +75,22 @@ public class ModAnimations {
                             new Keyframe(0.4583433f, KeyframeAnimations.degreeVec(-30f, 0f, -45f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5416766f, KeyframeAnimations.degreeVec(-17.5f, 0f, -45f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.7083434f, KeyframeAnimations.degreeVec(47.5f, 0f, -45f),
                                     AnimationChannel.Interpolations.LINEAR)))
             .addAnimation("RightArm",
                     new AnimationChannel(AnimationChannel.Targets.POSITION,
                             new Keyframe(0f, KeyframeAnimations.posVec(0f, -1f, 3f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(0.5834334f, KeyframeAnimations.posVec(1f, -1f, 3f),
+                            new Keyframe(0.7083434f, KeyframeAnimations.posVec(0f, -1f, 3f),
                                     AnimationChannel.Interpolations.LINEAR)))
             .addAnimation("RightArm",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(-45f, 0f, 45f),
                                     AnimationChannel.Interpolations.LINEAR),
                             new Keyframe(0.5416766f, KeyframeAnimations.degreeVec(22.5f, 0f, 45f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.7083434f, KeyframeAnimations.degreeVec(-45f, 0f, 45f),
                                     AnimationChannel.Interpolations.LINEAR))).build();
     public static final AnimationDefinition JAWA_IDLE = AnimationDefinition.Builder.withLength(2f).looping()
             .addAnimation("LeftArm",
