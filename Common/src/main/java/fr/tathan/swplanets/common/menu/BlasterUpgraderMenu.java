@@ -19,9 +19,6 @@ public class BlasterUpgraderMenu extends BaseContainerMenu<BlasterUpgraderEntity
         super(MenusRegistry.BLASTER_UPGRADER.get(), id, inventory, entity);
     }
 
-
-
-
     @Override
     protected int getContainerInputEnd() {
         return 2;
