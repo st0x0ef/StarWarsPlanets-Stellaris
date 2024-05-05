@@ -70,6 +70,8 @@
   "item.swplanets.blaster_zoom_upgrade": "Blaster Zoom Upgrade",
   "item.swplanets.blaster_distance_upgrade": "Blaster Distance Upgrade",
   "item.swplanets.blaster_upgrader": "Blaster Upgrader",
+  "item.swplanets.blaster_explosion_upgrade": "Blaster Explosion Upgrade",
+
 
   "item.swplanets.beskar_armor_helmet": "Beskar Helmet",
   "item.swplanets.beskar_armor_chestplate": "Beskar ChestPlate",
@@ -93,6 +95,7 @@
   "block.swplanets.mustafar_sand": "Mustafar Sand",
   "block.swplanets.beskar_ore_sandstone": "Beskar Ore",
 
+  "block.swplanets.blaster_upgrader": "Blaster Upgrader",
 
 
   "message.swplanets.error.patchouli": "I think &4patchouli&r is not installed. You need this mod to use this item",
