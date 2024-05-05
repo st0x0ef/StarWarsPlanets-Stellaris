@@ -1,5 +1,5 @@
 {
-  "custom_clouds": false,
+  "custom_clouds": true,
   "custom_sky": true,
   "custom_weather": true,
   "dimension": "swplanets:mandalore",
