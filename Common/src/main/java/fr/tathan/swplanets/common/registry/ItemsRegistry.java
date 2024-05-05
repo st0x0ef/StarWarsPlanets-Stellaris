@@ -30,11 +30,8 @@ public class ItemsRegistry {
     public static final RegistryEntry<Item> KYLO_REN_LIGHT_SABER = TAB_ITEMS.register("light_saber_kylo_ren", () -> new SithLightSaber(StarWarsTiers.LIGHT_SABER, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
     public static final RegistryEntry<Item> DARK_MAUL_LIGHT_SABER = TAB_ITEMS.register("light_saber_dark_maul", () -> new SithLightSaber(StarWarsTiers.LIGHT_SABER, -2.4F, new Item.Properties().fireResistant().stacksTo(1)));
 
-    public static final RegistryEntry<Item> PLASTIC_PLATE = TAB_ITEMS.register("plastic_plate", () -> new Item(new Item.Properties().stacksTo(64)));
 
     /** Mandalorian **/
-    public static final RegistryEntry<Item> DARKSABER = TAB_ITEMS.register("darksaber", () -> new SwordItem(StarWarsTiers.BESKAR, 11, -2.5F, new Item.Properties().fireResistant().stacksTo(1)));
-    public static final RegistryEntry<Item> BESKAR = TAB_ITEMS.register("beskar", () -> new Item(new Item.Properties().fireResistant().stacksTo(16)));
     public static final RegistryEntry<BlockItem> BESKAR_ORE_SANDSTONE_ITEM = TAB_ITEMS.register("beskar_ore_sandstone", () -> new BlockItem(BlocksRegistry.BESKAR_ORE_SANDSTONE.get(), new Item.Properties()));
 
     public static final RegistryEntry<BlockItem> KYBER_CRYSTAl_ORE_ITEM = TAB_ITEMS.register("kyber_crystal_ore", () -> new BlockItem(BlocksRegistry.CRYSTAL_KYBER_ORE.get(), new Item.Properties()));
@@ -58,6 +55,7 @@ public class ItemsRegistry {
     public static final RegistryEntry<Item> STORMTROOPER_BOOTS = TAB_ITEMS.register("stormtrooper_boots",
             () -> new CustomDyeableArmorItem(ArmorMaterialRegistry.STORMTROOPER_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties()));
+    public static final RegistryEntry<Item> PLASTIC_PLATE = TAB_ITEMS.register("plastic_plate", () -> new Item(new Item.Properties().stacksTo(64)));
 
     /** Beskar*/
     public static final RegistryEntry<ArmorItem> BESKAR_HELMET = TAB_ITEMS.register("beskar_armor_helmet",
@@ -73,15 +71,18 @@ public class ItemsRegistry {
     public static final RegistryEntry<Item> BESKAR_BOOTS = TAB_ITEMS.register("beskar_armor_boots",
             () -> new ArmorItem(ArmorMaterialRegistry.BESKAR_MATERIAL, ArmorItem.Type.BOOTS,
                     new Item.Properties()));
+    public static final RegistryEntry<Item> DARKSABER = TAB_ITEMS.register("darksaber", () -> new SwordItem(StarWarsTiers.BESKAR, 11, -2.5F, new Item.Properties().fireResistant().stacksTo(1)));
+    public static final RegistryEntry<Item> BESKAR = TAB_ITEMS.register("beskar", () -> new Item(new Item.Properties().fireResistant().stacksTo(16)));
 
     /** Blaster */
     //Blasters
     public static final RegistryEntry<Item> BLASTER = TAB_ITEMS.register("blaster", () -> new Blaster(new Item.Properties().durability(2000)));
 
     // Blaster Upgrade
-    public static final RegistryEntry<Item> BLASTER_ZOOM_UPGRADE = TAB_ITEMS.register("blaster_zoom_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16), true, 0, false));
     public static final RegistryEntry<BlockItem> BLASTER_UPGRADE = TAB_ITEMS.register("blaster_upgrader", () -> new BlockItem(BlocksRegistry.BLASTER_UPGRADER.get(), new Item.Properties()));
- public static final RegistryEntry<BlasterUpgrade> BLASTER_EXPLOSION_UPGRADE = TAB_ITEMS.register("blaster_explosion_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16), false, 0, true));
+
+  public static final RegistryEntry<Item> BLASTER_ZOOM_UPGRADE = TAB_ITEMS.register("blaster_zoom_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16), true, 0, false));
+    public static final RegistryEntry<BlasterUpgrade> BLASTER_EXPLOSION_UPGRADE = TAB_ITEMS.register("blaster_explosion_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16), false, 0, true));
 
 
 }
