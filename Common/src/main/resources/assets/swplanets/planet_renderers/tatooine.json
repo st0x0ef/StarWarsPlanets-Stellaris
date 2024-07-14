@@ -1,9 +1,9 @@
 {
-  "custom_clouds": true,
+  "custom_clouds": false,
   "custom_sky": true,
   "custom_weather": false,
   "dimension": "swplanets:tatooine",
-  "has_fog": false,
+  "has_fog": true,
   "has_thick_fog": false,
   "render_in_rain": true,
   "sky_renderables": [
@@ -27,11 +27,11 @@
     },
     {
       "back_light_color": -39,
-      "back_light_scale": 27.0,
+      "back_light_scale": 23.0,
       "blend": false,
       "global_rotation": [
         0.0,
-        90.0,
+        30.0,
         0.0
       ],
       "local_rotation": [
@@ -40,11 +40,11 @@
         0.0
       ],
       "movement_type": "TIME_OF_DAY",
-      "scale": 9.0,
-      "texture": "swplanets:textures/sky/mustafar.png"
+      "scale": 6.0,
+      "texture": "swplanets:textures/sky/tatooine_sun.png"
     }
   ],
-  "star_brightness": 0.6,
+  "star_brightness": 0,
   "star_colors": [
     {
       "data": -1447239681,
