@@ -1,14 +1,12 @@
 package fr.tathan.swplanets.client;
 
 import earth.terrarium.adastra.client.ClientPlatformUtils;
-import earth.terrarium.adastra.client.renderers.entities.mobs.PygroBruteRenderer;
-import earth.terrarium.adastra.client.renderers.entities.mobs.PygroRenderer;
-import earth.terrarium.adastra.common.registry.ModEntityTypes;
 import earth.terrarium.botarium.client.ClientHooks;
-import fr.tathan.swplanets.client.renderers.JawaModel;
-import fr.tathan.swplanets.client.renderers.JawaRenderer;
+import fr.tathan.swplanets.client.renderers.bantha.BanthaModel;
+import fr.tathan.swplanets.client.renderers.bantha.BanthaRenderer;
+import fr.tathan.swplanets.client.renderers.jawa.JawaModel;
+import fr.tathan.swplanets.client.renderers.jawa.JawaRenderer;
 import fr.tathan.swplanets.client.screens.BlasterUpgraderScreen;
-import fr.tathan.swplanets.common.entities.JawaEntity;
 import fr.tathan.swplanets.common.registry.EntityRegistry;
 import fr.tathan.swplanets.common.registry.MenusRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -27,9 +25,13 @@ public class SWPlanetsClient {
 
     private static void registerRenderers() {
         ClientHooks.registerEntityRenderer(EntityRegistry.JAWA, JawaRenderer::new);
+        ClientHooks.registerEntityRenderer(EntityRegistry.BANTHA, BanthaRenderer::new);
+
     }
     public static void onRegisterEntityLayers(ClientPlatformUtils.LayerDefinitionRegistry consumer) {
         consumer.register(JawaModel.LAYER_LOCATION, JawaModel::createBodyLayer);
+        consumer.register(BanthaModel.LAYER_LOCATION, BanthaModel::createBodyLayer);
+
     }
 
 }

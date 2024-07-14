@@ -1,9 +1,6 @@
 package fr.tathan.swplanets;
 
-import earth.terrarium.botarium.client.ClientHooks;
 import fr.tathan.swplanets.client.SWPlanetsClient;
-import fr.tathan.swplanets.client.renderers.JawaModel;
-import fr.tathan.swplanets.client.renderers.JawaRenderer;
 import fr.tathan.swplanets.common.registry.EntityRegistry;
 import fr.tathan.swplanets.common.registry.ItemsRegistry;
 import net.fabricmc.api.ClientModInitializer;

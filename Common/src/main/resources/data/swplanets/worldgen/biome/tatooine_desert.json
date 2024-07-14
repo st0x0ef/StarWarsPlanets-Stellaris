@@ -82,7 +82,14 @@
   "category": "desert",
   "spawn_costs": {},
   "spawners": {
-    "ambient": [],
+    "ambient": [
+      {
+        "type": "swplanets:bantha",
+        "maxCount": 2,
+        "minCount": 4,
+        "weight": 100
+      }
+    ],
     "axolotls": [],
     "creature": [],
     "misc": [],
@@ -111,18 +118,7 @@
         "minCount": 4,
         "weight": 100
       },
-      {
-        "type": "minecraft:creeper",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:slime",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
+
       {
         "type": "minecraft:enderman",
         "maxCount": 4,
@@ -132,18 +128,11 @@
       {
         "type": "minecraft:husk",
         "maxCount": 4,
-        "minCount": 4,
-        "weight": 80
+        "minCount": 6,
+        "weight": 100
       }
     ],
-    "underground_water_creature": [
-      {
-        "type": "minecraft:glow_squid",
-        "maxCount": 6,
-        "minCount": 4,
-        "weight": 10
-      }
-    ],
+    "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []
   },

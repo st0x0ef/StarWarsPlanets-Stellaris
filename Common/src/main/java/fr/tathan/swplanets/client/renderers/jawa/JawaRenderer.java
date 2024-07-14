@@ -1,16 +1,10 @@
-package fr.tathan.swplanets.client.renderers;
+package fr.tathan.swplanets.client.renderers.jawa;
 
-import earth.terrarium.adastra.client.models.entities.mobs.PygroModel;
-import earth.terrarium.adastra.client.renderers.entities.mobs.PygroRenderer;
 import fr.tathan.swplanets.Constants;
 import fr.tathan.swplanets.common.entities.JawaEntity;
-import net.minecraft.client.model.HumanoidArmorModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
-import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
 
 public class JawaRenderer extends MobRenderer<JawaEntity, JawaModel> {

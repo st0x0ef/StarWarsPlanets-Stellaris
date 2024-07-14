@@ -79,6 +79,8 @@
   "item.swplanets.beskar_armor_boots": "Beskar Boots",
 
   "entity.swplanets.speeder": "Speeder",
+  "entity.swplanets.jawa": "Jawa",
+  "entity.swplanets.bantha": "Bantha",
 
   "tooltip.swplanets.jedilightsaber.tooltip.shift": "A weapon used by the greatest §1Jedi",
   "tooltip.swplanets.jedilightsaber.tooltip.shift.two": "May the force be with you!",
@@ -134,5 +136,7 @@
   "config.swplanets.explosionUpgradeRadius": "Explosion Upgrade Radius",
   "config.swplanets.explosionUpgradeFire": "Explosion Upgrade Fire",
   "config.swplanets.lightSabersAttackModifier": "Light Sabers Attack Modifier",
-  "config.swplanets.maxBlasterEnergy": "Max Blaster Energy"
+  "config.swplanets.maxBlasterEnergy": "Max Blaster Energy",
+
+  "death.attack.blaster": "%s was blasted by the Empire"
 }

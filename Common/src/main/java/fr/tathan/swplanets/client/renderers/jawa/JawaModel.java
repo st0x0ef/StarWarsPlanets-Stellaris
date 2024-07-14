@@ -1,4 +1,4 @@
-package fr.tathan.swplanets.client.renderers;// Made with Blockbench 4.9.4
+package fr.tathan.swplanets.client.renderers.jawa;// Made with Blockbench 4.9.4
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
@@ -8,14 +8,12 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import fr.tathan.swplanets.Constants;
 import fr.tathan.swplanets.common.entities.JawaEntity;
 import fr.tathan.swplanets.common.entities.animation.ModAnimations;
-import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 
 public class JawaModel extends HierarchicalModel<JawaEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
