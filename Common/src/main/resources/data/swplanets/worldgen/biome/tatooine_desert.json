@@ -85,8 +85,8 @@
     "ambient": [
       {
         "type": "swplanets:bantha",
-        "maxCount": 2,
-        "minCount": 4,
+        "maxCount": 4,
+        "minCount": 2,
         "weight": 100
       }
     ],
@@ -127,8 +127,8 @@
       },
       {
         "type": "minecraft:husk",
-        "maxCount": 4,
-        "minCount": 6,
+        "maxCount": 6,
+        "minCount": 4,
         "weight": 100
       }
     ],

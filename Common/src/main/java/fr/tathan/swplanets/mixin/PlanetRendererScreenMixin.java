@@ -38,6 +38,10 @@ public abstract class PlanetRendererScreenMixin {
 
         if (PlanetRenderUtil.OUTER_RIMS.equals(selectedSolarSystem)) {
             screen.drawCircles(0, 5, 0xff24327b, bufferBuilder);
+        } else if (PlanetConstants.SOLAR_SYSTEM.equals(selectedSolarSystem)) {
+            screen.drawCircles(0, 4, 0xff24327b, bufferBuilder);
+        } else if (PlanetConstants.PROXIMA_CENTAURI.equals(selectedSolarSystem)) {
+            screen.drawCircles(1, 1, 0xff008080, bufferBuilder);
         }
     }
 
@@ -50,12 +54,18 @@ public abstract class PlanetRendererScreenMixin {
             )
     )
     private void swplanets$renderOuterRimsPlanets(GuiGraphics graphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci, @Local BufferBuilder bufferBuilder){
+        PlanetsScreen screen = (PlanetsScreen) ((Object) this);
+
         if (PlanetRenderUtil.OUTER_RIMS.equals(selectedSolarSystem)) {
-            renderSolarSystem(graphics);
+            renderOuterRims(graphics);
+        } else if (PlanetConstants.PROXIMA_CENTAURI.equals(selectedSolarSystem)) {
+            screen.renderProximaCentauri(graphics);
+        } else if (PlanetConstants.SOLAR_SYSTEM.equals(selectedSolarSystem)) {
+            screen.renderSolarSystem(graphics);
         }
     }
 
-    public void renderSolarSystem(GuiGraphics graphics) {
+    public void renderOuterRims(GuiGraphics graphics) {
         PlanetsScreen screen = (PlanetsScreen) ((Object) this);
 
         graphics.blit(DimensionRenderingUtils.SUN, screen.width / 2 - 8, screen.height / 2 - 8, 0, 0, 16, 16, 16, 16);
