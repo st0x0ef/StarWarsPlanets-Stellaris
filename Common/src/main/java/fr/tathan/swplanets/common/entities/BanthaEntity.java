@@ -680,6 +680,7 @@ public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping
                 BanthaEntity.this.standUp();
             }
 
+
             super.tick();
         }
     }
