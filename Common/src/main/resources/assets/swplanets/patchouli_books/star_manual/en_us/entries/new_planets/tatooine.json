@@ -15,9 +15,24 @@
       "images": ["swplanets:textures/gui/background/tatooine.png"],
       "border": true
 
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Entities",
+      "text": "Tatooine is home to several entities. So far, only two have been identified by the great explorers : $(br)$(li) The Jawa$(br)$(li) The Bantha"
+
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "swplanets:bantha",
+      "text": "The Bantha is a passive mob that live in the desert. You can mount them by giving them wheat",
+      "scale": 0.6
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "swplanets:jawa",
+      "text": "Jawas are passive creatures that lives in big structures named 'Jawa Crawlers'. They are attracted by mechanical items",
+      "offset": 0.17
     }
-
-
-
   ]
 }

@@ -1,0 +1,9 @@
+{
+  "name": "Star Manual",
+  "landing_text": "Welcome to this beautiful book",
+  "creative_tab": "swplanets:main",
+  "version": 1,
+  "model": "swplanets:star_manual",
+  "use_resource_pack": true,
+  "show_progress": false
+}

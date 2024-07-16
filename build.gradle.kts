@@ -110,7 +110,7 @@ subprojects {
             "include"(implementation(group = "javazoom", name = "jlayer", version = "1.0.1"))
             "modCompileOnly"(group = "me.shedaniel", name = "RoughlyEnoughItems-api-$modLoader", version = reiVersion)
             "modCompileOnly"(group = "me.shedaniel", name = "RoughlyEnoughItems-default-plugin-$modLoader", version = reiVersion)
-//            "modLocalRuntime"(group = "vazkii.patchouli", name = "Patchouli", version = "$minecraftVersion-$patchouliVersion-${modLoader.uppercase()}")
+            "modLocalRuntime"(group = "vazkii.patchouli", name = "Patchouli", version = "$minecraftVersion-$patchouliVersion-${modLoader.uppercase()}")
 //            "modLocalRuntime"(group = "com.lowdragmc.shimmer", name = "Shimmer-$modLoader", version = "$minecraftVersion-$shimmerVersion") { isTransitive = false }
         }
     }

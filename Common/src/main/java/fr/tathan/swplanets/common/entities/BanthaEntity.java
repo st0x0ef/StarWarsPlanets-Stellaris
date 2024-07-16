@@ -662,6 +662,10 @@ public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping
         }
     }
 
+    @Override
+    public boolean isSaddled() {
+        return true;
+    }
 
     static {
         TEMPTATION_ITEM = Ingredient.of(new ItemLike[]{Items.WHEAT});

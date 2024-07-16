@@ -40,7 +40,6 @@ public class ItemsRegistry {
     //public static final RegistryObject<BlockItem> MUSTAFAR_SAND_ITEM = ITEMS.register("mustafar_sand", () -> new BlockItem(BlocksRegistry.MUSTAFAR_SAND.get(), new Item.Properties()));
     public static final RegistryEntry<Item> LASER_ITEM = ITEMS.register("laser_item", () -> new Item(new Item.Properties()));
 
-    public static final RegistryEntry<Item> STAR_MANUAL = TAB_ITEMS.register("star_manual", () -> new StarManual(new Item.Properties()));
 
     public static final RegistryEntry<ArmorItem> STORMTROOPER_MASK = TAB_ITEMS.register("stormtrooper_mask",
             () -> new CustomDyeableArmorItem(ArmorMaterialRegistry.STORMTROOPER_MATERIAL, ArmorItem.Type.HELMET,
