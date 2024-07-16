@@ -68,7 +68,10 @@
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
-    [],
+    [
+      "minecraft:lush_caves_ceiling_vegetation",
+      "minecraft:cave_vines"
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
