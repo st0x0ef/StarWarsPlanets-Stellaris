@@ -86,8 +86,8 @@
     "ambient": [
       {
         "type": "swplanets:bantha",
-        "maxCount": 4,
-        "minCount": 2,
+        "maxCount": 2,
+        "minCount": 1,
         "weight": 100
       }
     ],
