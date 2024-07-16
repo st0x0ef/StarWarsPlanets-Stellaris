@@ -19,11 +19,12 @@ public class PlanetRenderUtil {
     public static final ResourceLocation DEATH_STAR = new ResourceLocation(Constants.MODID, "textures/sky/deathstar.png");
 
     public static final List<ResourceLocation> STAR_WARS_PLANETS_TEXTURES = List.of(
-            ENDOR,
-            HOTH,
-            MANDALORE,
             MUSTAFAR,
-            TATOOINE
+            TATOOINE,
+            MANDALORE,
+            ENDOR,
+            HOTH
     );
+
 
 }
