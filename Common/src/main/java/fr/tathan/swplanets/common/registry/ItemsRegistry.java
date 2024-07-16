@@ -57,6 +57,7 @@ public class ItemsRegistry {
                     new Item.Properties()));
     public static final RegistryEntry<Item> PLASTIC_PLATE = TAB_ITEMS.register("plastic_plate", () -> new Item(new Item.Properties().stacksTo(64)));
 
+
     /** Beskar*/
     public static final RegistryEntry<ArmorItem> BESKAR_HELMET = TAB_ITEMS.register("beskar_armor_helmet",
             () -> new ArmorItem(ArmorMaterialRegistry.BESKAR_MATERIAL, ArmorItem.Type.HELMET,
@@ -80,9 +81,12 @@ public class ItemsRegistry {
 
     // Blaster Upgrade
     public static final RegistryEntry<BlockItem> BLASTER_UPGRADE = TAB_ITEMS.register("blaster_upgrader", () -> new BlockItem(BlocksRegistry.BLASTER_UPGRADER.get(), new Item.Properties()));
-
-  public static final RegistryEntry<Item> BLASTER_ZOOM_UPGRADE = TAB_ITEMS.register("blaster_zoom_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16), true, 0, false));
+    public static final RegistryEntry<Item> BLASTER_ZOOM_UPGRADE = TAB_ITEMS.register("blaster_zoom_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16), true, 0, false));
     public static final RegistryEntry<BlasterUpgrade> BLASTER_EXPLOSION_UPGRADE = TAB_ITEMS.register("blaster_explosion_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16), false, 0, true));
 
+    /** Blocks */
+    public static final RegistryEntry<BlockItem> TATOOINE_STONE = TAB_ITEMS.register("tatooine_stone", () -> new BlockItem(BlocksRegistry.TATOOINE_STONE.get(),  new Item.Properties().stacksTo(64)));
+    public static final RegistryEntry<BlockItem> TATOOINE_STONE_SLAB = TAB_ITEMS.register("tatooine_stone_slab", () -> new BlockItem(BlocksRegistry.TATOOINE_STONE_STONE_SLAB.get(),  new Item.Properties().stacksTo(64)));
+    public static final RegistryEntry<BlockItem> TATOOINE_STONE_STAIRS = TAB_ITEMS.register("tatooine_stone_stairs", () -> new BlockItem(BlocksRegistry.TATOOINE_STONE_STONE_STAIRS.get(),  new Item.Properties().stacksTo(64)));
 
 }

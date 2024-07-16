@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "swplanets:block/tatooine_stone",
+    "side": "swplanets:block/tatooine_stone",
+    "top": "swplanets:block/tatooine_stone"
+  }
+}

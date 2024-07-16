@@ -3,8 +3,33 @@
   "forge:use_server_seed": false,
   "generator": {
     "biome_source": {
-      "biome": "swplanets:tatooine_desert",
-      "type": "minecraft:fixed"
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "swplanets:tatooine_desert",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 1.0,
+            "weirdness": 0.5,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "swplanets:tatooine_rocky_desert",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 1,
+            "weirdness": -1.5,
+            "depth": 0,
+            "offset": 0
+          }
+        }
+      ]
     },
     "settings": "swplanets:tatooine",
     "type": "minecraft:noise"

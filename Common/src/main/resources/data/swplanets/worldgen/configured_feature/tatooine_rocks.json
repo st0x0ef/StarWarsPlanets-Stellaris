@@ -1,0 +1,8 @@
+{
+  "type": "swplanets:tatooine_rocks",
+  "config": {
+    "state": {
+      "Name": "swplanets:tatooine_stone"
+    }
+  }
+}

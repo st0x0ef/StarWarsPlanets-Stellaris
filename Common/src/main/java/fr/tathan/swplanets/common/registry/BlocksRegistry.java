@@ -4,12 +4,11 @@ import com.teamresourceful.resourcefullib.common.registry.RegistryEntry;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import earth.terrarium.adastra.common.blocks.base.MachineBlock;
+import earth.terrarium.adastra.common.registry.ModBlocks;
 import fr.tathan.swplanets.Constants;
 import fr.tathan.swplanets.common.blocks.BlasterUpgraderBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
@@ -36,5 +35,8 @@ public class BlocksRegistry {
 
     public static final RegistryEntry<Block> BLASTER_UPGRADER = BLOCKS.register("blaster_upgrader", () -> new BlasterUpgraderBlock(IRON_PROPERTIES));
 
+    public static final RegistryEntry<Block> TATOOINE_STONE = BLOCKS.register("tatooine_stone", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).sound(SoundType.SAND).strength(1.5f, 1f).requiresCorrectToolForDrops()));
+    public static final RegistryEntry<Block> TATOOINE_STONE_STONE_STAIRS = BLOCKS.register("tatooine_stone_stairs", () -> new StairBlock(TATOOINE_STONE.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)));
+    public static final RegistryEntry<Block> TATOOINE_STONE_STONE_SLAB = BLOCKS.register("tatooine_stone_slab", () -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)));
 
 }

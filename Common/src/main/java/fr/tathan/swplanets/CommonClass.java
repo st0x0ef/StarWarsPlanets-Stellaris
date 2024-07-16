@@ -26,6 +26,7 @@ public class CommonClass {
         LevelRegistry.init();
         TabsRegistry.CREATIVE_MODE_TABS.init();
         Constants.LOG.info("Hello There !");
+        FeatureRegistry.FEATURES.init();
 
     }
 

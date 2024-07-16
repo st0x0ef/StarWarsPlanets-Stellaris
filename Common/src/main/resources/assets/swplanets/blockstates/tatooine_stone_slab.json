@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "swplanets:block/tatooine_stone_slab"
+    },
+    "type=double": {
+      "model": "swplanets:block/tatooine_stone"
+    },
+    "type=top": {
+      "model": "swplanets:block/tatooine_stone_slab"
+    }
+  }
+}
