@@ -1,26 +1,30 @@
 package fr.tathan.swplanets.common.entities;
 
-import earth.terrarium.adastra.common.entities.mob.MartianRaptor;
 import earth.terrarium.adastra.common.registry.ModItems;
 import fr.tathan.swplanets.common.registry.EntityRegistry;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Sheep;
-import net.minecraft.world.entity.monster.warden.Warden;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.*;
 
 public class JawaEntity extends Animal {
 
@@ -32,18 +36,37 @@ public class JawaEntity extends Animal {
 
     public final AnimationState attackAnimationState = new AnimationState();
     public int attackAnimationTimeout = 0;
+
+    public final AnimationState tradeAnimationState = new AnimationState();
+    public int tradeAnimationTimeout = 0;
+
+    public boolean isTrading = false;
+
     public AnimationState dieAnimationState = new AnimationState();
 
+    public Map<Item, Integer> TRADED_ITEMS = new HashMap<>();
 
     public JawaEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
+        this.addItems();
+
+    }
+
+    public void addItems() {
+        TRADED_ITEMS.put(ModItems.WRENCH.get(), 1);
+        TRADED_ITEMS.put(ModItems.STEEL_CABLE.get(), 10);
+        TRADED_ITEMS.put(ModItems.DESH_CABLE.get(), 5);
+        TRADED_ITEMS.put(ModItems.SOLAR_PANEL.get(), 2);
+        TRADED_ITEMS.put(ModItems.GAS_TANK.get(), 2);
+        TRADED_ITEMS.put(ModItems.IRON_PLATE.get(), 15);
+        TRADED_ITEMS.put(ModItems.PHOTOVOLTAIC_VESNIUM_CELL.get(), 3);
+
     }
 
     @Override
     protected void tickDeath() {
         super.tickDeath();
     }
-
 
 
     @Override
@@ -75,6 +98,21 @@ public class JawaEntity extends Animal {
             attackAnimationState.start(this.tickCount);
         } else {
             --this.attackAnimationTimeout;
+        }
+
+        if(this.isTrading && tradeAnimationTimeout <= 0) {
+            tradeAnimationTimeout = 20;
+            tradeAnimationState.start(this.tickCount);
+        } else {
+            --this.tradeAnimationTimeout;
+        }
+
+        if (tradeAnimationTimeout == 20) {
+            tradeAnimationState.stop();
+        }
+
+        if(!this.isTrading) {
+            tradeAnimationState.stop();
         }
 
         if(!this.isAttacking()) {
@@ -123,5 +161,42 @@ public class JawaEntity extends Animal {
     public void die(DamageSource damageSource) {
         this.dieAnimationState.start(this.tickCount);
         super.die(damageSource);
+    }
+
+    @Override
+    public InteractionResult interactAt(Player player, Vec3 vec, InteractionHand hand) {
+
+        trade(player, hand);
+
+        return super.interactAt(player, vec, hand);
+    }
+
+    public void trade(Player player, InteractionHand hand) {
+
+        this.isTrading = true;
+
+        ItemStack stack = player.getItemInHand(hand);
+        tradeAnimationState.start(this.tickCount);
+        if (stack.is(ModItems.WRENCH.get())) {
+            player.getItemInHand(hand).grow(-1);
+
+            ItemEntity items = new ItemEntity(this.level(), this.position().x, this.position().y, this.position().z, getTradeItems());
+            this.level().addFreshEntity(items);
+        }
+
+    }
+
+    public ItemStack getTradeItems() {
+        Random generator = new Random();
+
+        List<Item> keys = new ArrayList<Item>(TRADED_ITEMS.keySet());
+        Item randomKey = keys.get( generator.nextInt(keys.size()) );
+
+        int stacksSize = TRADED_ITEMS.get(randomKey);
+        ItemStack randomItem = new ItemStack(randomKey) ;
+        randomItem.setCount(stacksSize);
+
+        return randomItem;
+
     }
 }

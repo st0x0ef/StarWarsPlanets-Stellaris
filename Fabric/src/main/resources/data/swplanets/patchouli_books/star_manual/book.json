@@ -1,6 +1,6 @@
 {
   "name": "item.swplanets.star_manual",
-  "landing_text": "Welcome to this beautiful book",
+  "landing_text": "Learn everything about this beautiful galaxy",
   "creative_tab": "swplanets:main",
   "version": 1,
   "model": "swplanets:star_manual",
