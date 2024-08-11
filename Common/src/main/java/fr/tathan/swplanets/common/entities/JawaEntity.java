@@ -1,7 +1,10 @@
 package fr.tathan.swplanets.common.entities;
 
 import earth.terrarium.adastra.common.registry.ModItems;
+import fr.tathan.swplanets.Constants;
+import fr.tathan.swplanets.common.config.SWPlanetsConfig;
 import fr.tathan.swplanets.common.registry.EntityRegistry;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -41,15 +44,16 @@ public class JawaEntity extends Animal {
     public int tradeAnimationTimeout = 0;
 
     public boolean isTrading = false;
-
     public AnimationState dieAnimationState = new AnimationState();
-
     public Map<Item, Integer> TRADED_ITEMS = new HashMap<>();
+
+    public int TRADES_LEFT;
 
     public JawaEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
         this.addItems();
-
+        Random generator = new Random();
+        TRADES_LEFT = generator.nextInt(0, SWPlanetsConfig.jawaMaxTrade);
     }
 
     public void addItems() {
@@ -66,6 +70,18 @@ public class JawaEntity extends Animal {
     @Override
     protected void tickDeath() {
         super.tickDeath();
+    }
+
+    @Override
+    public void addAdditionalSaveData(CompoundTag compound) {
+        super.addAdditionalSaveData(compound);
+        compound.putInt("tradesLeft", this.TRADES_LEFT);
+    }
+
+    @Override
+    public void readAdditionalSaveData(CompoundTag compound) {
+        super.readAdditionalSaveData(compound);
+        this.TRADES_LEFT = compound.getInt("tradesLeft");
     }
 
 
@@ -101,13 +117,13 @@ public class JawaEntity extends Animal {
         }
 
         if(this.isTrading && tradeAnimationTimeout <= 0) {
-            tradeAnimationTimeout = 20;
+            tradeAnimationTimeout = 25;
             tradeAnimationState.start(this.tickCount);
         } else {
             --this.tradeAnimationTimeout;
         }
 
-        if (tradeAnimationTimeout == 20) {
+        if (tradeAnimationTimeout == 25) {
             tradeAnimationState.stop();
         }
 
@@ -178,10 +194,16 @@ public class JawaEntity extends Animal {
         ItemStack stack = player.getItemInHand(hand);
         tradeAnimationState.start(this.tickCount);
         if (stack.is(ModItems.WRENCH.get())) {
+            Constants.LOG.error("Trades " + TRADES_LEFT);
+            if (TRADES_LEFT < 0) {
+                return;
+            }
+
             player.getItemInHand(hand).grow(-1);
 
             ItemEntity items = new ItemEntity(this.level(), this.position().x, this.position().y, this.position().z, getTradeItems());
             this.level().addFreshEntity(items);
+            TRADES_LEFT--;
         }
 
     }

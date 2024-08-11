@@ -45,4 +45,12 @@ public class SWPlanetsConfig {
     @Comment("What should be the attack modifier for the light sabers?")
     public static int lightSabersAttackModifier = 13;
 
+    @ConfigEntry(
+            id = "jawaMaxTrade",
+            type = EntryType.INTEGER,
+            translation = "config.swplanets.jawaMaxTrade"
+    )
+    @Comment("What should be the maximum amount a Jawa can do.")
+    public static int jawaMaxTrade = 7;
+
 }
