@@ -26,6 +26,24 @@
       "texture": "ad_astra:textures/environment/sun.png"
     },
     {
+      "back_light_color": -5261108,
+      "back_light_scale": 24.0,
+      "blend": false,
+      "global_rotation": [
+        50.0,
+        0.0,
+        0.0
+      ],
+      "local_rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "movement_type": "TIME_OF_DAY",
+      "scale": 8.0,
+      "texture": "ad_astra:textures/environment/red_sun.png"
+    },
+    {
       "back_light_color": -5543543,
       "back_light_scale": 240.0,
       "blend": false,
@@ -42,24 +60,6 @@
       "movement_type": "STATIC",
       "scale": 80.0,
       "texture": "swplanets:textures/sky/tatooine.png"
-    },
-    {
-      "back_light_color": -5261108,
-      "back_light_scale": 24.0,
-      "blend": false,
-      "global_rotation": [
-        80.0,
-        0.0,
-        30.0
-      ],
-      "local_rotation": [
-        0.0,
-        -5.0,
-        0.0
-      ],
-      "movement_type": "TIME_OF_DAY",
-      "scale": 8.0,
-      "texture": "ad_astra:textures/environment/red_sun.png"
     }
   ],
   "star_brightness": 0.6,
