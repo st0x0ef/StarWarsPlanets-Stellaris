@@ -58,7 +58,7 @@
         0.0
       ],
       "movement_type": "STATIC",
-      "scale": 8.0,
+      "scale": 6.0,
       "texture": "swplanets:textures/sky/deathstar.png"
     }
   ],

@@ -26,21 +26,21 @@
       "texture": "ad_astra:textures/environment/sun.png"
     },
     {
-      "back_light_color": -4943731,
-      "back_light_scale": 6.0,
-      "blend": true,
+      "back_light_color": -5261108,
+      "back_light_scale": 24.0,
+      "blend": false,
       "global_rotation": [
-        20.0,
-        20.0,
-        180.0
+        80.0,
+        0.0,
+        30.0
       ],
       "local_rotation": [
         0.0,
-        0.0,
+        -5.0,
         0.0
       ],
       "movement_type": "STATIC",
-      "scale": 2.0,
+      "scale": 6.0,
       "texture": "swplanets:textures/sky/deathstar.png"
     }
   ],
