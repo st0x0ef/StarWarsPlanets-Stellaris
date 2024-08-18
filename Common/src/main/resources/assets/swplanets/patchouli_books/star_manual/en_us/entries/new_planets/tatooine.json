@@ -31,7 +31,7 @@
     {
       "type": "patchouli:entity",
       "entity": "swplanets:jawa",
-      "text": "Jawas are passive creatures that lives in big structures named 'Jawa Crawlers'. They are attracted by mechanical items",
+      "text": "Jawas are passive creatures that lives in big structures named 'Jawa Crawlers'. They are attracted by mechanical items and you can trade items with them !",
       "offset": 0.17
     }
   ]
