@@ -11,6 +11,7 @@ plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("com.github.johnrengelman.shadow") version "7.1.2" apply false
     id("com.modrinth.minotaur") version "2.+"
+    id("me.modmuss50.mod-publish-plugin") version "0.6.3"
 
 }
 
@@ -26,9 +27,12 @@ subprojects {
     apply(plugin = "architectury-plugin")
     apply(plugin = "com.github.johnrengelman.shadow")
     apply(plugin = "com.modrinth.minotaur")
+    apply(plugin = "me.modmuss50.mod-publish-plugin")
 
     val minecraftVersion: String by project
-    val  modLoader = project.name
+    val version: String by project
+
+    val modLoader = project.name
     val modId = rootProject.name
     val isCommon = modLoader == rootProject.projects.common.name
 
@@ -193,21 +197,33 @@ subprojects {
                 }
             }
         }
+
+        publishMods {
+
+            file = file("../${modLoader.capitalize()}/build/libs/swplanets-${modLoader}-${minecraftVersion}-${version}.jar")
+            changelog = file("../changelog.md").readText(Charsets.UTF_8)
+            type = STABLE
+            modLoaders.add(modLoader)
+            displayName = "[${modLoader.capitalize()}] Star Wars Planets ${version}"
+
+            curseforge {
+                projectId = "725821"
+                projectSlug = "star-wars-planets-ad-astra" // Required for discord webhook
+                accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
+                minecraftVersions.add("${minecraftVersion}")
+                requires("ad-astra")
+            }
+
+            modrinth {
+                projectId = "sgQirvDi"
+                accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+                minecraftVersions.add("${minecraftVersion}")
+                requires("ad-astra")
+
+            }
+        }
+
     }
 
-    modrinth {
-        token.set(System.getenv("MODRINTH_TOKEN"))
-        projectId = "star-wars-planets-ad-astra" // This can be the project ID or the slug. Either will work!
-        versionNumber.set("$version") // You don't need to set this manually. Will fail if Modrinth has this version already
-        versionType.set("release") // This is the default -- can also be `beta` or `alpha`
-        versionName = "[${modLoader.lowercase()}] SWPlanets ${version}"// This can be the project ID or the slug. Either will work!
-        changelog = file("../changelog.md").readText(Charsets.UTF_8) // This is the changelog for the version
-        uploadFile.set(tasks.findByPath("remapJar")) // With Loom, this MUST be set to `remapJar` instead of `jar`!
-        gameVersions.addAll("1.20.4") // Must be an array, even with only one version
-        loaders.add("$modLoader") // Must also be an array - no need to specify this if you're using Loom or ForgeGradle
-        dependencies { // A special DSL for creating dependencies
-            required.project("ad-astra", "resourceful-lib", "resourceful-config", "botarium")
-        }
-    }
 
 }
