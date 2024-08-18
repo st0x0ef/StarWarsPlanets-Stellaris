@@ -4,6 +4,7 @@ import earth.terrarium.adastra.common.registry.ModItems;
 import fr.tathan.swplanets.Constants;
 import fr.tathan.swplanets.common.config.SWPlanetsConfig;
 import fr.tathan.swplanets.common.registry.EntityRegistry;
+import fr.tathan.swplanets.common.registry.TagsRegistry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -193,8 +194,8 @@ public class JawaEntity extends Animal {
 
         ItemStack stack = player.getItemInHand(hand);
         tradeAnimationState.start(this.tickCount);
-        if (stack.is(ModItems.WRENCH.get())) {
-            Constants.LOG.error("Trades " + TRADES_LEFT);
+
+        if (stack.is(TagsRegistry.JAWAS_TRADES)) {
             if (TRADES_LEFT < 0) {
                 return;
             }
