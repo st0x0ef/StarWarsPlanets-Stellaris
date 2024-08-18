@@ -46,11 +46,20 @@ public class SWPlanetsConfig {
     public static int lightSabersAttackModifier = 13;
 
     @ConfigEntry(
+            id = "jawaTrade",
+            type = EntryType.BOOLEAN,
+            translation = "config.swplanets.jawaTrade"
+    )
+    @Comment("Should jawa's be able to trade ?")
+    public static boolean jawaTrade = true;
+
+
+    @ConfigEntry(
             id = "jawaMaxTrade",
             type = EntryType.INTEGER,
             translation = "config.swplanets.jawaMaxTrade"
     )
-    @Comment("What should be the maximum amount a Jawa can do.")
+    @Comment("What should be the maximum amount of trades a Jawa can do.")
     public static int jawaMaxTrade = 7;
 
 }

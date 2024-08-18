@@ -138,6 +138,8 @@
   "config.swplanets.explosionUpgradeFire": "Explosion Upgrade Fire",
   "config.swplanets.lightSabersAttackModifier": "Light Sabers Attack Modifier",
   "config.swplanets.maxBlasterEnergy": "Max Blaster Energy",
+  "config.swplanets.jawaTrade": "Jawa Trades",
+  "config.swplanets.jawaMaxTrade": "Max Jawa Trades",
 
   "death.attack.blaster": "%s was blasted by the Empire"
 }
