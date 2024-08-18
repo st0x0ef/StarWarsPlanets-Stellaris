@@ -183,7 +183,9 @@ subprojects {
             }
             repositories {
                 maven {
-                    setUrl("https://maven.odysseyus.fr/releases/")
+                    setUrl("http://maven.odysseyus.fr/releases/")
+                    setAllowInsecureProtocol(true)
+
                     credentials {
                         username = System.getenv("MAVEN_USER")
                         password = System.getenv("MAVEN_PASS")
