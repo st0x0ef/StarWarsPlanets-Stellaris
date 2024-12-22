@@ -61,7 +61,6 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
-import org.joml.Vector3f;
 
 public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping, Saddleable {
     public static final Ingredient TEMPTATION_ITEM;

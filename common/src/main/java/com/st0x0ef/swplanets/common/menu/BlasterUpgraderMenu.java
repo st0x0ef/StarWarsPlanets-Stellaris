@@ -1,7 +1,6 @@
 package com.st0x0ef.swplanets.common.menu;
 
 
-import com.st0x0ef.swplanets.common.blocks.entities.BlasterUpgraderBlockEntity;
 import com.st0x0ef.swplanets.common.registry.MenusRegistry;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;

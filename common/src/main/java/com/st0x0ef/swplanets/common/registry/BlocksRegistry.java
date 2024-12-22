@@ -5,7 +5,6 @@ import com.st0x0ef.swplanets.SWPlanets;
 import com.st0x0ef.swplanets.common.blocks.BlasterUpgraderBlock;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
