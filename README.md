@@ -9,7 +9,7 @@ repositories {
 }
 
 dependencies {
-    "modImplementation"(group = "fr.tathan.swplanets", name = "swplanets-[MODLOADER]-[MINECRAFT_VERSION]", version = [MOD_VERSION])
+    "modImplementation"(group = "fr.tathan.swplanets", name = "swplanets-[MODLOADER]-[minecraftVersion]", version = [version])
 }
 ```
 
@@ -23,6 +23,6 @@ repositories {
 }
 
 dependencies {
-  implementation "fr.tathan.swplanets:swplanets-[MODLOADER]-[MINECRAFT_VERSION]:[MOD_VERSION]"
+  implementation "fr.tathan.swplanets:swplanets-[MODLOADER]-[minecraftVersion]:[version]"
 }
 ```

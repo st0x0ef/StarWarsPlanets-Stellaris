@@ -1,0 +1,39 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "CC BY-NC-SA 4.0"
+issueTrackerURL="https://github.com/st0x0ef/StarWarsPlanets-Stellaris/issues"
+
+[[mods]]
+modId = "swplanets"
+version = "${version}"
+displayName = "Star Wars Planets"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/star-wars-planets-ad-astra/"
+logoFile = "swplanets.png"
+authors = "St0x0ef & TATHAN"
+credits = "Lost Tapes, Duchy, BossOfTheGym"
+description = '''This Mod is an Addon for Stellaris!.
+It add planets from Star Wars, Light Sabers and more :)
+'''
+[[mixins]]
+config = "swplanets.mixins.json"
+
+[[dependencies.swplanets]]
+modId = "neoforge"
+type="required"
+versionRange = "[21.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.swplanets]]
+modId = "minecraft"
+type="required"
+versionRange = "[1.21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.swplanets]]
+modId = "stellaris"
+type="required"
+versionRange = "[1.2.0-beta4,)"
+ordering = "NONE"
+side = "BOTH"

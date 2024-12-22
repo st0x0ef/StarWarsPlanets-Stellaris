@@ -1,0 +1,17 @@
+architectury {
+    common("fabric", "neoforge")
+}
+
+dependencies {
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabricLoaderVersion}"
+    modApi "dev.architectury:architectury:${rootProject.architecturyVersion}"
+}
+
+publishing {
+    publications {
+        mavenCommon(MavenPublication) {
+            artifactId = rootProject.modid
+            from components.java
+        }
+    }
+}
