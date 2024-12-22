@@ -52,7 +52,7 @@ public class BanthaAi {
     }
 
     private static void initCoreActivity(Brain<BanthaEntity> brain) {
-        brain.addActivity(Activity.CORE, 0, ImmutableList.of(new Swim(0.8F), new BanthaAi.BanthaPanic(1.5F), new LookAtTargetSink(45, 90), new MoveToTargetSink(), new CountDownCooldownTicks(MemoryModuleType.TEMPTATION_COOLDOWN_TICKS), new CountDownCooldownTicks(MemoryModuleType.GAZE_COOLDOWN_TICKS)));
+        brain.addActivity(Activity.CORE, 0, (ImmutableList<? extends BehaviorControl<? super BanthaEntity>>) ImmutableList.of(new Swim(0.8F), new BanthaPanic(1.5F), new LookAtTargetSink(45, 90), new MoveToTargetSink(), new CountDownCooldownTicks(MemoryModuleType.TEMPTATION_COOLDOWN_TICKS), new CountDownCooldownTicks(MemoryModuleType.GAZE_COOLDOWN_TICKS)));
     }
 
     private static void initIdleActivity(Brain<BanthaEntity> brain) {

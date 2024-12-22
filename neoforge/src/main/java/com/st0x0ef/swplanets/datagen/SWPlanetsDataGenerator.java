@@ -1,6 +1,6 @@
 package com.st0x0ef.swplanets.datagen;
 
-import fr.tathan.swplanets.Constants;
+import fr.tathan.swplanets.SWPlanets;
 import fr.tathan.swplanets.datagen.provider.PlanetsRendererProvider;
 import fr.tathan.swplanets.datagen.provider.base.StructureUpdater;
 import net.minecraft.data.DataGenerator;
@@ -11,7 +11,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 
-@Mod.EventBusSubscriber(modid = Constants.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = SWPlanets.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SWPlanetsDataGenerator {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
@@ -21,7 +21,7 @@ public class SWPlanetsDataGenerator {
 
 
         generator.addProvider(event.includeClient(), new PlanetsRendererProvider(packOutput));
-        generator.addProvider(true, new StructureUpdater("structures", Constants.MODID, existingFileHelper, packOutput));
+        generator.addProvider(true, new StructureUpdater("structures", SWPlanets.MODID, existingFileHelper, packOutput));
 
     }
 }

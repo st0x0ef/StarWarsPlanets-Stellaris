@@ -89,7 +89,6 @@ public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping
 
     public BanthaEntity(EntityType<? extends BanthaEntity> entityType, Level level) {
         super(entityType, level);
-        this.setMaxUpStep(1.5F);
         this.moveControl = new BanthaMoveControl();
         this.lookControl = new BanthaLookControl();
         GroundPathNavigation groundPathNavigation = (GroundPathNavigation)this.getNavigation();

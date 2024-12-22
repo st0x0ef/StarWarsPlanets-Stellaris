@@ -1,7 +1,8 @@
 package com.st0x0ef.swplanets.common.menu;
 
 
-import com.st0x0ef.swplanets.common.blocks.entities.BlasterUpgraderEntity;
+import com.st0x0ef.swplanets.common.blocks.entities.BlasterUpgraderBlockEntity;
+import com.st0x0ef.swplanets.common.registry.MenusRegistry;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -11,12 +12,11 @@ import net.minecraft.world.item.ItemStack;
 
 public class BlasterUpgraderMenu extends AbstractContainerMenu {
     public BlasterUpgraderMenu( int id, Inventory inventory, FriendlyByteBuf buf) {
-
-        this(id, inventory, (BlasterUpgraderEntity) inventory.player.level().getBlockEntity(buf.readBlockPos()));
+        this(id);
     }
-    public BlasterUpgraderMenu( int id, Inventory inventory, BlasterUpgraderEntity entity) {
+    public BlasterUpgraderMenu(int id) {
 
-        super(MenusRegistry.BLASTER_UPGRADER.get(), id, inventory, entity);
+        super(MenusRegistry.BLASTER_UPGRADER_MENU.get(), id);
     }
 
     @Override

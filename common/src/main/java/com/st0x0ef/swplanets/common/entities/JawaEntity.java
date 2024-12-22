@@ -2,6 +2,7 @@ package com.st0x0ef.swplanets.common.entities;
 
 
 import com.st0x0ef.stellaris.common.registry.ItemsRegistry;
+import com.st0x0ef.swplanets.common.registry.EntityRegistry;
 import com.st0x0ef.swplanets.common.registry.TagsRegistry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -51,7 +52,7 @@ public class JawaEntity extends Animal {
         super(entityType, level);
         this.addItems();
         Random generator = new Random();
-        TRADES_LEFT = generator.nextInt(0, SWPlanetsConfig.jawaMaxTrade);
+        TRADES_LEFT = generator.nextInt(0, 12);
     }
 
     public void addItems() {
@@ -77,12 +78,16 @@ public class JawaEntity extends Animal {
         this.TRADES_LEFT = compound.getInt("tradesLeft");
     }
 
+    @Override
+    public boolean isFood(ItemStack stack) {
+        return false;
+    }
+
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1D));
-        this.goalSelector.addGoal(2, new TemptGoal(this, 1D, Ingredient.of(ModItems.WRENCH.get()), false));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 4f));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
     }
@@ -144,10 +149,9 @@ public class JawaEntity extends Animal {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(ATTACKING, false);
-
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(ATTACKING, false);
     }
 
     public boolean isAttacking() {

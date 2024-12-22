@@ -19,7 +19,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 public class Blaster extends TieredItem implements EnergyItem<WrappedItemEnergyContainer> {
@@ -49,7 +48,7 @@ public class Blaster extends TieredItem implements EnergyItem<WrappedItemEnergyC
             if (!useEnergy) return;
 
             level.playSeededSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundsRegistry.BLASTER_SOUND, SoundSource.PLAYERS, 1.0F, 1.0F, 0);
-            LaserEntity laser = new LaserEntity( entity.getX(), entity.getY(), entity.getZ(), 0, 0, 0, level, getExplosionUpgrade(stack));            laser.setPos(entity.getX(), entity.getY() + 1.5, entity.getZ());
+            LaserEntity laser = new LaserEntity(level, getExplosionUpgrade(stack));            laser.setPos(entity.getX(), entity.getY() + 1.5, entity.getZ());
             laser.shootFromRotation(entity, entity.getXRot(), entity.getYRot(), 0.0F, 3.0F, 1.0F);
             laser.setItem(ItemsRegistry.LASER_ITEM.get().getDefaultInstance());
             level.addFreshEntity(laser);
@@ -78,7 +77,7 @@ public class Blaster extends TieredItem implements EnergyItem<WrappedItemEnergyC
 
         if(Screen.hasShiftDown()) {
             addUpgradesComponents(stack, tooltipComponents);
-            tooltipComponents.add(TooltipUtils.getEnergyComponent(energy.getStoredEnergy(), energy.getMaxCapacity()));
+            //tooltipComponents.add(TooltipUtils.getEnergyComponent(energy.getStoredEnergy(), energy.getMaxCapacity()));
 
         } else {
             tooltipComponents.add(Component.translatable("tooltip.swplanets.shift"));
@@ -163,9 +162,9 @@ public class Blaster extends TieredItem implements EnergyItem<WrappedItemEnergyC
     }
 
     @Override
-    public WrappedItemEnergyContainer getEnergyStorage(net.minecraft.class_1799 holder) {
+    public WrappedItemEnergyContainer getEnergyStorage(ItemStack itemStack) {
         return new WrappedItemEnergyContainer(
-                holder,
+                itemStack,
                 new SimpleEnergyContainer(10000) {
                     @Override
                     public long maxInsert() {

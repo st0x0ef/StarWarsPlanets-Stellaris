@@ -20,7 +20,7 @@ public class SWPlanets {
         SoundsRegistry.SOUNDS.register();
         EntityRegistry.ENTITY_TYPES.register();
         BlockEntitiesRegistry.BLOCK_ENTITY_TYPES.register();
-        MenusRegistry.MENUS.register();
+        MenusRegistry.MENU_TYPE.register();
         TabsRegistry.CREATIVE_MODE_TABS.register();
         FeatureRegistry.FEATURES.register();
     }

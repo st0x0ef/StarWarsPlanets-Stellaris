@@ -7,7 +7,6 @@ import com.st0x0ef.swplanets.common.registry.ItemsRegistry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -25,16 +24,15 @@ public class LaserEntity extends Fireball {
 
     }
 
-    public LaserEntity( double x, double y, double z, double offsetX, double offsetY, double offsetZ, Level level, Boolean explode) {
-        super(EntityRegistry.LASER.get(), x, y, z, offsetX, offsetY, offsetZ, level);
+    public LaserEntity(Level level, Boolean explode) {
+        super(EntityRegistry.LASER.get(), level);
         this.lifetime = 60;
         this.explode = explode;
     }
 
-    public LaserEntity(LivingEntity shooter, double offsetX, double offsetY, double offsetZ, Level level) {
-        super(EntityRegistry.LASER.get(), shooter, offsetX, offsetY, offsetZ, level);
+    public LaserEntity(Level level) {
+        super(EntityRegistry.LASER.get(), level);
         this.lifetime = 60;
-
     }
 
     @Override

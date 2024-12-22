@@ -11,7 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 public class ItemsRegistry {
 
-   // public static final RegistrationProvider<Item> ITEMS = RegistrationProvider.get(Registries.ITEM, Constants.MODID);
+   // public static final RegistrationProvider<Item> ITEMS = RegistrationProvider.get(Registries.ITEM, SWPlanets.MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(SWPlanets.MODID, Registries.ITEM);
 
     public static final RegistrySupplier<Item> KYBER_CRYSTAL = ITEMS.register("kyber_crystal", () -> new Item(new Item.Properties().stacksTo(16)));

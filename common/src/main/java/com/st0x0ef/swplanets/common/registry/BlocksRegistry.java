@@ -1,13 +1,12 @@
 package com.st0x0ef.swplanets.common.registry;
 
-import com.teamresourceful.resourcefullib.common.registry.RegistrySupplier;
-import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
-import com.teamresourceful.resourcefullib.common.registry.DeferredRegister;
-import earth.terrarium.adastra.common.blocks.base.MachineBlock;
-import earth.terrarium.adastra.common.registry.ModBlocks;
-import fr.tathan.swplanets.Constants;
-import fr.tathan.swplanets.common.blocks.BlasterUpgraderBlock;
+
+import com.st0x0ef.swplanets.SWPlanets;
+import com.st0x0ef.swplanets.common.blocks.BlasterUpgraderBlock;
+import dev.architectury.registry.registries.DeferredRegister;
+import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -15,7 +14,7 @@ import net.minecraft.world.level.material.MapColor;
 
 public class BlocksRegistry {
 
-    public static final DeferredRegister<Block> BLOCKS = ResourcefulRegistries.create(BuiltInRegistries.BLOCK, Constants.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(SWPlanets.MODID, Registries.BLOCK);
 
     public static final BlockBehaviour.Properties IRON_PROPERTIES = BlockBehaviour.Properties.of()
         .mapColor(MapColor.METAL)

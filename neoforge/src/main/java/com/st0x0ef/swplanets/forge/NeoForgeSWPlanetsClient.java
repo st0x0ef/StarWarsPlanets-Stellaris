@@ -1,6 +1,5 @@
 package com.st0x0ef.swplanets.forge;
 
-import com.st0x0ef.swplanets.client.SWPlanetsClient;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;

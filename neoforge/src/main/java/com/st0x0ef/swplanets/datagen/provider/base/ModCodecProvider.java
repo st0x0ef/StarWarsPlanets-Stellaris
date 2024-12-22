@@ -2,7 +2,7 @@ package com.st0x0ef.swplanets.datagen.provider.base;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.JsonOps;
-import com.teamresourceful.resourcefullib.common.lib.Constants;
+import com.teamresourceful.resourcefullib.common.lib.SWPlanets;
 import earth.terrarium.adastra.client.neoforge.AdAstraClientNeoForge;
 import net.minecraft.core.Registry;
 import net.minecraft.data.CachedOutput;
@@ -37,7 +37,7 @@ public abstract class ModCodecProvider<T> implements DataProvider {
         build((key, value) ->
             futures.add(DataProvider.saveStable(
                 output,
-                codec.encodeStart(JsonOps.INSTANCE, value).getOrThrow(false, Constants.LOGGER::error),
+                codec.encodeStart(JsonOps.INSTANCE, value).getOrThrow(false, SWPlanets.LOGGER::error),
                 pathProvider.json(key)
             ))
         );

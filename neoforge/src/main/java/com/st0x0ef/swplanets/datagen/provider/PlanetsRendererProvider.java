@@ -4,7 +4,7 @@ import earth.terrarium.adastra.client.dimension.MovementType;
 import earth.terrarium.adastra.client.dimension.PlanetRenderer;
 import earth.terrarium.adastra.client.dimension.SkyRenderable;
 import earth.terrarium.adastra.client.utils.DimensionRenderingUtils;
-import fr.tathan.swplanets.Constants;
+import fr.tathan.swplanets.SWPlanets;
 import fr.tathan.swplanets.common.registry.LevelRegistry;
 import fr.tathan.swplanets.common.util.PlanetRenderUtil;
 import fr.tathan.swplanets.datagen.provider.base.ModCodecProvider;
@@ -25,7 +25,7 @@ import java.util.function.BiConsumer;
 
 public class PlanetsRendererProvider extends ModCodecProvider<PlanetRenderer> {
 
-    public static final ResourceKey<Registry<PlanetRenderer>> PLANET_REGISTRY = ResourceKey.createRegistryKey(new ResourceLocation(Constants.MODID, "planets_renderer"));
+    public static final ResourceKey<Registry<PlanetRenderer>> PLANET_REGISTRY = ResourceKey.createRegistryKey(ResourceLocation.fromNamespaceAndPath(SWPlanets.MODID, "planets_renderer"));
     public static final int DEFAULT_SUNRISE_COLOR = 0xd85f33;
 
     public static final SimpleWeightedRandomList<Integer> COLORED_STARS = SimpleWeightedRandomList.<Integer>builder()

@@ -13,7 +13,7 @@ package com.st0x0ef.swplanets.datagen.provider.base;
 import com.google.common.hash.Hashing;
 import com.mojang.datafixers.DataFixer;
 import com.mojang.datafixers.DataFixerUpper;
-import com.teamresourceful.resourcefullib.common.lib.Constants;
+import com.teamresourceful.resourcefullib.common.lib.SWPlanets;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
@@ -73,7 +73,7 @@ public class StructureUpdater implements DataProvider {
         CompoundTag inputNBT = NbtIo.readCompressed(resource.open(), NbtAccounter.unlimitedHeap());
         CompoundTag converted = updateNBT(inputNBT);
         if (!converted.equals(inputNBT)) {
-            Constants.LOGGER.info("Found outdated NBT file: {}", loc);
+            SWPlanets.LOGGER.info("Found outdated NBT file: {}", loc);
             Class<? extends DataFixer> fixerClass = DataFixers.getDataFixer().getClass();
             if (!fixerClass.equals(DataFixerUpper.class))
                 throw new RuntimeException("Structures are not up to date, but unknown data fixer is in use: " + fixerClass.getName());

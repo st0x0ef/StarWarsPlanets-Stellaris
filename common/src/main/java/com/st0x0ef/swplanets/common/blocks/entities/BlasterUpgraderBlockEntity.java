@@ -1,42 +1,35 @@
 package com.st0x0ef.swplanets.common.blocks.entities;
 
-import com.st0x0ef.stellaris.common.blocks.entities.machines.BaseEnergyBlockEntity;
+import com.st0x0ef.stellaris.common.blocks.entities.machines.BaseEnergyContainerBlockEntity;
 import com.st0x0ef.swplanets.SWPlanets;
+import com.st0x0ef.swplanets.common.items.Blaster;
 import com.st0x0ef.swplanets.common.items.BlasterUpgrade;
+import com.st0x0ef.swplanets.common.menu.BlasterUpgraderMenu;
+import com.st0x0ef.swplanets.common.registry.BlockEntitiesRegistry;
+import com.st0x0ef.swplanets.common.registry.TagsRegistry;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
-public class BlasterUpgraderEntity extends BaseEnergyBlockEntity {
-    public static final List<ConfigurationEntry> SIDE_CONFIG = List.of(
-        new ConfigurationEntry(ConfigurationType.SLOT, Configuration.NONE, ConstantComponents.SIDE_CONFIG_INPUT_SLOTS)
-    );
+public class BlasterUpgraderBlockEntity extends BaseEnergyContainerBlockEntity {
     private static final int[] INPUT_SLOTS = {0, 1};
-    public BlasterUpgraderEntity(BlockPos pos, BlockState state) {
-        super(pos, state, 3);
-        this.setRedstoneControl(RedstoneControl.NEVER_ON);
+    public BlasterUpgraderBlockEntity(BlockPos pos, BlockState state) {
+        super(BlockEntitiesRegistry.BLASTER_UPGRADER.get(), pos, state);
     }
 
-    @Override
-    public List<ConfigurationEntry> getDefaultConfig() {
-        return SIDE_CONFIG;
-    }
 
     @Override
-    public int[] getSlotsForFace(Direction side) {
-        return INPUT_SLOTS;
+    protected Component getDefaultName() {
+        return Component.literal("Blaster Upgrader");
     }
 
     @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
+    public AbstractContainerMenu createMenu(int i, Inventory inventory) {
         return new BlasterUpgraderMenu( i, inventory, this);
     }
 
@@ -83,7 +76,7 @@ public class BlasterUpgraderEntity extends BaseEnergyBlockEntity {
         if(hasRecipe()) {
             craft();
         } else {
-            setChanged(level, pos, state);
+            setChanged(level, worldPosition, getBlockState());
         }
     }
 }
