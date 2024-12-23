@@ -31,7 +31,7 @@ dependencies {
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${reiVersion}"
     modCompileOnly("mezz.jei:jei-${minecraftVersion}-neoforge-api:${jeiVersion}")
     runtimeOnly("mezz.jei:jei-${minecraftVersion}-neoforge:${jeiVersion}")
-    implementation("maven.modrinth:stellaris:${stellarisVersion}-neoforge")
+    runtimeOnly("maven.modrinth:stellaris:${stellarisVersion}-neoforge")
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowBundle project(path: ":common", configuration: "transformProductionNeoForge")

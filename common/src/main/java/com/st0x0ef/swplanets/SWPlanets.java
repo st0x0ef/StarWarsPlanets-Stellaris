@@ -1,6 +1,5 @@
 package com.st0x0ef.swplanets;
 
-import com.st0x0ef.stellaris.common.registry.BlocksRegistry;
 import com.st0x0ef.swplanets.common.registry.*;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.world.item.Item;
@@ -15,14 +14,17 @@ public class SWPlanets {
     public static final Logger LOG = LoggerFactory.getLogger(MOD_NAME);
 
     public static void init() {
-        BlocksRegistry.BLOCKS.register();
-        ItemsRegistry.ITEMS.register();
         SoundsRegistry.SOUNDS.register();
-        EntityRegistry.ENTITY_TYPES.register();
+        DataComponentRegistry.DATA_COMPONENT_TYPE.register();
+        BlocksRegistry.BLOCKS.register();
         BlockEntitiesRegistry.BLOCK_ENTITY_TYPES.register();
-        MenusRegistry.MENU_TYPE.register();
+        ItemsRegistry.ITEMS.register();
+        ArmorMaterialRegistry.ARMOR_MATERIAL.register();
         TabsRegistry.CREATIVE_MODE_TABS.register();
+        EntityRegistry.ENTITY_TYPES.register();
+        MenusRegistry.MENU_TYPE.register();
         FeatureRegistry.FEATURES.register();
+        EntityRegistry.registerSpawnPlacements();
     }
 
     public static void postInit() {
@@ -31,6 +33,5 @@ public class SWPlanets {
         map.put(ItemsRegistry.STORMTROOPER_CHESTPLATE.get(), CauldronInteraction.DYED_ITEM);
         map.put(ItemsRegistry.STORMTROOPER_LEGGINGS.get(), CauldronInteraction.DYED_ITEM);
         map.put(ItemsRegistry.STORMTROOPER_MASK.get(), CauldronInteraction.DYED_ITEM);
-        EntityRegistry.registerSpawnPlacements();
     }
 }

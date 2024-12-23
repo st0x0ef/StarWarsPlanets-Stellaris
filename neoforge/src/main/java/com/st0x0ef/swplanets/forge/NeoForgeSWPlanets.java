@@ -16,7 +16,6 @@ public class NeoForgeSWPlanets {
         SWPlanets.init();
         bus.addListener(NeoForgeSWPlanets::commonSetup);
         bus.addListener(NeoForgeSWPlanets::onAttributes);
-
     }
 
     public static void commonSetup(FMLCommonSetupEvent event) {

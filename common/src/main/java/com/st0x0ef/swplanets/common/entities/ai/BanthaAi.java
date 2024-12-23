@@ -52,11 +52,18 @@ public class BanthaAi {
     }
 
     private static void initCoreActivity(Brain<BanthaEntity> brain) {
-        brain.addActivity(Activity.CORE, 0, (ImmutableList<? extends BehaviorControl<? super BanthaEntity>>) ImmutableList.of(new Swim(0.8F), new BanthaPanic(1.5F), new LookAtTargetSink(45, 90), new MoveToTargetSink(), new CountDownCooldownTicks(MemoryModuleType.TEMPTATION_COOLDOWN_TICKS), new CountDownCooldownTicks(MemoryModuleType.GAZE_COOLDOWN_TICKS)));
+        brain.addActivity(Activity.CORE, 0, ImmutableList.of(
+                new Swim(0.8F),
+                new BanthaPanic(1.5F),
+                new LookAtTargetSink(45, 90),
+                new MoveToTargetSink(),
+                new CountDownCooldownTicks(MemoryModuleType.TEMPTATION_COOLDOWN_TICKS),
+                new CountDownCooldownTicks(MemoryModuleType.GAZE_COOLDOWN_TICKS)
+        ));
     }
 
     private static void initIdleActivity(Brain<BanthaEntity> brain) {
-        brain.addActivity(Activity.IDLE, ImmutableList.of(Pair.of(0, SetEntityLookTargetSometimes.create(EntityType.PLAYER, 6.0F, UniformInt.of(30, 60))), Pair.of(1, new AnimalMakeLove(EntityType.CAMEL, 1.0F)), Pair.of(2, new RunOne(ImmutableList.of(Pair.of(new FollowTemptation((livingEntity) -> 2.5F, (livingEntity) -> livingEntity.isBaby() ? 2.5 : 3.5), 1), Pair.of(BehaviorBuilder.triggerIf(Predicate.not(BanthaEntity::refuseToMove), BabyFollowAdult.create(ADULT_FOLLOW_RANGE, 2.5F)), 1)))), Pair.of(3, new RandomLookAround(UniformInt.of(150, 250), 30.0F, 0.0F, 0.0F)), Pair.of(4, new RunOne(ImmutableMap.of(MemoryModuleType.WALK_TARGET, MemoryStatus.VALUE_ABSENT), ImmutableList.of(Pair.of(BehaviorBuilder.triggerIf(Predicate.not(BanthaEntity::refuseToMove), RandomStroll.stroll(1.5F)), 1), Pair.of(BehaviorBuilder.triggerIf(Predicate.not(BanthaEntity::refuseToMove), SetWalkTargetFromLookTarget.create(2.0F, 3)), 1), Pair.of(new BanthaAi.RandomSitting(20), 1), Pair.of(new DoNothing(30, 60), 1))))));
+        brain.addActivity(Activity.IDLE, ImmutableList.of(Pair.of(0, SetEntityLookTargetSometimes.create(EntityType.PLAYER, 6.0F, UniformInt.of(30, 60))), Pair.of(1, new AnimalMakeLove(EntityType.CAMEL, 1.0F, 2)), Pair.of(2, new RunOne(ImmutableList.of(Pair.of(new FollowTemptation((livingEntity) -> 2.5F, (livingEntity) -> livingEntity.isBaby() ? 2.5 : 3.5), 1), Pair.of(BehaviorBuilder.triggerIf(Predicate.not(BanthaEntity::refuseToMove), BabyFollowAdult.create(ADULT_FOLLOW_RANGE, 2.5F)), 1)))), Pair.of(3, new RandomLookAround(UniformInt.of(150, 250), 30.0F, 0.0F, 0.0F)), Pair.of(4, new RunOne(ImmutableMap.of(MemoryModuleType.WALK_TARGET, MemoryStatus.VALUE_ABSENT), ImmutableList.of(Pair.of(BehaviorBuilder.triggerIf(Predicate.not(BanthaEntity::refuseToMove), RandomStroll.stroll(1.5F)), 1), Pair.of(BehaviorBuilder.triggerIf(Predicate.not(BanthaEntity::refuseToMove), SetWalkTargetFromLookTarget.create(2.0F, 3)), 1), Pair.of(new BanthaAi.RandomSitting(20), 1), Pair.of(new DoNothing(30, 60), 1))))));
     }
 
     public static void updateActivity(BanthaEntity camel) {
@@ -72,16 +79,13 @@ public class BanthaAi {
         MEMORY_TYPES = ImmutableList.of(MemoryModuleType.IS_PANICKING, MemoryModuleType.HURT_BY, MemoryModuleType.HURT_BY_ENTITY, MemoryModuleType.WALK_TARGET, MemoryModuleType.LOOK_TARGET, MemoryModuleType.CANT_REACH_WALK_TARGET_SINCE, MemoryModuleType.PATH, MemoryModuleType.NEAREST_VISIBLE_LIVING_ENTITIES, MemoryModuleType.TEMPTING_PLAYER, MemoryModuleType.TEMPTATION_COOLDOWN_TICKS, MemoryModuleType.GAZE_COOLDOWN_TICKS, MemoryModuleType.IS_TEMPTED, new MemoryModuleType[]{MemoryModuleType.BREED_TARGET, MemoryModuleType.NEAREST_VISIBLE_ADULT});
     }
 
-    public static class BanthaPanic extends AnimalPanic {
+    public static class BanthaPanic extends AnimalPanic<BanthaEntity> {
         public BanthaPanic(float f) {
             super(f);
         }
 
-        protected void start(ServerLevel level, PathfinderMob entity, long gameTime) {
-            if (entity instanceof BanthaEntity bantha) {
-                bantha.standUpInstantly();
-            }
-
+        protected void start(ServerLevel level, BanthaEntity entity, long gameTime) {
+            entity.standUpInstantly();
             super.start(level, entity, gameTime);
         }
     }

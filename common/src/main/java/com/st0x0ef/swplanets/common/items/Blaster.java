@@ -5,7 +5,9 @@ import com.st0x0ef.stellaris.common.systems.energy.impl.SimpleEnergyContainer;
 import com.st0x0ef.stellaris.common.systems.energy.impl.WrappedItemEnergyContainer;
 import com.st0x0ef.stellaris.common.systems.item.ItemStackHolder;
 import com.st0x0ef.stellaris.platform.systems.energy.EnergyContainer;
+import com.st0x0ef.swplanets.common.data.BlasterComponent;
 import com.st0x0ef.swplanets.common.entities.LaserEntity;
+import com.st0x0ef.swplanets.common.registry.DataComponentRegistry;
 import com.st0x0ef.swplanets.common.registry.ItemsRegistry;
 import com.st0x0ef.swplanets.common.registry.SoundsRegistry;
 import net.minecraft.ChatFormatting;
@@ -106,20 +108,8 @@ public class Blaster extends TieredItem implements EnergyItem<WrappedItemEnergyC
     }
 
     public void setUpgrade(BlasterUpgrade upgradeItem, ItemStack stack) {
-
-        var tag = stack.getOrCreateTag();
-
-        if(stack.getItem() instanceof Blaster blaster) {
-
-            if(!blaster.getZoomUpgrade(stack) ) {
-                tag.putBoolean(ZOOM_UPGRADE, upgradeItem.getZoom());
-            }
-
-            if(!blaster.getZoomUpgrade(stack) ) {
-                tag.putBoolean(EXPLOSION_UPGRADE, upgradeItem.getExplosion());
-            }
-        }
-
+        BlasterComponent component = new BlasterComponent(upgradeItem.getZoom(), upgradeItem.getExplosion());
+        stack.set(DataComponentRegistry.BLASTER_COMPONENT.get(), component);
     }
 
     @Override
@@ -150,15 +140,15 @@ public class Blaster extends TieredItem implements EnergyItem<WrappedItemEnergyC
         var container = EnergyContainer.of(holder);
         if (container == null) return false;
         container.extractEnergy(amount, false);
-        stack.setTag(holder.getStack().getTag());
         return container.getStoredEnergy() > 0;
     }
 
     public boolean getZoomUpgrade(ItemStack stack) {
-        return stack.getOrCreateTag().getBoolean(ZOOM_UPGRADE);
+        return stack.get(DataComponentRegistry.BLASTER_COMPONENT.get()).zoom_upgrade();
     }
+
     public boolean getExplosionUpgrade(ItemStack stack) {
-        return stack.getOrCreateTag().getBoolean(EXPLOSION_UPGRADE);
+        return stack.get(DataComponentRegistry.BLASTER_COMPONENT.get()).explosion_upgrade();
     }
 
     @Override
