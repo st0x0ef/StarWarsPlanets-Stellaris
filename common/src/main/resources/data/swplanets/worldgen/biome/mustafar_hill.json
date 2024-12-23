@@ -4,7 +4,6 @@
   "precipitation": "rain",
   "category": "desert",
   "has_precipitation": false,
-
   "effects": {
     "sky_color": -3044526,
     "fog_color": -3044526,
@@ -29,10 +28,10 @@
     ]
   },
   "features": [
-  [],
-  [
-    "minecraft:lake_lava_underground",
-    "minecraft:lake_lava_surface"
-  ]
+    [],
+    [
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
+    ]
   ]
 }

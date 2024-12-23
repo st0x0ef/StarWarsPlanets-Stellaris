@@ -23,7 +23,7 @@
       ],
       "movement_type": "TIME_OF_DAY",
       "scale": 9.0,
-      "texture": "ad_astra:textures/environment/sun.png"
+      "texture": "stellaris:textures/environment/sun.png"
     },
     {
       "back_light_color": -39,

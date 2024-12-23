@@ -23,7 +23,7 @@
       ],
       "movement_type": "TIME_OF_DAY",
       "scale": 14.0,
-      "texture": "ad_astra:textures/environment/sun.png"
+      "texture": "stellaris:textures/environment/sun.png"
     },
     {
       "back_light_color": -801674,
@@ -41,7 +41,7 @@
       ],
       "movement_type": "STATIC",
       "scale": 80.0,
-      "texture": "ad_astra:textures/environment/venus.png"
+      "texture": "stellaris:textures/environment/venus.png"
     }
   ],
   "star_brightness": 0.6,

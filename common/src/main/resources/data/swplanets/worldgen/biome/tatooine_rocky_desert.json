@@ -7,12 +7,12 @@
     ]
   },
   "has_precipitation": false,
-  "downfall": 0.0,
+  "downfall": 0,
   "effects": {
     "fog_color": 12638463,
     "mood_sound": {
       "block_search_extent": 8,
-      "offset": 2.0,
+      "offset": 2,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
@@ -120,7 +120,6 @@
         "minCount": 4,
         "weight": 100
       },
-
       {
         "type": "minecraft:enderman",
         "maxCount": 4,
@@ -138,5 +137,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 2.0
+  "temperature": 2
 }

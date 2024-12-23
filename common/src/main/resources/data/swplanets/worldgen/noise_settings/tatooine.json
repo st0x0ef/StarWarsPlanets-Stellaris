@@ -62,7 +62,7 @@
     "continents": "minecraft:overworld/continents",
     "ridges": "minecraft:overworld/ridges",
     "erosion": "minecraft:overworld/erosion",
-    "depth": "ad_astra:depth",
+    "depth": "stellaris:mars/depth",
     "initial_density_without_jaggedness": {
       "type": "minecraft:mul",
       "argument1": 4,
@@ -70,10 +70,10 @@
         "type": "minecraft:quarter_negative",
         "argument": {
           "type": "minecraft:mul",
-          "argument1": "ad_astra:depth",
+          "argument1": "stellaris:mars/depth",
           "argument2": {
             "type": "minecraft:cache_2d",
-            "argument": "ad_astra:factor"
+            "argument": "stellaris:mars/factor"
           }
         }
       }
@@ -299,8 +299,6 @@
           }
         }
       },
-
-
       {
         "type": "minecraft:condition",
         "if_true": {
@@ -337,7 +335,6 @@
           }
         }
       },
-
       {
         "type": "minecraft:condition",
         "if_true": {
@@ -382,7 +379,6 @@
                     }
                   }
                 },
-
                 {
                   "type": "minecraft:condition",
                   "if_true": {
