@@ -12,7 +12,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = Player.class)
 public class PlayerScopeMixin {
-
     @Inject(at = @At(value = "RETURN"), method = "isScoping", cancellable = true)
     public void isScoping(CallbackInfoReturnable<Boolean> cir) {
         Player player = (Player) ((Object) this);

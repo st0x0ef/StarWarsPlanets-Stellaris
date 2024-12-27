@@ -14,7 +14,6 @@
     }
   },
   "result": {
-    "item": "swplanets:light_saber_base",
-    "count": 1
+    "id": "swplanets:light_saber_base"
   }
 }

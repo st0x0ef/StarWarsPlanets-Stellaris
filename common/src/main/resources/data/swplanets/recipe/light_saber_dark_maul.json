@@ -17,7 +17,6 @@
     }
   },
   "result": {
-    "item": "swplanets:light_saber_dark_maul",
-    "count": 1
+    "id": "swplanets:light_saber_dark_maul"
   }
 }

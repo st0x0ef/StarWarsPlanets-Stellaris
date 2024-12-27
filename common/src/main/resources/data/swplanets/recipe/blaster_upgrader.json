@@ -7,7 +7,7 @@
   ],
   "key": {
     "#": {
-      "tag": "ad_astra:steel_plates"
+      "tag": "stellaris:steel_ingot"
     },
     "A": {
       "item": "minecraft:smithing_table"
@@ -17,6 +17,6 @@
     }
   },
   "result": {
-    "item": "swplanets:blaster_upgrader"
+    "id": "swplanets:blaster_upgrader"
   }
 }

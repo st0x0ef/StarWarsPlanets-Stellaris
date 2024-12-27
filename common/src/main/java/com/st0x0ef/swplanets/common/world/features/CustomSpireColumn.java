@@ -15,10 +15,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Custom Spire Column to let the feature spawn wanted block
- * From the InfernalSpireColumnFeature from Ad Astra
- */
+
 public class CustomSpireColumn extends Feature<CustomSpireColumnConfig> {
     private static final ImmutableList<Block> CANNOT_PLACE_ON = ImmutableList.of(
             Blocks.LAVA,

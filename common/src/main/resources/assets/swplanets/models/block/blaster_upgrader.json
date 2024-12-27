@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "ad_astra:block/steel_machine_bottom",
-    "east": "ad_astra:block/steel_machine_side",
+    "down": "stellaris:block/machines/coal_generator_bottom",
+    "east": "stellaris:block/machines/coal_generator_side",
     "north": "swplanets:block/blaster_upgrader",
     "particle": "swplanets:block/blaster_upgrader",
-    "south": "ad_astra:block/steel_machine_side",
-    "up": "ad_astra:block/steel_machine_top",
-    "west": "ad_astra:block/steel_machine_side"
+    "south": "stellaris:block/machines/coal_generator_side",
+    "up": "stellaris:block/machines/coal_generator_top",
+    "west": "stellaris:block/machines/coal_generator_side"
   }
 }

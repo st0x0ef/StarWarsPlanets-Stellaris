@@ -10,10 +10,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockStateConfiguration;
 
-/**
- * Custom Blob to let blob spawn on wanted blocks
- * From the MarsBlockBlockFeature from Ad Astra
- */
+
 public class TatooineStoneFeature extends Feature<BlockStateConfiguration> {
 
     public TatooineStoneFeature(Codec<BlockStateConfiguration> codec) {

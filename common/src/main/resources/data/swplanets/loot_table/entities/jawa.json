@@ -7,17 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ad_astra:etrionic_capacitor",
-          "weight": 1
-        },
-        {
-          "type": "minecraft:item",
-          "name": "ad_astra:wrench",
-          "weight": 3
-        },
-        {
-          "type": "minecraft:item",
-          "name": "ad_astra:steel_cable",
+          "name": "stellaris:cable",
           "weight": 2,
           "functions": [
             {

@@ -14,7 +14,7 @@
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false,
-    "background": "ad_astra:textures/block/steel_plating.png"
+    "background": "stellaris:textures/block/steel_ingot.png"
   },
   "criteria": {
     "tatooine": {

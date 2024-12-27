@@ -113,12 +113,12 @@
                       "type": "minecraft:add",
                       "argument1": {
                         "type": "minecraft:range_choice",
-                        "input": "ad_astra:sloped_cheese",
+                        "input": "swplanets:sloped_cheese",
                         "min_inclusive": -1000000,
                         "max_exclusive": 1.5625,
                         "when_in_range": {
                           "type": "minecraft:min",
-                          "argument1": "ad_astra:sloped_cheese",
+                          "argument1": "swplanets:sloped_cheese",
                           "argument2": {
                             "type": "minecraft:mul",
                             "argument1": 5,
@@ -171,7 +171,7 @@
                                       "argument2": {
                                         "type": "minecraft:mul",
                                         "argument1": -0.64,
-                                        "argument2": "ad_astra:sloped_cheese"
+                                        "argument2": "swplanets:sloped_cheese"
                                       }
                                     },
                                     "min": 0,

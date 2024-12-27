@@ -2,8 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "111",
-    "121",
-    "   "
+    "121"
   ],
   "key": {
     "1": {
@@ -14,6 +13,6 @@
     }
   },
   "result": {
-    "item": "swplanets:stormtrooper_mask"
+    "id": "swplanets:stormtrooper_mask"
   }
 }

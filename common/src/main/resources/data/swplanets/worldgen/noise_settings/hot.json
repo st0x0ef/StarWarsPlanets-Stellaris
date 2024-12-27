@@ -5,7 +5,7 @@
   "ore_veins_enabled": false,
   "legacy_random_source": false,
   "default_block": {
-    "Name": "ad_astra:glacio_stone"
+    "Name": "stellaris:moon_stone"
   },
   "default_fluid": {
     "Name": "minecraft:air"
@@ -392,7 +392,7 @@
                   "then_run": {
                     "type": "minecraft:block",
                     "result_state": {
-                      "Name": "ad_astra:permafrost"
+                      "Name": "minecraft:snow_block"
                     }
                   }
                 },
@@ -430,7 +430,7 @@
                 {
                   "type": "minecraft:block",
                   "result_state": {
-                    "Name": "ad_astra:permafrost"
+                    "Name": "minecraft:snow_block"
                   }
                 }
               ]
@@ -504,7 +504,7 @@
                 {
                   "type": "minecraft:block",
                   "result_state": {
-                    "Name": "ad_astra:permafrost"
+                    "Name": "minecraft:snow_block"
                   }
                 }
               ]

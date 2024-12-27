@@ -20,7 +20,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "ad_astra:steel_plate",
+          "name": "stellaris:steel_ingot",
           "weight": 10,
           "functions": [
             {
@@ -82,7 +82,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "ad_astra:steel_cable",
+          "name": "stellaris:cable",
           "weight": 10,
           "functions": [
             {
