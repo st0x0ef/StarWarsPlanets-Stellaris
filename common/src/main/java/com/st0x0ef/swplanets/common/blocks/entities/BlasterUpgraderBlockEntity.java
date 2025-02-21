@@ -13,10 +13,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 public class BlasterUpgraderBlockEntity extends BaseEnergyContainerBlockEntity {
-    private static final int[] INPUT_SLOTS = {0, 1};
     public BlasterUpgraderBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntitiesRegistry.BLASTER_UPGRADER.get(), pos, state);
     }
@@ -27,10 +26,9 @@ public class BlasterUpgraderBlockEntity extends BaseEnergyContainerBlockEntity {
         return Component.literal("Blaster Upgrader");
     }
 
-    @Nullable
     @Override
-    public AbstractContainerMenu createMenu(int i, Inventory inventory) {
-        return new BlasterUpgraderMenu(i, inventory, this);
+    public @NotNull AbstractContainerMenu createMenu(int containerID, Inventory inventory) {
+        return new BlasterUpgraderMenu(containerID, inventory, this);
     }
 
     private boolean hasRecipe() {
@@ -78,5 +76,10 @@ public class BlasterUpgraderBlockEntity extends BaseEnergyContainerBlockEntity {
         } else {
             setChanged(level, worldPosition, getBlockState());
         }
+    }
+
+    @Override
+    public int getContainerSize() {
+        return 3;
     }
 }
