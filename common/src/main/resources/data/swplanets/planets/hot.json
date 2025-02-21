@@ -1,11 +1,14 @@
-
 {
-    "dimension": "swplanets:hot",
-    "gravity": 9.807,
-    "orbit": "swplanets:hot_orbit",
+    "system": "swplanets:outer_rims",
+    "level": "swplanets:hot",
+    "name": "Hot",
+    "translatable": "swplanets.planet.hot",
     "oxygen": true,
-    "solar_power": 16,
-    "solar_system": "swplanets:outer_rims",
     "temperature": -10,
-    "tier": 4
+    "distanceFromEarth": 7000,
+    "gravity": 9.807,
+    "textures": {
+        "planet": "swplanets:textures/planet_bar/kamino_planet_bar.png",
+        "planet_bar": "swplanets:textures/planet_bar/kamino_planet_bar.png"
+    }
 }

@@ -1,10 +1,14 @@
 {
-    "dimension": "swplanets:mandalore",
-    "gravity": 3.0,
-    "orbit": "swplanets:mandalore_orbit",
+    "system": "swplanets:outer_rims",
+    "level": "swplanets:mandalore",
+    "name": "Mandalore",
+    "translatable": "swplanets.planet.mandalore",
     "oxygen": true,
-    "solar_power": 16,
-    "solar_system": "swplanets:outer_rims",
     "temperature": -160,
-    "tier": 4
+    "distanceFromEarth": 8500,
+    "gravity": 3.0,
+    "textures": {
+        "planet": "swplanets:textures/planet_bar/kamino_planet_bar.png",
+        "planet_bar": "swplanets:textures/planet_bar/kamino_planet_bar.png"
+    }
 }

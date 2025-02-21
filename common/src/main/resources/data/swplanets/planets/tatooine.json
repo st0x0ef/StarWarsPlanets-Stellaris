@@ -1,10 +1,14 @@
 {
-    "dimension": "swplanets:tatooine",
-    "gravity": 9.807,
-    "orbit": "swplanets:tatooine_orbit",
+    "system": "swplanets:outer_rims",
+    "level": "swplanets:tatooine",
+    "name": "Tatooine",
+    "translatable": "swplanets.planet.tatooine",
     "oxygen": true,
-    "solar_power": 30,
-    "solar_system": "swplanets:outer_rims",
     "temperature": 25,
-    "tier": 4
+    "distanceFromEarth": 7500,
+    "gravity": 9.807,
+    "textures": {
+        "planet": "swplanets:textures/planet_bar/tatooine_planet_bar.png",
+        "planet_bar": "swplanets:textures/planet_bar/tatooine_planet_bar.png"
+    }
 }
