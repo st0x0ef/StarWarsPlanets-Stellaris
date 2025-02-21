@@ -2,7 +2,7 @@
   "parent": "swplanets:find_kyber",
   "display": {
     "icon": {
-      "item": "swplanets:light_saber_base"
+      "id": "swplanets:light_saber_base"
     },
     "title": {
       "translate": "advancements.craft_saber.title"

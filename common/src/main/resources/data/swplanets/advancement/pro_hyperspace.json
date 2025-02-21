@@ -2,7 +2,7 @@
   "parent": "swplanets:craft_light_saber",
   "display": {
     "icon": {
-      "item": "swplanets:light_saber_blue"
+      "id": "swplanets:light_saber_blue"
     },
     "title": {
       "translate": "advancements.pro_hyperspace.title"

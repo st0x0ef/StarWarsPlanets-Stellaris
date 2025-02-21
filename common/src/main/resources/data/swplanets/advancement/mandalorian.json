@@ -2,7 +2,7 @@
   "parent": "swplanets:beskar",
   "display": {
     "icon": {
-      "item": "swplanets:beskar_armor_helmet"
+      "id": "swplanets:beskar_armor_helmet"
     },
     "title": {
       "translate": "advancements.mandalorian.title"

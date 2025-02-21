@@ -2,7 +2,7 @@
 {
   "display": {
     "icon": {
-      "item": "swplanets:light_saber_blue"
+      "id": "swplanets:light_saber_blue"
     },
     "title": {
       "translate": "advancements.swplanets.title"

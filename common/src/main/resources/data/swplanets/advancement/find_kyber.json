@@ -2,7 +2,7 @@
   "parent": "swplanets:swplanets",
   "display": {
     "icon": {
-      "item": "swplanets:kyber_crystal"
+      "id": "swplanets:kyber_crystal"
     },
     "title": {
       "translate": "advancements.find_kyber.title"

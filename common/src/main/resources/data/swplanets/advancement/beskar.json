@@ -2,7 +2,7 @@
   "parent": "swplanets:swplanets",
   "display": {
     "icon": {
-      "item": "swplanets:beskar"
+      "id": "swplanets:beskar"
     },
     "title": {
       "translate": "advancements.beskar.title"
