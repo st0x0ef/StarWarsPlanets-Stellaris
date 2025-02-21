@@ -5,6 +5,7 @@ architectury {
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabricLoaderVersion}"
     modApi "dev.architectury:architectury:${rootProject.architecturyVersion}"
+    implementation "com.st0x0ef.stellaris:stellaris-common-${minecraftVersion}:${stellarisVersion}"
 }
 
 publishing {
