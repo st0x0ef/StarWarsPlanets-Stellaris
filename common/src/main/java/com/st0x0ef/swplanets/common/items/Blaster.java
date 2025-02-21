@@ -23,17 +23,10 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-public class Blaster extends TieredItem implements EnergyItem<WrappedItemEnergyContainer> {
-
-    public static final String ZOOM_UPGRADE = "Mode";
-    public static final String EXPLOSION_UPGRADE = "Explosion";
-
-
+public class Blaster extends TieredItem {
     public Blaster(Properties properties) {
         super(StarWarsTiers.PLASTIC, properties);
     }
-
-
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand handIn) {
@@ -46,8 +39,6 @@ public class Blaster extends TieredItem implements EnergyItem<WrappedItemEnergyC
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int $$3) {
         if (!level.isClientSide) {
-            if (!useEnergy(stack, 100L)) return;
-
             level.playSeededSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundsRegistry.BLASTER_SOUND, SoundSource.PLAYERS, 1.0F, 1.0F, 0);
             LaserEntity laser = new LaserEntity(level, getExplosionUpgrade(stack));
             laser.setPos(entity.getX(), entity.getY() + 1.5, entity.getZ());
@@ -73,16 +64,12 @@ public class Blaster extends TieredItem implements EnergyItem<WrappedItemEnergyC
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        WrappedItemEnergyContainer energy = getEnergyStorage(stack);
-
-        if(Screen.hasShiftDown()) {
+        if (Screen.hasShiftDown()) {
             addUpgradesComponents(stack, tooltipComponents);
-            tooltipComponents.add(Component.literal("Energy : " + energy.getStoredEnergy() + "/" + energy.getMaxCapacity()));
-
         } else {
             tooltipComponents.add(Component.translatable("tooltip.swplanets.shift"));
-
         }
+
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 
@@ -115,54 +102,11 @@ public class Blaster extends TieredItem implements EnergyItem<WrappedItemEnergyC
         return $$0;
     }
 
-    @Override
-    public boolean isBarVisible(@NotNull ItemStack stack) {
-        return getEnergyStorage(stack).getStoredEnergy() > 0;
-    }
-
-    @Override
-    public int getBarWidth(@NotNull ItemStack stack) {
-        var energyStorage = getEnergyStorage(stack);
-        return (int) (((double) energyStorage.getStoredEnergy() / energyStorage.getMaxCapacity()) * 13);
-    }
-
-    @Override
-    public int getBarColor(ItemStack stack) {
-        return 0x63dcc2;
-    }
-
-    public boolean useEnergy(ItemStack stack, long amount) {
-        if (!(stack.getItem() instanceof Blaster)) return false;
-        ItemStackHolder holder = new ItemStackHolder(stack);
-
-        var container = EnergyContainer.of(holder);
-        if (container == null) return false;
-        container.extractEnergy(amount, false);
-        return container.getStoredEnergy() > 0;
-    }
-
     public boolean getZoomUpgrade(ItemStack stack) {
         return stack.get(DataComponentRegistry.BLASTER_COMPONENT.get()).zoom_upgrade();
     }
 
     public boolean getExplosionUpgrade(ItemStack stack) {
         return stack.get(DataComponentRegistry.BLASTER_COMPONENT.get()).explosion_upgrade();
-    }
-
-    @Override
-    public WrappedItemEnergyContainer getEnergyStorage(ItemStack itemStack) {
-        return new WrappedItemEnergyContainer(
-                itemStack,
-                new SimpleEnergyContainer(10000) {
-                    @Override
-                    public long maxInsert() {
-                        return 100;
-                    }
-
-                    @Override
-                    public long maxExtract() {
-                        return 500;
-                    }
-                });
     }
 }
