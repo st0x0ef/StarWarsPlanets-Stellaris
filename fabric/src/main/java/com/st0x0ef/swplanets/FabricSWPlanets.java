@@ -14,8 +14,8 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 public class FabricSWPlanets implements ModInitializer {
 	@Override
 	public void onInitialize() {
-
 		SWPlanets.LOG.info("Star Wars Planets 🚀!");
+
 		SWPlanets.init();
 		EntityRegistry.registerAttributes((type, builder) -> FabricDefaultAttributeRegistry.register(type.get(), builder.get()));
 

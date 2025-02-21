@@ -18,8 +18,8 @@ public class LaserEntity extends Fireball {
     public int lifetime;
     public boolean explode;
 
-    public LaserEntity(EntityType<? extends Fireball> $$0, Level $$1) {
-        super($$0, $$1);
+    public LaserEntity(EntityType<? extends Fireball> entityType, Level level) {
+        super(entityType, level);
         this.life = 0;
 
     }
@@ -36,20 +36,19 @@ public class LaserEntity extends Fireball {
     }
 
     @Override
-    public void addAdditionalSaveData(CompoundTag $$0) {
-        super.addAdditionalSaveData($$0);
-        $$0.putInt("Life", this.life);
-        $$0.putInt("LifeTime", this.lifetime);
-        $$0.putBoolean("Explode", this.explode);
-
+    public void addAdditionalSaveData(CompoundTag tag) {
+        super.addAdditionalSaveData(tag);
+        tag.putInt("Life", this.life);
+        tag.putInt("LifeTime", this.lifetime);
+        tag.putBoolean("Explode", this.explode);
     }
 
     @Override
-    public void readAdditionalSaveData(CompoundTag $$0) {
-        super.readAdditionalSaveData($$0);
-        this.life = $$0.getInt("Life");
-        this.lifetime = $$0.getInt("LifeTime");
-        this.explode = $$0.getBoolean("Explode");
+    public void readAdditionalSaveData(CompoundTag tag) {
+        super.readAdditionalSaveData(tag);
+        this.life = tag.getInt("Life");
+        this.lifetime = tag.getInt("LifeTime");
+        this.explode = tag.getBoolean("Explode");
     }
 
 
@@ -66,8 +65,6 @@ public class LaserEntity extends Fireball {
         if(!this.level().isClientSide && this.life > this.lifetime ) {
             this.discard();
         }
-
-
     }
 
     @Override
@@ -82,7 +79,7 @@ public class LaserEntity extends Fireball {
 
 
     @Override
-    public boolean hurt(DamageSource $$0, float $$1) {
+    public boolean hurt(DamageSource source, float damage) {
         return true;
     }
 
@@ -109,6 +106,7 @@ public class LaserEntity extends Fireball {
         if(this.explode) {
             this.level().explode(null, this.getX(), this.getY(), this.getZ(), 2f, true, Level.ExplosionInteraction.BLOCK);
         }
+
         this.discard();
     }
 }

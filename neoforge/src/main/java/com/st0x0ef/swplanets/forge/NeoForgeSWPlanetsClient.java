@@ -7,6 +7,7 @@ import com.st0x0ef.swplanets.client.renderers.jawa.JawaRenderer;
 import com.st0x0ef.swplanets.client.screens.BlasterUpgraderScreen;
 import com.st0x0ef.swplanets.common.registry.EntityRegistry;
 import com.st0x0ef.swplanets.common.registry.MenusRegistry;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -19,6 +20,7 @@ public class NeoForgeSWPlanetsClient {
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EntityRegistry.JAWA.get(), JawaRenderer::new);
         event.registerEntityRenderer(EntityRegistry.BANTHA.get(), BanthaRenderer::new);
+        event.registerEntityRenderer(EntityRegistry.LASER.get(), renderManager -> new ThrownItemRenderer<>(renderManager, 1, true));
     }
 
     @SubscribeEvent

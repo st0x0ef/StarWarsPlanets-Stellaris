@@ -33,6 +33,8 @@ public class FabricSWPlanetsClient implements ClientModInitializer {
         // Entities rendering
         EntityRendererRegistry.register(EntityRegistry.JAWA.get(), JawaRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.BANTHA.get(), BanthaRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.LASER.get(), renderManager -> new ThrownItemRenderer<>(renderManager, 1, true));
+
 
         // Entities model layer
         EntityModelLayerRegistry.registerModelLayer(JawaModel.LAYER_LOCATION, JawaModel::createBodyLayer);

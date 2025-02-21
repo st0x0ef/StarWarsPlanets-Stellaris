@@ -2,6 +2,8 @@ package com.st0x0ef.swplanets.forge;
 
 
 import com.st0x0ef.swplanets.SWPlanets;
+import com.st0x0ef.swplanets.common.entities.BanthaEntity;
+import com.st0x0ef.swplanets.common.entities.JawaEntity;
 import com.st0x0ef.swplanets.common.registry.EntityRegistry;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
@@ -12,7 +14,8 @@ import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 public class NeoForgeSWPlanets {
 
     public NeoForgeSWPlanets(IEventBus bus) {
-        SWPlanets.LOG.info("Hello There ✨!");
+        SWPlanets.LOG.info("Star Wars Planets 🚀!");
+
         SWPlanets.init();
         bus.addListener(NeoForgeSWPlanets::commonSetup);
         bus.addListener(NeoForgeSWPlanets::onAttributes);
@@ -23,8 +26,7 @@ public class NeoForgeSWPlanets {
     }
 
     public static void onAttributes(EntityAttributeCreationEvent event) {
-        EntityRegistry.registerAttributes((entityType, attribute) -> event.put(entityType.get(), attribute.get().build()));
+        event.put(EntityRegistry.JAWA.get(), JawaEntity.addAttributes().build());
+        event.put(EntityRegistry.BANTHA.get(), BanthaEntity.addAttributes().build());
     }
-
-
 }
