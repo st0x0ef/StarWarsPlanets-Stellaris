@@ -31,7 +31,7 @@ dependencies {
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${reiVersion}"
     modCompileOnly("mezz.jei:jei-${minecraftVersion}-neoforge-api:${jeiVersion}")
     runtimeOnly("mezz.jei:jei-${minecraftVersion}-neoforge:${jeiVersion}")
-    implementation "com.st0x0ef.stellaris:stellaris-neoforge-${minecraftVersion}:${stellarisVersion}"
+    modApi "com.st0x0ef.stellaris:stellaris-neoforge-${minecraftVersion}:${stellarisVersion}"
 
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }

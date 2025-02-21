@@ -32,7 +32,7 @@ dependencies {
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rootProject.reiVersion}"
     modCompileOnlyApi("mezz.jei:jei-${minecraftVersion}-fabric-api:${jeiVersion}")
     modRuntimeOnly("mezz.jei:jei-${minecraftVersion}-fabric:${jeiVersion}")
-    implementation 'com.st0x0ef.stellaris:stellaris-fabric-' + minecraftVersion + ':' + stellarisVersion
+    modApi 'com.st0x0ef.stellaris:stellaris-fabric-' + minecraftVersion + ':' + stellarisVersion
 
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
