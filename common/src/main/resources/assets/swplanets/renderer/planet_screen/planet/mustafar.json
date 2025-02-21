@@ -1,0 +1,12 @@
+{
+  "texture": "swplanets:textures/sky/mustafar.png",
+  "name": "Mustafar",
+  "distance": 340,
+  "period": 7000,
+  "width": 10.0,
+  "height": 10.0,
+  "parent": "swplanets:outer_rims",
+  "dimensionId": "swplanets:mustafar",
+  "translatable": "text.swplanets.planetscreen.mustafar",
+  "id": "swplanets:mustafar"
+}

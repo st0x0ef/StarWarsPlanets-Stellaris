@@ -1,0 +1,12 @@
+{
+  "texture": "swplanets:textures/sky/mandalore.png",
+  "name": "Mandalore",
+  "distance": 280,
+  "period": 7500,
+  "width": 10.0,
+  "height": 10.0,
+  "parent": "swplanets:outer_rims",
+  "dimensionId": "swplanets:mandalore",
+  "translatable": "text.swplanets.planetscreen.mandalore",
+  "id": "swplanets:mandalore"
+}

@@ -1,0 +1,12 @@
+{
+  "texture": "swplanets:textures/sky/hot.png",
+  "name": "Hot",
+  "distance": 100,
+  "period": 8000,
+  "width": 10.0,
+  "height": 10.0,
+  "parent": "swplanets:outer_rims",
+  "dimensionId": "swplanets:hot",
+  "translatable": "text.swplanets.planetscreen.hot",
+  "id": "swplanets:hot"
+}

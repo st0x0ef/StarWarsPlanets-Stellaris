@@ -1,0 +1,12 @@
+{
+  "texture": "swplanets:textures/sky/tatooine.png",
+  "name": "Tatooine",
+  "distance": 160,
+  "period": 8500,
+  "width": 10.0,
+  "height": 10.0,
+  "parent": "swplanets:outer_rims",
+  "dimensionId": "swplanets:tatooine",
+  "translatable": "text.swplanets.planetscreen.tatooine",
+  "id": "swplanets:tatooine"
+}

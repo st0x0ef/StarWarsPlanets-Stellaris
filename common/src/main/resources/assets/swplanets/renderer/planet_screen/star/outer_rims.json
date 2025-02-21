@@ -1,0 +1,11 @@
+{
+  "texture": "swplanets:textures/sky/deathstar.png",
+  "name": "Outer Rims",
+  "x": 500,
+  "y": 1000,
+  "width": 36.0,
+  "height": 36.0,
+  "orbitColor": "Red",
+  "translatable": "text.swplanets.planetscreen.outer_rims",
+  "id": "swplanets:outer_rims"
+}

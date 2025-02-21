@@ -1,0 +1,12 @@
+{
+  "texture": "swplanets:textures/sky/endor.png",
+  "name": "Endor",
+  "distance": 220,
+  "period": 6000,
+  "width": 10.0,
+  "height": 10.0,
+  "parent": "swplanets:outer_rims",
+  "dimensionId": "swplanets:endor",
+  "translatable": "text.swplanets.planetscreen.endor",
+  "id": "swplanets:endor"
+}
