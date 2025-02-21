@@ -98,7 +98,7 @@ public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
-        compound.putLong("LastPoseTick", (Long)this.entityData.get(LAST_POSE_CHANGE_TICK));
+        compound.putLong("LastPoseTick", this.entityData.get(LAST_POSE_CHANGE_TICK));
     }
 
     @Override
@@ -165,7 +165,7 @@ public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping
         if (this.dashCooldown > 0) {
             --this.dashCooldown;
             if (this.dashCooldown == 0) {
-                this.level().playSound((Player)null, this.blockPosition(), SoundEvents.CAMEL_DASH_READY, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                this.level().playSound(null, this.blockPosition(), SoundEvents.CAMEL_DASH_READY, SoundSource.NEUTRAL, 1.0F, 1.0F);
             }
         }
 
@@ -288,7 +288,7 @@ public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping
     }
 
     public boolean isDashing() {
-        return (Boolean)this.entityData.get(DASH);
+        return this.entityData.get(DASH);
     }
 
     public void setDashing(boolean dashing) {
@@ -350,7 +350,7 @@ public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping
     @Override
     protected void setOffspringAttributes(AgeableMob parent, AbstractHorse child) {
         super.setOffspringAttributes(parent, child);
-        this.setOffspringAttribute(parent, child, Attributes.MOVEMENT_SPEED, (double)0.0, (double)0.5);
+        this.setOffspringAttribute(parent, child, Attributes.MOVEMENT_SPEED, 0.0, 0.5);
     }
 
     private void setOffspringAttribute(AgeableMob otherParent, AbstractHorse child, Holder<Attribute> attribute, double min, double max) {
@@ -415,7 +415,7 @@ public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping
                 if (!this.isSilent()) {
                     SoundEvent soundEvent = this.getEatingSound();
                     if (soundEvent != null) {
-                        this.level().playSound((Player)null, this.getX(), this.getY(), this.getZ(), soundEvent, this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
+                        this.level().playSound(null, this.getX(), this.getY(), this.getZ(), soundEvent, this.getSoundSource(), 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
                     }
                 }
 
@@ -537,7 +537,7 @@ public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping
     }
 
     public boolean isBanthaSitting() {
-        return (Long)this.entityData.get(LAST_POSE_CHANGE_TICK) < 0L;
+        return this.entityData.get(LAST_POSE_CHANGE_TICK) < 0L;
     }
 
     public boolean isBanthaVisuallySitting() {
@@ -587,7 +587,7 @@ public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping
     }
 
     public long getPoseTime() {
-        return this.level().getGameTime() - Math.abs((Long)this.entityData.get(LAST_POSE_CHANGE_TICK));
+        return this.level().getGameTime() - Math.abs(this.entityData.get(LAST_POSE_CHANGE_TICK));
     }
 
     public SoundEvent getSaddleSoundEvent() {
@@ -647,7 +647,7 @@ public class BanthaEntity extends AbstractHorse implements PlayerRideableJumping
     }
 
     static {
-        TEMPTATION_ITEM = Ingredient.of(new ItemLike[]{Items.WHEAT});
+        TEMPTATION_ITEM = Ingredient.of(Items.WHEAT);
         DASH = SynchedEntityData.defineId(BanthaEntity.class, EntityDataSerializers.BOOLEAN);
         LAST_POSE_CHANGE_TICK = SynchedEntityData.defineId(BanthaEntity.class, EntityDataSerializers.LONG);
         SITTING_DIMENSIONS = EntityDimensions.scalable(EntityType.CAMEL.getWidth(), EntityType.CAMEL.getHeight() - 1.43F);

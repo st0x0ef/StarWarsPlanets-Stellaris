@@ -97,9 +97,9 @@ public class JawaModel extends HierarchicalModel<JawaEntity> {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 
 		this.animateWalk(ModAnimations.JAWA_WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
-		this.animate(((JawaEntity) entity).idleAnimationState, ModAnimations.JAWA_IDLE, ageInTicks, 1f);
+		this.animate(entity.idleAnimationState, ModAnimations.JAWA_IDLE, ageInTicks, 1f);
 
-		this.animate(((JawaEntity) entity).dieAnimationState, ModAnimations.JAWA_DEATH, ageInTicks, 1f);
+		this.animate(entity.dieAnimationState, ModAnimations.JAWA_DEATH, ageInTicks, 1f);
 		this.animate(entity.tradeAnimationState, ModAnimations.JAWA_TRADING, ageInTicks, 1f);
 
 	}
