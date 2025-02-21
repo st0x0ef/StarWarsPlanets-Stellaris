@@ -79,7 +79,7 @@ public class Blaster extends TieredItem implements EnergyItem<WrappedItemEnergyC
 
         if(Screen.hasShiftDown()) {
             addUpgradesComponents(stack, tooltipComponents);
-            //tooltipComponents.add(TooltipUtils.getEnergyComponent(energy.getStoredEnergy(), energy.getMaxCapacity()));
+            tooltipComponents.add(Component.literal("Energy : " + energy.getStoredEnergy() + "/" + energy.getMaxCapacity()));
 
         } else {
             tooltipComponents.add(Component.translatable("tooltip.swplanets.shift"));

@@ -6,6 +6,7 @@ import com.st0x0ef.swplanets.common.items.Blaster;
 import com.st0x0ef.swplanets.common.items.BlasterUpgrade;
 import com.st0x0ef.swplanets.common.menu.BlasterUpgraderMenu;
 import com.st0x0ef.swplanets.common.registry.BlockEntitiesRegistry;
+import com.st0x0ef.swplanets.common.registry.DataComponentRegistry;
 import com.st0x0ef.swplanets.common.registry.TagsRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -20,7 +21,6 @@ public class BlasterUpgraderBlockEntity extends BaseEnergyContainerBlockEntity {
         super(BlockEntitiesRegistry.BLASTER_UPGRADER.get(), pos, state);
     }
 
-
     @Override
     protected Component getDefaultName() {
         return Component.literal("Blaster Upgrader");
@@ -32,32 +32,29 @@ public class BlasterUpgraderBlockEntity extends BaseEnergyContainerBlockEntity {
     }
 
     private boolean hasRecipe() {
-        boolean hasBlasterInFirstSlot = getItem(0).is(TagsRegistry.BLASTERS);
+        boolean hasBlasterInFirstSlot = getItem(0).has(DataComponentRegistry.BLASTER_COMPONENT.get());
         boolean hasUpgradeInSecondSlot = getItem(1).getItem() instanceof BlasterUpgrade;
         return hasBlasterInFirstSlot && hasUpgradeInSecondSlot;
     }
 
-    private void craft(){
+    private void craft() {
+        ItemStack blaster_input = getItem(0);
         ItemStack upgrade_input = getItem(1);
-        ItemStack vehicle_input = getItem(0);
 
-        if (!upgrade_input.isEmpty() && !vehicle_input.isEmpty()) {
+        if (!upgrade_input.isEmpty() && !blaster_input.isEmpty()) {
             if (upgrade_input.getItem() instanceof BlasterUpgrade upgrade) {
-                SWPlanets.LOG.error("Upgrade " + upgrade.getZoom());
-                ItemStack output = vehicle_input.copy();
+                ItemStack output = blaster_input.copy();
 
                 if (output.getItem() instanceof Blaster blaster) {
                     blaster.setUpgrade(upgrade, output);
                 }
 
                 output.setCount(1);
-                SWPlanets.LOG.error("Crafting Blaster");
                 removeItem(0, 1);
                 removeItem(1, 1);
                 setItem(2, output);
             }
         }
-
     }
 
     @Override
@@ -67,13 +64,12 @@ public class BlasterUpgraderBlockEntity extends BaseEnergyContainerBlockEntity {
 
     @Override
     public void tick() {
-        if(level.isClientSide()) {
+        if (level.isClientSide()) {
             return;
         }
 
-        if(hasRecipe()) {
+        if (hasRecipe()) {
             craft();
-        } else {
             setChanged(level, worldPosition, getBlockState());
         }
     }
