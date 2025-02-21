@@ -14,8 +14,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import java.util.EnumMap;
 import java.util.List;
 
-import static net.minecraft.core.registries.Registries.ARMOR_MATERIAL;
-
 public class ArmorMaterialRegistry {
     public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIAL = DeferredRegister.create(SWPlanets.MODID, Registries.ARMOR_MATERIAL);
 

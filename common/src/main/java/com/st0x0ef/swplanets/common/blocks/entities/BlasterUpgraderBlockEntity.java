@@ -1,13 +1,11 @@
 package com.st0x0ef.swplanets.common.blocks.entities;
 
 import com.st0x0ef.stellaris.common.blocks.entities.machines.BaseEnergyContainerBlockEntity;
-import com.st0x0ef.swplanets.SWPlanets;
 import com.st0x0ef.swplanets.common.items.Blaster;
 import com.st0x0ef.swplanets.common.items.BlasterUpgrade;
 import com.st0x0ef.swplanets.common.menu.BlasterUpgraderMenu;
 import com.st0x0ef.swplanets.common.registry.BlockEntitiesRegistry;
 import com.st0x0ef.swplanets.common.registry.DataComponentRegistry;
-import com.st0x0ef.swplanets.common.registry.TagsRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;

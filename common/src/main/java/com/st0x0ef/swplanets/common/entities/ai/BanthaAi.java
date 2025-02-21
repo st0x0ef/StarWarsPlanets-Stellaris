@@ -9,7 +9,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.Brain;
 import net.minecraft.world.entity.ai.behavior.*;
 import net.minecraft.world.entity.ai.behavior.declarative.BehaviorBuilder;
@@ -18,7 +17,6 @@ import net.minecraft.world.entity.ai.memory.MemoryStatus;
 import net.minecraft.world.entity.ai.sensing.Sensor;
 import net.minecraft.world.entity.ai.sensing.SensorType;
 import net.minecraft.world.entity.schedule.Activity;
-import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.function.Predicate;
 
