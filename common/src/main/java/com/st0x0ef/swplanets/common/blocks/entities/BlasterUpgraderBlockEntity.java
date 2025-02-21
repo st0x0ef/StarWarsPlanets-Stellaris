@@ -30,7 +30,7 @@ public class BlasterUpgraderBlockEntity extends BaseEnergyContainerBlockEntity {
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory) {
-        return new BlasterUpgraderMenu( i, inventory, this);
+        return new BlasterUpgraderMenu(i, inventory, this);
     }
 
     private boolean hasRecipe() {
