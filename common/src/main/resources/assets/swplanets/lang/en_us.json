@@ -134,8 +134,5 @@
   "config.swplanets.jawaTrade": "Jawa Trades",
   "config.swplanets.jawaMaxTrade": "Max Jawa Trades",
 
-  "death.attack.blaster": "%s was blasted by the Empire",
-
-
-
+  "death.attack.blaster": "%s was blasted by the Empire"
 }
