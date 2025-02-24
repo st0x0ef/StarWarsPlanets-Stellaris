@@ -24,7 +24,7 @@ public class FabricSWPlanetsClient implements ClientModInitializer {
     public void onInitializeClient() {
         EntityRendererRegistry.register(EntityRegistry.LASER.get(), (p_174060_) -> new ThrownItemRenderer<>(p_174060_, 0.75F, true));
 
-        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xFFFFFF, ItemsRegistry.STORMTROOPER_MASK.get(), ItemsRegistry.STORMTROOPER_CHESTPLATE.get(), ItemsRegistry.STORMTROOPER_LEGGINGS.get(), ItemsRegistry.STORMTROOPER_LEGGINGS.get());
+        //ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 0xFFFFFF, ItemsRegistry.STORMTROOPER_MASK.get(), ItemsRegistry.STORMTROOPER_CHESTPLATE.get(), ItemsRegistry.STORMTROOPER_LEGGINGS.get(), ItemsRegistry.STORMTROOPER_BOOTS.get());
         FabricLoader.getInstance().getModContainer(SWPlanets.MODID).ifPresent(modContainer -> ResourceManagerHelper.registerBuiltinResourcePack(ResourceLocation.fromNamespaceAndPath(SWPlanets.MODID, "old_lightsabers_models"), modContainer, ResourcePackActivationType.NORMAL));
 
         // GUI
