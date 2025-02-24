@@ -6,6 +6,6 @@
   "width": 36.0,
   "height": 36.0,
   "orbitColor": "Red",
-  "translatable": "text.swplanets.planetscreen.outer_rims",
+  "translatable": "gui.swplanets.planet_selection.solar_system_button",
   "id": "swplanets:outer_rims"
 }

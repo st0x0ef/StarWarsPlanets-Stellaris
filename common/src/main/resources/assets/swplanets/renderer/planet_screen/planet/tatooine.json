@@ -7,6 +7,6 @@
   "height": 10.0,
   "parent": "swplanets:outer_rims",
   "dimensionId": "swplanets:tatooine",
-  "translatable": "text.swplanets.planetscreen.tatooine",
+  "translatable": "swplanets.planet.tatooine",
   "id": "swplanets:tatooine"
 }

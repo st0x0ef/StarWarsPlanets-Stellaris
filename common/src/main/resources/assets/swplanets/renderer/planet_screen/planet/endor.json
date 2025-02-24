@@ -7,6 +7,6 @@
   "height": 10.0,
   "parent": "swplanets:outer_rims",
   "dimensionId": "swplanets:endor",
-  "translatable": "text.swplanets.planetscreen.endor",
+  "translatable": "swplanets.planet.endor",
   "id": "swplanets:endor"
 }
