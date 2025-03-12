@@ -61,9 +61,8 @@ public class JawaEntity extends Animal {
     }
 
     public void addItems() {
-        TRADED_ITEMS.put(ItemsRegistry.CABLE.get(), 10);
+        TRADED_ITEMS.put(ItemsRegistry.T2_CABLE.get(), 10);
         TRADED_ITEMS.put(ItemsRegistry.SOLAR_PANEL.get(), 2);
-
     }
 
     @Override

@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class BlasterUpgraderBlockEntity extends BaseEnergyContainerBlockEntity {
     public BlasterUpgraderBlockEntity(BlockPos pos, BlockState state) {
-        super(BlockEntitiesRegistry.BLASTER_UPGRADER.get(), pos, state);
+        super(BlockEntitiesRegistry.BLASTER_UPGRADER.get(), pos, state, 3000);
     }
 
     @Override
@@ -53,11 +53,6 @@ public class BlasterUpgraderBlockEntity extends BaseEnergyContainerBlockEntity {
                 setItem(2, output);
             }
         }
-    }
-
-    @Override
-    public int getMaxCapacity() {
-        return 3000;
     }
 
     @Override

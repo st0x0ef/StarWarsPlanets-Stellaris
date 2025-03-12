@@ -1,10 +1,5 @@
 package com.st0x0ef.swplanets.common.items;
 
-import com.st0x0ef.stellaris.common.systems.energy.base.EnergyItem;
-import com.st0x0ef.stellaris.common.systems.energy.impl.SimpleEnergyContainer;
-import com.st0x0ef.stellaris.common.systems.energy.impl.WrappedItemEnergyContainer;
-import com.st0x0ef.stellaris.common.systems.item.ItemStackHolder;
-import com.st0x0ef.stellaris.platform.systems.energy.EnergyContainer;
 import com.st0x0ef.swplanets.common.data.BlasterComponent;
 import com.st0x0ef.swplanets.common.entities.LaserEntity;
 import com.st0x0ef.swplanets.common.registry.DataComponentRegistry;
@@ -18,9 +13,11 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 public class Blaster extends TieredItem {
