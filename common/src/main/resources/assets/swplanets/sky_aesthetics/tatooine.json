@@ -9,7 +9,7 @@
   },
   "rain": false,
   "custom_vanilla_objects": {
-    "sun": true,
+    "sun": false,
     "sun_texture": "swplanets:textures/sky/tatooine_sun.png",
     "sun_height": 200,
     "sun_size": 60,
@@ -18,9 +18,12 @@
     "moon_texture": "",
     "moon_height": 150,
     "moon_size": 150
-
   },
-  "sunrise_color": [0, 0, 0],
+  "sunrise_color": [
+    0,
+    0,
+    0
+  ],
   "sunrise_alpha_modifier": 1,
   "stars": {
     "vanilla": false,
@@ -28,7 +31,11 @@
     "count": 30000,
     "all_days_visible": true,
     "scale": 0.05,
-    "color": [255, 255, 255],
+    "color": [
+      255,
+      255,
+      255
+    ],
     "shooting_stars": {
       "percentage": 999,
       "random_lifetime": [
@@ -37,14 +44,61 @@
       ],
       "scale": 0.1,
       "speed": 0.4,
-      "color": [190, 160, -1]
-
+      "color": [
+        190,
+        160,
+        -1
+      ]
     }
   },
   "sky_color": {
     "custom_color": true,
-    "color": [0, 0, 0, 0]
+    "color": [
+      0,
+      0,
+      0,
+      0
+    ]
   },
   "sky_type": "NORMAL",
-  "sky_objects": []
+  "sky_objects": [
+    {
+      "texture": "swplanets:textures/sky/tatooine_sun.png",
+      "blend": true,
+      "size": 50,
+      "height": 120,
+      "rotation": [
+        0,
+        10,
+        0
+      ],
+      "object_rotation": [
+        0,
+        0,
+        0
+      ],
+      "rotation_type": "DAY"
+    },
+    {
+      "texture": "textures/environment/sun.png",
+      "blend": true,
+      "size": 30,
+      "height": 100,
+      "rotation": [
+        0,
+        40,
+        0
+      ],
+      "object_rotation": [
+        0,
+        0,
+        0
+      ],
+      "rotation_type": "DAY"
+    }
+  ],
+  "constellations": [],
+  "condition": {
+    "condition": false
+  }
 }
