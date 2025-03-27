@@ -10,7 +10,7 @@
   "rain": false,
   "custom_vanilla_objects": {
     "sun": true,
-    "sun_texture": "swplanets:textures/sky/deathstar.png",
+    "sun_texture": "textures/environment/sun.png",
     "sun_height": 200,
     "sun_size": 60,
     "moon": false,

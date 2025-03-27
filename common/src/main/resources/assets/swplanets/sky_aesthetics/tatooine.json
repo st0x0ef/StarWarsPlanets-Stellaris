@@ -29,7 +29,7 @@
     "vanilla": false,
     "moving_stars": true,
     "count": 30000,
-    "all_days_visible": true,
+    "all_days_visible": false,
     "scale": 0.05,
     "color": [
       255,
@@ -52,7 +52,7 @@
     }
   },
   "sky_color": {
-    "custom_color": true,
+    "custom_color": false,
     "color": [
       0,
       0,
