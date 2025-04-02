@@ -2,7 +2,7 @@ plugins {
     id "dev.architectury.loom" version "1.7-SNAPSHOT" apply false
     id "architectury-plugin" version "3.4-SNAPSHOT"
     id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
-    id "me.modmuss50.mod-publish-plugin" version "0.7.4"
+    id "me.modmuss50.mod-publish-plugin" version "0.8.4"
 }
 
 architectury {
@@ -18,6 +18,9 @@ subprojects {
     base {
         archivesName = "${rootProject.modid}-${rootProject.minecraftVersion}-${project.name}"
     }
+
+    def modLoader = project.name
+    boolean isCommon = modLoader == "common"
 
     repositories {
         maven { url "https://maven.shedaniel.me" }
@@ -64,6 +67,59 @@ subprojects {
 
     tasks.withType(JavaCompile).configureEach {
         it.options.release = 21
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                groupId "com.st0x0ef.swplanets"
+                artifactId "swplanets-$modLoader-" + minecraftVersion
+                version version
+                from components.java
+                pom {
+                    name = "SWPlanets" + modLoader.capitalize()
+                    url = "https://github.com/st0x0ef/StarWarsPlanets-Stellaris"
+                }
+            }
+        }
+
+        repositories {
+            maven {
+                url = "https://maven.exodusstudio.org/releases/"
+                credentials {
+                    username = System.getenv("EXODUS_MAVEN_USERNAME") // DO NOT CHANGE
+                    password = System.getenv("EXODUS_MAVEN_KEY") // DO NOT CHANGE
+                }
+            }
+        }
+    }
+
+    if (!isCommon) {
+        publishMods {
+            file = file("../${modLoader.capitalize()}/build/libs/swplanets-${minecraftVersion}-${modLoader}-${version}.jar")
+            changelog = file("../changelog.md").getText('UTF-8')
+            type = STABLE
+            modLoaders.add(modLoader)
+            displayName = "[${modLoader.capitalize()} ${minecraftVersion}] Stellaris ${version}"
+
+            curseforge {
+                projectId = "1036270"
+                projectSlug = "swplanets" // Required for discord webhook
+                accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
+                minecraftVersions.add("${minecraftVersion}")
+                javaVersions.add(JavaVersion.VERSION_21)
+                requires("stellaris")
+                requires("architectury-api")
+            }
+
+            modrinth {
+                projectId = "ItTQpuBn"
+                accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+                minecraftVersions.add("${minecraftVersion}")
+                requires("stellaris")
+                requires("architectury-api")
+            }
+        }
     }
 }
 
