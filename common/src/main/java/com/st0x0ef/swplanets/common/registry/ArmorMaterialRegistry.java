@@ -49,5 +49,4 @@ public class ArmorMaterialRegistry {
 
     public static final RegistrySupplier<ArmorMaterial> STORMTROOPER = ARMOR_MATERIAL.register("stormtrooper", () -> STORMTROOPER_MATERIAL);
     public static final RegistrySupplier<ArmorMaterial> BESKAR = ARMOR_MATERIAL.register("beskar_armor", () -> BESKAR_MATERIAL);
-
 }

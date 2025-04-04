@@ -21,13 +21,13 @@ public enum StarWarsTiers implements Tier {
     private final int enchantmentValue;
     private final LazyLoadedValue<Ingredient> repairIngredient;
 
-    StarWarsTiers(int $$0, int $$1, float $$2, float $$3, int $$4, Supplier<Ingredient> $$5) {
-        this.level = $$0;
-        this.uses = $$1;
-        this.speed = $$2;
-        this.damage = $$3;
-        this.enchantmentValue = $$4;
-        this.repairIngredient = new LazyLoadedValue<>($$5);
+    StarWarsTiers(int level, int uses, float speed, float damage, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
+        this.level = level;
+        this.uses = uses;
+        this.speed = speed;
+        this.damage = damage;
+        this.enchantmentValue = enchantmentValue;
+        this.repairIngredient = new LazyLoadedValue<>(repairIngredient);
     }
 
     @Override
