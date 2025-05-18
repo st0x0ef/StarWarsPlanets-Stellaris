@@ -2,8 +2,9 @@ package com.st0x0ef.swplanets.common.registry;
 
 import com.st0x0ef.stellaris.common.items.CustomArmorItem;
 import com.st0x0ef.swplanets.SWPlanets;
-import com.st0x0ef.swplanets.common.data.BlasterComponent;
 import com.st0x0ef.swplanets.common.items.*;
+import com.st0x0ef.swplanets.common.items.upgrades.ExplosionUpgrade;
+import com.st0x0ef.swplanets.common.items.upgrades.SpyglassUpgrade;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
@@ -76,12 +77,13 @@ public class ItemsRegistry {
 
     /** Blaster */
     //Blasters
-    public static final RegistrySupplier<Item> BLASTER = ITEMS.register("blaster", () -> new Blaster(new Item.Properties().durability(2000).component(DataComponentRegistry.BLASTER_COMPONENT.get(), new BlasterComponent(false, false)).arch$tab(TabsRegistry.SWPLANET_TAB)));
+    public static final RegistrySupplier<Item> BLASTER = ITEMS.register("blaster", () -> new Blaster(new Item.Properties().durability(2000)));
+    public static final RegistrySupplier<Item> PISTOL_BLASTER = ITEMS.register("pistol_blaster", () -> new Blaster(new Item.Properties().durability(2000).arch$tab(TabsRegistry.SWPLANET_TAB)));
 
     // Blaster Upgrade
     public static final RegistrySupplier<BlockItem> BLASTER_UPGRADER = ITEMS.register("blaster_upgrader", () -> new BlockItem(BlocksRegistry.BLASTER_UPGRADER.get(), new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB)));
-    public static final RegistrySupplier<Item> BLASTER_ZOOM_UPGRADE = ITEMS.register("blaster_zoom_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16).arch$tab(TabsRegistry.SWPLANET_TAB), true, 0, false));
-    public static final RegistrySupplier<BlasterUpgrade> BLASTER_EXPLOSION_UPGRADE = ITEMS.register("blaster_explosion_upgrade", () -> new BlasterUpgrade(new Item.Properties().stacksTo(16).arch$tab(TabsRegistry.SWPLANET_TAB), false, 0, true));
+    public static final RegistrySupplier<SpyglassUpgrade> BLASTER_ZOOM_UPGRADE = ITEMS.register("blaster_zoom_upgrade", () -> new SpyglassUpgrade(new Item.Properties().stacksTo(16).arch$tab(TabsRegistry.SWPLANET_TAB)));
+    public static final RegistrySupplier<ExplosionUpgrade> BLASTER_EXPLOSION_UPGRADE = ITEMS.register("blaster_explosion_upgrade", () -> new ExplosionUpgrade(new Item.Properties().stacksTo(16).arch$tab(TabsRegistry.SWPLANET_TAB)));
 
     /** Blocks */
     public static final RegistrySupplier<BlockItem> TATOOINE_STONE = ITEMS.register("tatooine_stone", () -> new BlockItem(BlocksRegistry.TATOOINE_STONE.get(),  new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB)));

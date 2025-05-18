@@ -33,6 +33,8 @@ public class LaserEntity extends Fireball {
     public LaserEntity(Level level) {
         super(EntityRegistry.LASER.get(), level);
         this.lifetime = 60;
+        this.explode = false;
+
     }
 
     @Override

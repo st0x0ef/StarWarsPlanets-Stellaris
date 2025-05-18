@@ -11,6 +11,6 @@ import net.minecraft.world.inventory.MenuType;
 public class MenusRegistry {
     public static final DeferredRegister<MenuType<?>> MENU_TYPE = DeferredRegister.create(SWPlanets.MODID, Registries.MENU);
 
-    public static final RegistrySupplier<MenuType<BlasterUpgraderMenu>> BLASTER_UPGRADER_MENU = MENU_TYPE.register("blaster_upgrader_menu", () -> MenuRegistry.ofExtended(BlasterUpgraderMenu::new));
+    public static final RegistrySupplier<MenuType<BlasterUpgraderMenu>> BLASTER_UPGRADER_MENU = MENU_TYPE.register("blaster_upgrader_menu", () -> MenuRegistry.ofExtended(BlasterUpgraderMenu::create));
 
 }

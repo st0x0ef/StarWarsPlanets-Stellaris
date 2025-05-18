@@ -17,12 +17,11 @@ public class PlayerScopeMixin {
         Player player = (Player) ((Object) this);
         boolean haveZoom = false;
 
-        if(player.getItemInHand(InteractionHand.MAIN_HAND).is(ItemsRegistry.BLASTER.get())) {
-            Blaster blaster = (Blaster) player.getItemInHand(InteractionHand.MAIN_HAND).getItem();
-            haveZoom = blaster.getZoomUpgrade(player.getItemInHand(InteractionHand.MAIN_HAND));
+        if(player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof Blaster blaster) {
+            haveZoom = blaster.isSpyglass(player.getItemInHand(InteractionHand.MAIN_HAND));
         }
 
-        boolean isUsingBlaster = haveZoom && player.isCrouching() && player.getItemInHand(InteractionHand.MAIN_HAND).is(ItemsRegistry.BLASTER.get());
+        boolean isUsingBlaster = haveZoom && player.isCrouching() && player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof Blaster;
         boolean isUsingSpyglass = player.isUsingItem() && player.getUseItem().is(Items.SPYGLASS);
 
         boolean isScoping = isUsingBlaster || isUsingSpyglass;

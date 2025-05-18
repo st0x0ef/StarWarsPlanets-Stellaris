@@ -182,7 +182,7 @@ public class JawaEntity extends Animal {
 
     @Override
     public InteractionResult interactAt(Player player, Vec3 vec, InteractionHand hand) {
-        trade(player, hand);
+        this.trade(player, hand);
 
         return super.interactAt(player, vec, hand);
     }

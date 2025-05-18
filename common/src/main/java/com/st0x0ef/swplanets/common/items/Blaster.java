@@ -1,7 +1,9 @@
 package com.st0x0ef.swplanets.common.items;
 
-import com.st0x0ef.swplanets.common.data.BlasterComponent;
+import com.st0x0ef.swplanets.common.data_components.BlasterUpgrades;
 import com.st0x0ef.swplanets.common.entities.LaserEntity;
+import com.st0x0ef.swplanets.common.items.upgrades.BlasterUpgrade;
+import com.st0x0ef.swplanets.common.items.upgrades.SpyglassUpgrade;
 import com.st0x0ef.swplanets.common.registry.DataComponentRegistry;
 import com.st0x0ef.swplanets.common.registry.ItemsRegistry;
 import com.st0x0ef.swplanets.common.registry.SoundsRegistry;
@@ -20,6 +22,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
+
 public class Blaster extends TieredItem {
     public Blaster(Properties properties) {
         super(StarWarsTiers.PLASTIC, properties);
@@ -36,18 +39,25 @@ public class Blaster extends TieredItem {
     @Override
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int $$3) {
         if (!level.isClientSide) {
+
+            List<BlasterUpgrade> modules = getUpgrades(stack);
+
+
             level.playSeededSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundsRegistry.BLASTER_SOUND, SoundSource.PLAYERS, 1.0F, 1.0F, 0);
-            LaserEntity laser = new LaserEntity(level, getExplosionUpgrade(stack));
+            LaserEntity laser = new LaserEntity(level);
             laser.setPos(entity.getX(), entity.getY() + 1.5, entity.getZ());
             laser.shootFromRotation(entity, entity.getXRot(), entity.getYRot(), 0.0F, 3.0F, 1.0F);
             laser.setItem(ItemsRegistry.LASER_ITEM.get().getDefaultInstance());
+
+            modules.forEach((upgrade) -> upgrade.onShoot(stack, level, entity, laser));
+
             level.addFreshEntity(laser);
         }
     }
 
     @Override
     public UseAnim getUseAnimation(ItemStack stack) {
-        if (getZoomUpgrade(stack)) {
+        if (isSpyglass(stack)) {
             return UseAnim.SPYGLASS;
         } else {
             return UseAnim.BOW;
@@ -61,37 +71,23 @@ public class Blaster extends TieredItem {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+
+        List<BlasterUpgrade> modules = getUpgrades(stack);
+
         if (Screen.hasShiftDown()) {
-            addUpgradesComponents(stack, tooltipComponents);
+            if (!modules.isEmpty()) {
+                tooltipComponents.add(Component.translatable("spacesuit.stellaris.modules"));
+                modules.forEach(spaceSuitModule -> tooltipComponents.add(spaceSuitModule.displayName().withStyle(ChatFormatting.GRAY)));
+            }
         } else {
             tooltipComponents.add(Component.translatable("tooltip.swplanets.shift"));
         }
 
-        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 
-    public void addUpgradesComponents(ItemStack stack, List<Component> components) {
-        Component zoom;
-        Component explosion;
-
-        if (getZoomUpgrade(stack)) {
-            zoom = Component.literal("✔").withStyle(ChatFormatting.GREEN);
-        } else {
-            zoom = Component.literal("✘").withStyle(ChatFormatting.RED);
-        }
-        if (getExplosionUpgrade(stack)) {
-            explosion = Component.literal("✔").withStyle(ChatFormatting.GREEN);
-        } else {
-            explosion = Component.literal("✘").withStyle(ChatFormatting.RED);
-        }
-
-        components.add(Component.literal("Zoom: ").append(zoom));
-        components.add(Component.literal("Explosion: ").append(explosion));
-    }
-
-    public void setUpgrade(BlasterUpgrade upgradeItem, ItemStack stack) {
-        BlasterComponent component = new BlasterComponent(upgradeItem.getZoom(), upgradeItem.getExplosion());
-        stack.set(DataComponentRegistry.BLASTER_COMPONENT.get(), component);
+    public boolean isSpyglass(ItemStack stack) {
+        return stack.getOrDefault(DataComponentRegistry.BLASTER_COMPONENT.get(), BlasterUpgrades.empty()).getUpgrades().stream().anyMatch(upgrade -> upgrade instanceof SpyglassUpgrade);
     }
 
     @Override
@@ -99,11 +95,12 @@ public class Blaster extends TieredItem {
         return $$0;
     }
 
-    public boolean getZoomUpgrade(ItemStack stack) {
-        return stack.get(DataComponentRegistry.BLASTER_COMPONENT.get()).zoom_upgrade();
+    public BlasterUpgrades getUpgrade(ItemStack stack) {
+        return stack.getOrDefault(DataComponentRegistry.BLASTER_COMPONENT.get(), BlasterUpgrades.empty());
     }
 
-    public boolean getExplosionUpgrade(ItemStack stack) {
-        return stack.get(DataComponentRegistry.BLASTER_COMPONENT.get()).explosion_upgrade();
+    public List<BlasterUpgrade> getUpgrades(ItemStack stack) {
+        return stack.getOrDefault(DataComponentRegistry.BLASTER_COMPONENT.get(), BlasterUpgrades.empty()).getUpgrades();
     }
+
 }
