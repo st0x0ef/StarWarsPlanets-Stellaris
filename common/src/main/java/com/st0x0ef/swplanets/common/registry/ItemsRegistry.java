@@ -44,17 +44,17 @@ public class ItemsRegistry {
 
     public static final RegistrySupplier<ArmorItem> STORMTROOPER_MASK = ITEMS.register("stormtrooper_mask",
             () -> new CustomArmorItem(ArmorMaterialRegistry.STORMTROOPER, ArmorItem.Type.HELMET,
-                    new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB)));
+                    new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB), true));
 
     public static final RegistrySupplier<Item> STORMTROOPER_CHESTPLATE = ITEMS.register("stormtrooper_chestplate",
             () -> new CustomArmorItem(ArmorMaterialRegistry.STORMTROOPER, ArmorItem.Type.CHESTPLATE,
-                    new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB)));
+                    new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB), true));
     public static final RegistrySupplier<Item> STORMTROOPER_LEGGINGS = ITEMS.register("stormtrooper_leggings",
             () -> new CustomArmorItem(ArmorMaterialRegistry.STORMTROOPER, ArmorItem.Type.LEGGINGS,
-                    new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB)));
+                    new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB), true));
     public static final RegistrySupplier<Item> STORMTROOPER_BOOTS = ITEMS.register("stormtrooper_boots",
             () -> new CustomArmorItem(ArmorMaterialRegistry.STORMTROOPER, ArmorItem.Type.BOOTS,
-                    new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB)));
+                    new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB), true));
     public static final RegistrySupplier<Item> PLASTIC_PLATE = ITEMS.register("plastic_plate", () -> new Item(new Item.Properties().stacksTo(64)));
 
 
@@ -77,8 +77,8 @@ public class ItemsRegistry {
 
     /** Blaster */
     //Blasters
-    public static final RegistrySupplier<Item> BLASTER = ITEMS.register("blaster", () -> new Blaster(new Item.Properties().durability(2000)));
-    public static final RegistrySupplier<Item> PISTOL_BLASTER = ITEMS.register("pistol_blaster", () -> new Blaster(new Item.Properties().durability(2000).arch$tab(TabsRegistry.SWPLANET_TAB)));
+    public static final RegistrySupplier<Item> BLASTER = ITEMS.register("blaster", () -> new Blaster(new Item.Properties().durability(2000).arch$tab(TabsRegistry.SWPLANET_TAB)));
+    public static final RegistrySupplier<Item> PISTOL_BLASTER = ITEMS.register("pistol_blaster", () -> new Blaster(new Item.Properties().durability(2000)));
 
     // Blaster Upgrade
     public static final RegistrySupplier<BlockItem> BLASTER_UPGRADER = ITEMS.register("blaster_upgrader", () -> new BlockItem(BlocksRegistry.BLASTER_UPGRADER.get(), new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB)));
