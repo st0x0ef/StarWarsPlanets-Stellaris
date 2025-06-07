@@ -25,6 +25,7 @@ public class ItemsRegistry {
     public static final RegistrySupplier<Item> BLUE_LIGHT_SABER = ITEMS.register("light_saber_blue", () -> new JediLightSaber(StarWarsTiers.LIGHT_SABER, new Item.Properties().fireResistant().stacksTo(1).arch$tab(TabsRegistry.SWPLANET_TAB)));
     public static final RegistrySupplier<Item> GREEN_LIGHT_SABER = ITEMS.register("light_saber_green", () -> new JediLightSaber(StarWarsTiers.LIGHT_SABER, new Item.Properties().fireResistant().stacksTo(1).arch$tab(TabsRegistry.SWPLANET_TAB)));
     public static final RegistrySupplier<Item> VIOLET_LIGHT_SABER = ITEMS.register("light_saber_violet", () -> new JediLightSaber(StarWarsTiers.LIGHT_SABER, new Item.Properties().fireResistant().stacksTo(1).arch$tab(TabsRegistry.SWPLANET_TAB)));
+    public static final RegistrySupplier<Item> PLO_KOON_LIGHTSABER = ITEMS.register("plo_koon_lightsaber", () -> new JediLightSaber(StarWarsTiers.LIGHT_SABER, new Item.Properties().fireResistant().stacksTo(1).arch$tab(TabsRegistry.SWPLANET_TAB)));
 
     /** Sith Light Sabers **/
     public static final RegistrySupplier<Item> RED_LIGHT_SABER = ITEMS.register("light_saber_red", () -> new SithLightSaber(StarWarsTiers.LIGHT_SABER, new Item.Properties().fireResistant().stacksTo(1).arch$tab(TabsRegistry.SWPLANET_TAB)));
@@ -78,7 +79,7 @@ public class ItemsRegistry {
     /** Blaster */
     //Blasters
     public static final RegistrySupplier<Item> BLASTER = ITEMS.register("blaster", () -> new Blaster(new Item.Properties().durability(2000).arch$tab(TabsRegistry.SWPLANET_TAB)));
-    public static final RegistrySupplier<Item> PISTOL_BLASTER = ITEMS.register("pistol_blaster", () -> new Blaster(new Item.Properties().durability(2000)));
+    public static final RegistrySupplier<Item> PISTOL_BLASTER = ITEMS.register("pistol_blaster", () -> new Blaster(new Item.Properties().durability(2000).arch$tab(TabsRegistry.SWPLANET_TAB)));
 
     // Blaster Upgrade
     public static final RegistrySupplier<BlockItem> BLASTER_UPGRADER = ITEMS.register("blaster_upgrader", () -> new BlockItem(BlocksRegistry.BLASTER_UPGRADER.get(), new Item.Properties().arch$tab(TabsRegistry.SWPLANET_TAB)));
