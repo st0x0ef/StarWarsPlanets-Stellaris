@@ -1,7 +1,6 @@
 package com.st0x0ef.swplanets.mixin;
 
 import com.st0x0ef.swplanets.common.items.Blaster;
-import com.st0x0ef.swplanets.common.registry.ItemsRegistry;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;

@@ -1,0 +1,12 @@
+{
+  "name": "The Galaxy",
+  "translatable": "text.swplanets.galaxyscreen.the_galaxy",
+  "parent": "swplanets:the_galaxy",
+  "starCount": 1,
+  "id": "swplanets:the_galaxy",
+  "stars": [
+    { "id": "swplanets:outer_rims", "x": 500, "y": 1000, "mass": 1.0 }
+  ],
+  "centerX": 0,
+  "centerY": 0
+}

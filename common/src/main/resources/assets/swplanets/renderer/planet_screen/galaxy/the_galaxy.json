@@ -1,0 +1,7 @@
+{
+  "texture": "swplanets:textures/sky/deathstar.png",
+  "name": "The Galaxy",
+  "translatable": "text.swplanets.galaxyscreen.the_galaxy",
+  "id": "swplanets:outer_rims",
+  "centerStar": "swplanets:outer_rims"
+}

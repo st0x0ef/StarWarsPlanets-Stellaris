@@ -7,5 +7,6 @@
   "height": 36.0,
   "orbitColor": "Red",
   "translatable": "gui.swplanets.planet_selection.solar_system_button",
-  "id": "swplanets:outer_rims"
+  "id": "swplanets:outer_rims",
+  "galaxy": "swplanets:the_galaxy"
 }
