@@ -74,7 +74,7 @@ subprojects {
             mavenJava(MavenPublication) {
                 groupId "com.st0x0ef.swplanets"
                 artifactId "swplanets-$modLoader-" + minecraftVersion
-                version version
+                version mod_version
                 from components.java
                 pom {
                     name = "SWPlanets" + modLoader.capitalize()
@@ -96,14 +96,14 @@ subprojects {
 
     if (!isCommon) {
         publishMods {
-            file = file("../${modLoader.capitalize()}/build/libs/swplanets-${minecraftVersion}-${modLoader}-${version}.jar")
+            file = file("../${modLoader.capitalize()}/build/libs/swplanets-${minecraftVersion}-${modLoader}-${mod_version}.jar")
             changelog = file("../changelog.md").getText('UTF-8')
             type = STABLE
             modLoaders.add(modLoader)
-            displayName = "[${modLoader.capitalize()} ${minecraftVersion}] Stellaris ${version}"
+            displayName = "[${modLoader.capitalize()} ${minecraftVersion}] Star Wars Planets ${mod_version}"
 
             curseforge {
-                projectId = "1036270"
+                projectId = "1226349"
                 projectSlug = "swplanets" // Required for discord webhook
                 accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
                 minecraftVersions.add("${minecraftVersion}")
@@ -113,7 +113,7 @@ subprojects {
             }
 
             modrinth {
-                projectId = "ItTQpuBn"
+                projectId = "lETYKDoG"
                 accessToken = providers.environmentVariable("MODRINTH_TOKEN")
                 minecraftVersions.add("${minecraftVersion}")
                 requires("stellaris")
@@ -125,5 +125,5 @@ subprojects {
 
 allprojects {
     group = rootProject.mavenGroup
-    version = rootProject.version
+    version = rootProject.mod_version
 }
