@@ -72,11 +72,9 @@ body:
       options:
         - label: You have the latest version of the mod
           required: true
-        - label: You have the latest version of Ad Astra
+        - label: You have the latest version of Stellaris
           required: true
         - label: You have verified that you have installed all the required dependencies for the mod
-          required: true
-        - label: I have verified that I do not have Optifine installed. Optifine breaks with Ad Astra.
           required: true
         - label: The error come for this mod and not an other.
           required: true
